@@ -1,0 +1,192 @@
+#fp {
+    color: white;
+    text-decoration: none;
+    padding-bottom: 2px;
+    border-bottom: 2px solid rgb(191, 0, 0);
+    margin-left: 70%;
+}
+#fp:hover {
+    color: rgb(233, 0, 0);
+}
+#registerHere {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding-bottom: 2px;
+    border-bottom: 2px solid rgb(191, 0, 0);
+    margin-left: 15px;
+}
+#registerHere:hover {
+    color: rgb(230, 0, 0);
+}
+#divSI {
+    background-color: rgb(19, 19, 19);
+    width: 40%;
+    height: 300px;
+    padding-top: 10%;
+    padding-bottom: 0%;
+    position: relative;
+    margin-left: 31%;
+    margin-top: 0.5%;
+}
+#na {
+    padding-top: 100px;
+    padding-left: 10px;
+    margin-top: -70px;
+}
+#formRegister {
+    position: relative;
+    margin-top: 5%;
+    margin-left: 3%;
+    color: white;
+}
+#create {
+    color: white;
+    margin-top: -10px;
+    margin-left: -25px;
+}
+#h1si {
+    margin: 0;
+    margin-top: -10px;
+    margin-left: -27px;
+    color: white;
+}
+#navSI {
+    background-color: rgb(19, 19, 19);
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.529);
+    height: 1px;
+    border-radius: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: -130px;
+    margin-bottom: 15px;
+}
+label {
+    color: white;
+    margin-left: 15px;
+}
+input {
+    width: 500px;
+    height: 50px;
+    border: 0px solid white;
+    border-radius: 7px;
+    margin-bottom: 15px;
+    margin-top: 7px;
+    margin-left: 10px
+}
+#iniciar {
+    background-color: rgb(199, 0, 0);
+    border: 0 solid rgb(217, 0, 0);
+    border-radius: 6px;
+    width: 100px;
+    height: 40px;
+    color: white;
+    position: relative;
+    margin-left: 10px;
+    margin-top: 8px;
+}
+#iniciar:hover {
+    background-color: black;
+    border: 1px solid white;
+}
+#navR1 {
+    background-color: rgb(154, 154, 154);
+    border-radius: 0;
+    padding: 0;
+    height: 110px;
+}
+#register{
+    color: white;
+    background-color:rgb(79, 79, 79);
+    padding: 3px;
+    padding-bottom: 5px;
+    border-radius: 0;
+    text-decoration: none;
+    position: relative;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+    margin-left: 45%;
+}
+#login {
+    color: white;
+    background-color:rgb(79, 79, 79);
+    padding: 3px;
+    padding-bottom: 5px;
+    border-radius: 0;
+    text-decoration: none;
+    position: relative;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 5px solid rgb(161, 0, 0);
+    margin-left: 45%;
+}
+#register {
+    margin-left: 5px;
+}
+#register:hover {
+    border-bottom: 5px solid rgb(248, 248, 248);
+}
+#navR2 {
+    position: relative;
+    margin-top: 0px;
+    border-radius: 0;
+    background-color: rgb(79, 79, 79);
+    height: 1px;
+    padding-top: 15px;
+}
+#f1 {
+    padding: -50px;
+    margin-top: 20px;
+    margin-bottom: -15px;
+    margin-left: 15px;
+    margin-right: 5px;
+    height: 64px;
+    width: 256px;
+}
+#f1v2 {
+    padding: -50px;
+    margin-top: -13px;
+    margin-left: 0;
+    margin-right: 0;
+    height: 32px;
+    width: 128px;
+}
+#links1 {
+    color: white;
+    margin: 0;
+    padding: 0;
+    margin-left: 49.5%;
+    text-decoration: none;
+    position: relative;
+}
+#links2 {
+    color: white;
+    margin-left: 25px;
+    text-decoration: none;
+}
+#navSI2 {
+    background-color: rgb(19, 19, 19);
+    height: 5px;
+    border-radius: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 50px;
+    border-bottom: 1px solid rgb(149, 149, 149);
+    margin: 0;
+}
+#divSI2 {
+    margin: 0;
+    margin-left: 25px;
+    margin-right: 15px;
+    width: auto;
+    height: 130px;
+    background-color: rgb(19, 19, 19);
+    border-top: 8px solid white;
+    border-top-left-radius: 0;
+    border-right: 8px solid white;
+    border-top-right-radius: 25px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital@1&display=swap');
+*{
+    font-family: 'Ubuntu', sans-serif;
+}

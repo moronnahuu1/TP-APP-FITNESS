@@ -1,0 +1,9 @@
+h1 {
+    color: white;
+    position: relative;
+    margin-left: 35%;
+}
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital@1&display=swap');
+*{
+    font-family: 'Ubuntu', sans-serif;
+}

@@ -1,0 +1,52 @@
+
+<nav id="navR1">
+    <img id="f1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/F1.svg/2560px-F1.svg.png" alt="">
+</nav>
+<nav id="navR2">
+    <a id="login" href="login">Sign In</a>
+    <a id="register" href="register">Register</a>
+</nav>
+<div id="divR">
+    <nav id="navR">
+        <h1 id="create">
+            CREATE YOUR ACCOUNT
+        </h1>
+    </nav>
+    <form action="submit" id="formRegister">
+        <label for="nombre">First name</label>
+        <br>
+        <input type="text" name="nombre" placeholder="  First Name" id="name">
+        <br>
+        <label for="apellido">Last name</label>
+        <br>
+        <input type="text" name="apellido" placeholder="  Last name" id="lastName">
+        <br>
+        <label for="edad">Age</label>
+        <br>
+        <input type="number" name="edad" placeholder="  Age" id="age">
+        <br>
+        <label for="peso">Weight</label>
+        <br>
+        <input type="number" name="peso" placeholder="  Weight" id="weight">
+        <br>
+        <label for="altura">Height</label>
+        <br>
+        <input type="number" name="altura" placeholder="  Height" id="height">
+        <br>
+        <label for="email">Email</label>
+        <br>
+        <input type="email" name="email" placeholder="  Email" id="email1">
+        <br>
+        <label for="nombreUsuario">Username</label>
+        <br>
+        <input type="text" name="userName" placeholder="  Username" id="userName">
+        <br>
+        <label for="contrasenia">Password</label>
+        <br>
+        <input type="password" name="contrasenia" placeholder="  Password" id="pass">
+        <br>
+        <p>Already have an account? sign in <a id="here" href="login">here</a>!</p>
+        <br>
+        <button type="submit" (click)="onSubmit($event)" id="registrarse">REGISTER</button>
+    </form>
+</div>
