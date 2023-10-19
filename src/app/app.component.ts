@@ -31,7 +31,7 @@ export class usuario{
   }
   verInfo(): string {
     let info: string = "";
-    info += "Nombre: "+this.firstName+"\nApellido: "+this.lastName+"\nEdad: "+this.age;
+    info += "Nombre: "+this.firstName+"\nApellido: "+this.lastName+"\nEdad: "+this.age+"\nPeso: "+this.weight+"\nAltura: "+this.height+"\nemail: "+this.email+"\nNombre de usuario: "+this.userName+"\npassword: "+this.password;
     return info;
   }
 }

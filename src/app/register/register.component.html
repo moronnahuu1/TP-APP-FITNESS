@@ -1,4 +1,3 @@
-
 <nav id="navR1">
     <img id="f1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/F1.svg/2560px-F1.svg.png" alt="">
 </nav>
@@ -6,6 +5,16 @@
     <a id="login" href="login">Sign In</a>
     <a id="register" href="register">Register</a>
 </nav>
+<div id="main">
+<div id="divAlert">
+    <nav id="registroCorrecto">
+        <p>Se ha registrado correctamente</p>
+    </nav>
+    <nav id="registroIncorrecto">
+        <p>Los datos enviados no son correctos, no se ha podido registrar correctamente</p>
+    </nav>
+
+</div>
 <div id="divR">
     <nav id="navR">
         <h1 id="create">
@@ -15,38 +24,39 @@
     <form action="submit" id="formRegister">
         <label for="nombre">First name</label>
         <br>
-        <input type="text" name="nombre" placeholder="  First Name" id="name">
+        <input type="text" name="nombre" placeholder="  First Name" id="name" [(ngModel)] = "name">
         <br>
         <label for="apellido">Last name</label>
         <br>
-        <input type="text" name="apellido" placeholder="  Last name" id="lastName">
+        <input type="text" name="apellido" placeholder="  Last name" id="lastName" [(ngModel)] = "lastName">
         <br>
         <label for="edad">Age</label>
         <br>
-        <input type="number" name="edad" placeholder="  Age" id="age">
+        <input type="number" name="edad" placeholder="  Age" id="age" [(ngModel)] = "age">
         <br>
         <label for="peso">Weight</label>
         <br>
-        <input type="number" name="peso" placeholder="  Weight" id="weight">
+        <input type="number" name="peso" placeholder="  Weight" id="weight" [(ngModel)] = "weight">
         <br>
         <label for="altura">Height</label>
         <br>
-        <input type="number" name="altura" placeholder="  Height" id="height">
+        <input type="number" name="altura" placeholder="  Height" id="height" [(ngModel)] = "height">
         <br>
         <label for="email">Email</label>
         <br>
-        <input type="email" name="email" placeholder="  Email" id="email1">
+        <input type="email" name="email" placeholder="  Email" id="email1" [(ngModel)] = "email">
         <br>
         <label for="nombreUsuario">Username</label>
         <br>
-        <input type="text" name="userName" placeholder="  Username" id="userName">
+        <input type="text" name="userName" placeholder="  Username" id="userName" [(ngModel)] = "userName">
         <br>
         <label for="contrasenia">Password</label>
         <br>
-        <input type="password" name="contrasenia" placeholder="  Password" id="pass">
+        <input type="password" name="contrasenia" placeholder="  Password" id="pass" [(ngModel)] = "pass">
         <br>
         <p>Already have an account? sign in <a id="here" href="login">here</a>!</p>
         <br>
         <button type="submit" (click)="onSubmit($event)" id="registrarse">REGISTER</button>
     </form>
+</div>
 </div>

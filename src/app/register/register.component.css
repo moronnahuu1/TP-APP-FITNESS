@@ -25,11 +25,8 @@
     height: 580px;
     padding-top: 10%;
     padding-bottom: 12%;
-    position: relative;
     border: 1.5px solid rgba(230, 230, 230, 0.774);
     border-radius: 9px;
-    margin-left: 31%;
-    margin-top: 4%;
 }
 #formRegister {
     position: relative;
@@ -127,6 +124,37 @@ input {
     margin-right: 5px;
     height: 64px;
     width: 256px;
+}
+#registroCorrecto {
+    background-color: rgb(0, 164, 0);
+    margin: 0;
+    padding: 20px;
+    position: relative;
+    width: 550px;
+    height: 60px;
+    opacity: 0.7;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    display: none;
+}
+#registroIncorrecto {
+    background-color: rgb(228, 0, 0);
+    margin: 0;
+    padding: 20px;
+    position: relative;
+    width: 550px;
+    height: 60px;
+    opacity: 0.7;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+#divAlert {
+    
+}
+#main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital@1&display=swap');
 *{
