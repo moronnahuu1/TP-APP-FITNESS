@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-#login, #register, #Excercises, #Routines, #Schedule, #IMC {
+/* #login, #register, #Excercises, #Routines, #Schedule, #IMC {
     color: white;
     padding-left: 30px;
     padding-right: 30px;
@@ -8,7 +8,7 @@
     border-radius: 0;
     text-decoration: none;
     position: relative;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 18px;
     margin-right: 0;
 }
@@ -66,4 +66,4 @@ p {
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital@1&display=swap');
 *{
     font-family: 'Ubuntu', sans-serif;
-}
+} */

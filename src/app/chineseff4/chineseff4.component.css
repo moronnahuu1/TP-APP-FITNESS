@@ -3,7 +3,35 @@ h1 {
     position: relative;
     margin-left: 35%;
 }
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital@1&display=swap');
-*{
-    font-family: 'Ubuntu', sans-serif;
+
+#navBar{
+    position: fixed; /* Establece la posición fija */
+    z-index: 999; /* Asegura que la barra de navegación esté sobre otros elementos de la página */
+    width: 100%; /* Asegura que la barra de navegación ocupe todo el ancho */
+}
+
+#navBar a {
+    text-decoration: none; /* Quita la subrayado de los enlaces */
+    color: #bbb7b7; /* Color de los enlaces cuando no se les pasa el mouse por encima */
+    transition: color 0.3s; /* Agrega una transición suave de color */
+    
+}
+
+#navBar a:hover {
+    color: #ffffff; /* Cambia el color cuando el mouse pasa por encima */
+  }
+
+.navbar-toggler :hover{
+transition: all 0.3s; /* Agrega una transición suave */
+}
+
+.navbar-toggler:hover {
+    background-color: #45a049; /* Color de fondo al pasar el mouse por encima */
+  color: white; /* Color de texto al pasar el mouse por encima */
+  padding: 10px 16px; /* Tamaño al pasar el mouse por encima */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Sombra al pasar el mouse por encima */
+}
+
+body{
+    background-color: #d6e8ee;
 }
