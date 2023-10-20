@@ -1,8 +1,4 @@
-h1 {
-    color: white;
-    position: relative;
-    margin-left: 35%;
-}
+
 
 #navBar{
     position: fixed; /* Establece la posición fija */
@@ -34,4 +30,14 @@ transition: all 0.3s; /* Agrega una transición suave */
 
 body{
     background-color: #d6e8ee;
+}
+
+#logo{
+    padding: -50px;
+    margin-top: -20px;
+    margin-bottom: -15px;
+    margin-left: 4px;
+    margin-right: 5px;
+    height: 47px;
+    width: 90px;
 }

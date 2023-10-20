@@ -12,19 +12,23 @@
     font-size: 18px;
     margin-right: 0;
 }
+
 #bodyM {
     background-color: rgb(19, 19, 19);
 }
+
 #login:hover, #register:hover, #Excercises:hover, #IMC:hover, #Schedule:hover, #Routines:hover {
     background-color: black;
 }
+
 nav {
     background-color: rgb(212, 0, 0);
     padding: 30px;
     margin-top: 20px;
     border-radius: 7px;
 }
-#f1 {
+
+#logo {
     padding: -50px;
     margin-top: -20px;
     margin-bottom: -15px;
@@ -33,10 +37,12 @@ nav {
     height: 47px;
     width: 120px;
 }
+
 #checo {
     position: relative;
     margin-left: 27.5%;
 }
+
 #logoc {
     width: 79.5px;
     height: 47px;
@@ -45,6 +51,7 @@ nav {
     margin-left: 10px;
     margin-right: 5px;
 }
+
 #fia {
     width: 70.5px;
     height: 47px;
@@ -53,6 +60,7 @@ nav {
     margin-left: 10px;
     margin-right: 5px;
 }
+
 #mexico {
     width: 82.25px;
     height: 47px;
@@ -60,9 +68,11 @@ nav {
     margin-bottom: -15px;
     margin-left: 10px;
 }
+
 p {
     color: white;
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital@1&display=swap');
 *{
     font-family: 'Ubuntu', sans-serif;
