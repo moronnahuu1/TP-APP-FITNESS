@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { usuario } from '../app.component';
+import { Usuario } from '../models/usuario';
+
 
 @Component({
   selector: 'app-register',
@@ -9,19 +10,26 @@ import { usuario } from '../app.component';
 export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   } 
-  @Input()
-     name: string = "";
-     lastName: string = "";
-     age: number = 0;
-     weight: number = 0;
-     height: number = 0;
-     email: string = "";
-     userName: string = "";
-     pass: string = "";
-  onSubmit(event: Event){
-    let usuario1: usuario = new usuario(this.name, this.lastName, this.age, this.weight, this.height, this.email, this.userName, this.pass);
-    let resultado: string = usuario1.verInfo();
-    console.log(usuario1.verInfo());
-  }
+
+  // //Cuando recibe los siguientes datos
+  // @Input()
+  //   userList : Array<Usuario> = [];
+  //    email: string = "";
+  //    userName: string = "";
+  //    pass: string = "";
+
+  //    addUser(){
+  //     let newUser = new Usuario(this.email,this.userName, this.pass);
+  //     this.userList.push(newUser);
+  //     console.log (this.userList);
+  //    }
+
+
+
+  // onSubmit(event: Event){
+  //   let usuario1: Usuario = new Usuario (this.email, this.userName, this.pass);
+  //   // let resultado: string = usuario1.verInfo();
+  //   // console.log(usuario1.verInfo());
+  // }
 }
 

@@ -7,13 +7,12 @@ body{
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
 	background: linear-gradient(to bottom, #001b48, #02457a, #018abe);
-    background-image: url('../../assets/blue background.jpg');
+    background-image: url(/src/assets/blue\ background.jpg);
     background-repeat: no repeat;
     background-size: cover;
     background-attachment: fixed;
     background-position: center center;
 }
-
 .main{
 	width: 350px;
 	height: 500px;
@@ -42,10 +41,9 @@ label{
 	cursor: pointer;
 	transition: .5s ease-in-out;
 }
-
 input{
 	width: 60%;
-	height: 40px;
+	height: 20px;
 	background: #e0dede;
 	justify-content: center;
 	display: flex;
@@ -98,6 +96,15 @@ button:hover{
 }
 
 
+#registerHere {
+    text-decoration: none;
+    color: #02457a;
+}
+
+#registerHere:hover{
+    color: #018abe;
+}
+
 #footer{
     position: absolute;
     left:0px;
@@ -110,12 +117,6 @@ button:hover{
 
 #footer a{
     text-decoration: none;
-    
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 15px;
-    color: #bcd7f7;
-}
-
-#footer a:hover{
-    color: #fff;
+    color: #e0dede;
 }
