@@ -1,0 +1,21 @@
+#footer{
+    position: absolute;
+    left:0px;
+    bottom:0px;
+    height:40px;
+    width:100%;
+    text-align: center;
+    background-color: #001b48;
+}
+
+#footer a{
+    text-decoration: none;
+    
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 15px;
+    color: #bcd7f7;
+}
+
+#footer a:hover{
+    color: #fff;
+}
