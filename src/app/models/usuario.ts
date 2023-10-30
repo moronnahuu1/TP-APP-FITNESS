@@ -19,7 +19,10 @@ export class Usuario {
       this.password = password;
     }
 
-
+    getFirstName(){
+      return this.firstName;
+    }
+    
     
   }
   

@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'chinesef4'`, () => {
+  it(`should have as title 'fitHub'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('chinesef4');
+    expect(app.title).toEqual('fitHub');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('chinesef4 app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('fitHub app is running!');
   });
 });
