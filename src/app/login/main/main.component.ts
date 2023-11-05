@@ -10,8 +10,9 @@ export class MainComponent implements OnInit{
   ngOnInit(): void {
     
   }
+  userList: Array<Usuario> = []
+  access: boolean = false;
   @Input()
-  userList : Array<Usuario> = [];
   email: string = "";
   userName: string = "";
   password: string = "";
@@ -21,4 +22,22 @@ export class MainComponent implements OnInit{
    this.userList.push(nuevoUsuario);
    console.log(this.userList);
   }
+
+  /*@Input()
+  emailAux: string = "";
+  passAux: string = "";
+  loginButton(event: Event) {
+    event.preventDefault();
+    let i: number = 0;
+    while(i<this.userList.length && !this.access) {
+      if(this.userList[i].email == this.emailAux && this.userList[i].password == this.passAux) {
+        this.access = true;
+      }
+    }
+    if(this.access) {
+      ///Arranca el programa
+    }else {
+      document.getElementById("info").innerHTML = "Email o contraseña incorrectos";
+    }
+  }*/
 }
