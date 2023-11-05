@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>IMC calculator</h1>
+        <form [formGroup]="imcForm" (submit)="bmi()">
+            <input type="number" formControlName="edad"><span></span>
+            <label for="">Edad</label>
+    
+            <input type="number" formControlName="peso"><span></span>
+            <label for="">Peso</label>
+    
+            <input type="number" formControlName="altura"><span></span>
+            <label for="">Altura</label>
+
+        </form>
+    <div id="Resultado">
+        <table>
+            <thead>
+                <h1>Resultado</h1>
+            </thead>
+            <tbody>
+                <td>
+                    <a [routerLink]="['/bmi', bmi/:age]">
+                        {{bmi.edad}}
+                    </a>
+                </td>
+            </tbody>
+        </table>
+    </div>
+    <button type="button" id="imc">Calculate</button>
+
+    <script src="imc.component.ts"></script>
+</body>
+</html>

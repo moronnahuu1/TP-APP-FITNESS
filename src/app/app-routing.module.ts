@@ -6,6 +6,7 @@ import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
+import { ImcComponent } from './imc/imc.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,14 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'IMC',
+    component: ImcComponent
+  },
+  {
+    path:'bmi/:age/:weight/:height',
+    component:ImcComponent
   }
 ];
 
