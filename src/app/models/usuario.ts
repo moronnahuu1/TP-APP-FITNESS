@@ -18,8 +18,4 @@ export class Usuario {
       this.userName = userName;
       this.password = password;
     }
-
-
-    
   }
-  

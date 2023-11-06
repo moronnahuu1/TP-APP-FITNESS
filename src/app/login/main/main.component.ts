@@ -11,33 +11,59 @@ export class MainComponent implements OnInit{
     
   }
   userList: Array<Usuario> = []
-  access: boolean = false;
   @Input()
   email: string = "";
   userName: string = "";
   password: string = "";
+  register: boolean = true;
   //Cuando se sube el formulario, se crea el nuevo Usuario y lo agrega a la lista de usuarios:
   onSubmit(event: Event){
-   let nuevoUsuario: Usuario = new Usuario (this.email, this.userName, this.password);
-   this.userList.push(nuevoUsuario);
-   console.log(this.userList);
-  }
+    event.preventDefault();
+    this.verifyUserRegistration();
+    if(this.register == true) {
+      let nuevoUsuario: Usuario = new Usuario (this.email, this.userName, this.password);
+      this.userList.push(nuevoUsuario);
+    } else {
 
-  /*@Input()
+    }
+   window.location.reload();
+  }
+  verifyUserRegistration() {
+    let i = 0
+    while(i<this.userList.length && this.register == true) {
+      if(this.email == this.userList[i].email) {
+        this.register = false;
+      }else {
+        i++;
+      }
+    }
+  }
+  @Input()
+  access: boolean = false;
   emailAux: string = "";
   passAux: string = "";
   loginButton(event: Event) {
     event.preventDefault();
-    let i: number = 0;
-    while(i<this.userList.length && !this.access) {
-      if(this.userList[i].email == this.emailAux && this.userList[i].password == this.passAux) {
-        this.access = true;
-      }
-    }
+    console.log(this.userList);
+    this.verifyUserLogin();
     if(this.access) {
       ///Arranca el programa
+      console.log("INICIO EXITOSO");
+      
     }else {
-      document.getElementById("info").innerHTML = "Email o contraseña incorrectos";
+      console.log("ERROR AL INICIAR SESION");
     }
-  }*/
+  }
+  verifyUserLogin() {
+    let i = 0
+    while(i<this.userList.length && this.access == false) {
+      if(this.emailAux == this.userList[i].email) {
+        if(this.passAux == this.userList[i].password) {
+          this.access = true;
+        }
+      }else {
+        i++;
+      }
+    }
+  }
 }
