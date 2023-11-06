@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
-
+import { UserService } from '../../user.service'; // Ruta relativa para navegar hacia atrás y luego al servicio
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -10,7 +10,12 @@ export class MainComponent implements OnInit{
   ngOnInit(): void {
     
   }
-  userList: Array<Usuario> = []
+  userList: Array<Usuario> = [];
+  //storedData = localStorage.getItem('key'); // Obtiene los datos del almacenamiento local
+  //private userService: UserService =  this.storedData ? JSON.parse(this.storedData) : null;
+  constructor(private userService: UserService) {
+    this.userList = userService.obtenerUsuarios();
+  }
   @Input()
   email: string = "";
   userName: string = "";
@@ -22,11 +27,14 @@ export class MainComponent implements OnInit{
     this.verifyUserRegistration();
     if(this.register == true) {
       let nuevoUsuario: Usuario = new Usuario (this.email, this.userName, this.password);
-      this.userList.push(nuevoUsuario);
+      this.userService.agregarUsuario(nuevoUsuario);
+      this.userList = this.userService.obtenerUsuarios();
+      ///localStorage.setItem('key', JSON.stringify(this.userService));
+      console.log(this.userList);
+      
     } else {
 
     }
-   window.location.reload();
   }
   verifyUserRegistration() {
     let i = 0
@@ -39,13 +47,15 @@ export class MainComponent implements OnInit{
     }
   }
   @Input()
-  access: boolean = false;
   emailAux: string = "";
   passAux: string = "";
+  access: boolean = false;
   loginButton(event: Event) {
     event.preventDefault();
+    console.log(this.emailAux);
+    console.log(this.passAux);
     console.log(this.userList);
-    this.verifyUserLogin();
+    this.verifyUserLogin(this.emailAux, this.passAux);
     if(this.access) {
       ///Arranca el programa
       console.log("INICIO EXITOSO");
@@ -54,11 +64,11 @@ export class MainComponent implements OnInit{
       console.log("ERROR AL INICIAR SESION");
     }
   }
-  verifyUserLogin() {
+  verifyUserLogin(emailAux1: string, passAux1: string) {
     let i = 0
     while(i<this.userList.length && this.access == false) {
-      if(this.emailAux == this.userList[i].email) {
-        if(this.passAux == this.userList[i].password) {
+      if(emailAux1 == this.userList[i].email) {
+        if(passAux1 == this.userList[i].password) {
           this.access = true;
         }
       }else {

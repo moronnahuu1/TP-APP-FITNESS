@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http'; // Importa HttpClientModule
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { NotLoggedComponent } from './login/not-logged/not-logged.component';
 import { NotRegisteredComponent } from './login/not-registered/not-registered.component';
 import { SignInComponent } from './login/sign-in/sign-in.component';
 import { RegisterComponent } from './login/register/register.component';
+import { ExcercisesComponent } from './excercises/excercises.component';
 
 @NgModule({
   declarations: [
@@ -24,12 +26,14 @@ import { RegisterComponent } from './login/register/register.component';
     NotLoggedComponent,
     NotRegisteredComponent,
     SignInComponent,
-    RegisterComponent
+    RegisterComponent,
+    ExcercisesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
