@@ -15,6 +15,8 @@ import { NotRegisteredComponent } from './login/not-registered/not-registered.co
 import { SignInComponent } from './login/sign-in/sign-in.component';
 import { RegisterComponent } from './login/register/register.component';
 import { ExcercisesComponent } from './excercises/excercises.component';
+import { NavBarComponent } from './excercises/nav-bar/nav-bar.component';
+import { InfoComponent } from './excercises/info/info.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { ExcercisesComponent } from './excercises/excercises.component';
     NotRegisteredComponent,
     SignInComponent,
     RegisterComponent,
-    ExcercisesComponent
+    ExcercisesComponent,
+    NavBarComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,12 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import axios, { AxiosRequestConfig } from 'axios';
 import { ExcercisesComponent } from '../excercises/excercises.component';
+import { ExcerciseService } from '../excercise.service';
+import { Excercise } from '../models/excercise';
 @Component({
   selector: 'app-chineseff4',
   templateUrl: './chineseff4.component.html',
   styleUrls: ['./chineseff4.component.css']
 })
-export class Chineseff4Component {
+export class Chineseff4Component implements OnInit {
+  excerciseList: Array<Excercise> = [];
+  constructor(private excerciseService: ExcerciseService) {
+    this.excerciseList = excerciseService.getExcercises();
+  }
+  ngOnInit(): void {
+    console.log("MAIN \n"+this.excerciseList);
+  }
    /*axios = require('axios');
 
    options = {

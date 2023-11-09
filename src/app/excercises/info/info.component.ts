@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Excercise } from '../models/excercise';
-import { ExcerciseService } from '../excercise.service'; // Ruta relativa para navegar hacia atrás y luego al servicio
+import { ExcerciseService } from 'src/app/excercise.service';
+import { Excercise } from 'src/app/models/excercise';
 @Component({
-  selector: 'app-excercises',
-  templateUrl: './excercises.component.html',
-  styleUrls: ['./excercises.component.css']
+  selector: 'app-info',
+  templateUrl: './info.component.html',
+  styleUrls: ['./info.component.css']
 })
-export class ExcercisesComponent {
-  /*
+export class InfoComponent implements OnInit {
+  ///SOLO PARA PROBAR, DESPUES HAY QUE SACARLO CUANDO HAGAMOS LA PERSISTENCIA DE DATOS
   excerciseList: Array<Excercise>=[];
   constructor(private excerciseService: ExcerciseService) {
     this.excerciseList = excerciseService.getExcercises();
@@ -53,9 +53,18 @@ export class ExcercisesComponent {
     }
   }
   showExcercises(){
+    let container = document.getElementById("container");
+    let resultado = "";
     for(let i=0; i<this.excerciseList.length; i++){
-      
-    }    
+      resultado += `<div class="excercise">
+      <h1 class="name">${this.excerciseList[i].getName()}</h1>
+      <p class="type">TYPE: ${this.excerciseList[i].getType()}</p>
+      <p class="difficulty">DIFFICULTY: ${this.excerciseList[i].getDifficulty()}</p>
+  </div>`
+  
+    }
+    if(container!= null){
+      container.innerHTML = resultado;
+    }
   }
-  */
 }
