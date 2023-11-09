@@ -56,15 +56,30 @@ export class InfoComponent implements OnInit {
     let container = document.getElementById("container");
     let resultado = "";
     for(let i=0; i<this.excerciseList.length; i++){
-      resultado += `<div class="excercise">
-      <h1 class="name">${this.excerciseList[i].getName()}</h1>
-      <p class="type">TYPE: ${this.excerciseList[i].getType()}</p>
-      <p class="difficulty">DIFFICULTY: ${this.excerciseList[i].getDifficulty()}</p>
-  </div>`
+      let midiv = document.createElement('div');
+      let miH1 = document.createElement('h1');
+      let pType = document.createElement('p');
+      let pDifficulty = document.createElement('p');
+      miH1.textContent = this.excerciseList[i].getName();
+      pType.textContent = this.excerciseList[i].getType();
+      pDifficulty.textContent = this.excerciseList[i].getDifficulty();
+      midiv.appendChild(miH1);
+      midiv.appendChild(pType);
+      midiv.appendChild(pDifficulty);
+      resultado += midiv.outerHTML;      
   
     }
-    if(container!= null){
+    if (container != null) {
       container.innerHTML = resultado;
+      // Ahora, después de agregar los midiv al contenedor, puedes agregar el event listener
+      for (let i = 0; i < this.excerciseList.length; i++) {
+        let midiv = container.children[i];
+        if (midiv) {
+          midiv.addEventListener('click', function () {
+            window.location.href = 'login';
+          });
+        }
+      }
     }
   }
 }
