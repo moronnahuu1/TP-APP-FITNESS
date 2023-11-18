@@ -15,20 +15,7 @@
     color: #ffffff; /* Cambia el color cuando el mouse pasa por encima */
   }
 
-.navbar-toggler :hover{
-transition: all 0.3s; /* Agrega una transición suave */
-}
 
-.navbar-toggler:hover {
-    background-color: #45a049; /* Color de fondo al pasar el mouse por encima */
-  color: white; /* Color de texto al pasar el mouse por encima */
-  padding: 10px 16px; /* Tamaño al pasar el mouse por encima */
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Sombra al pasar el mouse por encima */
-}
-
-body{
-    background-color: #d6e8ee;
-}
 
 #logo{
     padding: -50px;

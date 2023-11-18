@@ -1,34 +1,102 @@
-h1 {
-    color: #bcd7f7;
-    margin-top: 15px;
+body{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin-bottom: 50px; 
 }
-p {
-    color: #bcd7f7;
+
+#head h1 {
+    color: rgb(51, 64, 75);
+    font-family: 'Kanit' !important;
+    font-size: 3em;
+    font-weight: 500;
+    letter-spacing: 2px;
+    /* font-family: 'Raleway',sans-serif; */
+    /* font-size: 50px;
+    font-weight: 600;
+    line-height: 72px;
+    margin: 0 0 24px;  */
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 0.5rem;
+}
+#head p {
+    color: rgb(51, 57, 70);
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: -.01em;
+    line-height: 1.3;
+    word-break: break-word;
     position: absolute;
     margin-left: 10px;
     margin-right: 10px;
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 }
 #head {
     position: absolute;
-    left: 367px;
-    top:80px;
+    /* left: 367px; */
+    top:70px;
     height:170px;
-    width:50%;
+    width:100%;
     text-align: center;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #001b48;
-    border-radius: 10px;
+    background-color: #fdfdfd;
+    /* border-radius: 10px; */
 }
 #container {
-    position: absolute;
-    top: 300px;
-    left: 60px;
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
+    /* position: absolute; */
+    /* top: 35%;
+    bottom: 1%; */
+    margin-top: 10%;
+    margin-bottom: 1%;
+    /* left: 60px; */
+    /* display: grid;
+    grid-template-columns: repeat(5,1fr); */
     align-items: center;
     justify-content: center;
     align-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    
 }
-.excercise {
-    background-color: black;
+
+.exercise-item {
+    /* border: 1px solid #ccc; */
+    margin: 1em; /* Margen en unidades em */
+    padding: 1em; /* Relleno en unidades em */
+    cursor: pointer;
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+    box-shadow: rgba(17, 15, 15, 0.493) 0px 5px 15px;
+    background-color: rgb(255, 255, 255);
+    flex: 1 1 200px; /* Tamaño flexible con ancho mínimo y máximo */
+    /* opacity: 0.5; */
+    width: 100%; /* Ancho del 100% para ser responsive */
+    max-width: 200px; /* Ancho máximo en píxeles o cualquier unidad deseada */
+    height: 230px; /* Altura fija en píxeles o cualquier unidad deseada */
+}
+
+
+.exercise-name {
+    font-size: 1.5rem;
+    font-weight: 100;
+    font-family: 'Lato', sans-serif;
+    line-height: 58px;
+}
+
+.exercise-type {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(36, 43, 49);
+}
+
+.exercise-difficulty {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(36, 43, 49);
+
+}
+
+#footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
