@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="info.component.css">
 </head>
 <body>
     <div id="head">
@@ -11,7 +12,11 @@
         <p>Watch a list of excercises made by us for the best ever experience on fitness. You can see full description and details by clicking on any of those on the list. You can also add them to your routine list if that's what you want!</p>
     </div>
     <div id="container">
-        
+        <div *ngFor="let exercise of excerciseList" class="exercise-item">
+            <h1 class="exercise-name"> {{exercise.getName()}}</h1>
+            <p class="exercise-type"> {{exercise.getType()}}</p>
+            <p class="exercise-difficulty">{{exercise.getDifficulty()}}</p>
+        </div>
     </div>
 </body>
 </html>
