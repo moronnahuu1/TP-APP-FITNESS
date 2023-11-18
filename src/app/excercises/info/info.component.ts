@@ -7,50 +7,15 @@ import { Excercise } from 'src/app/models/excercise';
   styleUrls: ['./info.component.css']
 })
 export class InfoComponent implements OnInit {
-  ///SOLO PARA PROBAR, DESPUES HAY QUE SACARLO CUANDO HAGAMOS LA PERSISTENCIA DE DATOS
   excerciseList: Array<Excercise>=[];
   constructor(private excerciseService: ExcerciseService) {
-    this.excerciseList = excerciseService.getExcercises();
   }
   async ngOnInit(): Promise<void> {
-    const url = 'https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises?muscle=biceps';
-    const options = {
-      method: 'GET',
-      headers: {
-        'X-RapidAPI-Key': '9199c93dfdmshb81cf20b6d2cf40p104aeajsn2274f1c47343',
-        'X-RapidAPI-Host': 'exercises-by-api-ninjas.p.rapidapi.com'
-      }
-    };
-    try {
-      const response = await fetch(url, options);
-      const result: string = await response.text();
-      console.log(result);
-      this.uploadExcercises(result);
-      // this.showExcercises();
-    } catch (error) {
-      console.error(error);
-    }
+    await this.excerciseService.loadExcercises();
+    this.excerciseList = this.excerciseService.getExcercises();    
   }
-
-  uploadExcercises(result: string): void {
-    try {
-      let data = JSON.parse(result);
-      for (let i = 0; i < result.length; i++) {
-        if (data[i] != null) {
-          const difficulty: string = data[i].difficulty;
-          const equipment: string = data[i].equipment;
-          const instructions: string = data[i].instructions;
-          const muscle: string = data[i].muscle;
-          const name: string = data[i].name;
-          const type: string = data[i].type;
-          const exercise = new Excercise(difficulty, equipment, instructions, muscle, name, type);
-          this.excerciseService.addExcercise(exercise);
-          this.excerciseList = this.excerciseService.getExcercises();
-        }
-      }
-    } catch (error) {
-      console.log(error);
-    }
+  changeWindow(parametro: number){
+    window.location.href = `specificInfo?parametro=${parametro}`;
   }
   // showExcercises(){
   //   let container = document.getElementById("container");

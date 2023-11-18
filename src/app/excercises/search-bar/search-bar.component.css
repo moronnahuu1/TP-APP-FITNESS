@@ -1,0 +1,18 @@
+input{
+    background-color: white;
+    color: black;
+    float: right;
+    border-radius: 8px;
+    margin-right: 10px;
+    height: 35px;
+    margin-top: -3px;
+}
+button {
+    float: right;
+    margin-right: 5px;
+    border-radius: 8px;
+    border: 0px;
+}
+#searchBar {
+    background-color: black;
+}

@@ -5,13 +5,17 @@ export class Excercise {
     muscle: string;
     name: string;
     type: string;
-    constructor(difficulty: string, equipment: string, instructions: string, muscle: string, name: string, type: string){
+    id: number;
+    reps: number;
+    constructor(difficulty: string, equipment: string, instructions: string, muscle: string, name: string, type: string, id: number){
         this.difficulty = difficulty;
         this.equipment = equipment;
         this.instructions = instructions;
         this.muscle = muscle;
         this.name = name;
         this.type = type;
+        this.id = id;
+        this.reps = 0;
     }
     getDifficulty(): string {
         return this.difficulty;
@@ -31,4 +35,14 @@ export class Excercise {
     getType(): string {
         return this.type;
     }
+    getId(): number {
+        return this.id;
+    }
+    getReps(): number {
+        return this.reps;
+    }
+    setReps(amount: number) {
+        this.reps = amount;
+    }
+
 }

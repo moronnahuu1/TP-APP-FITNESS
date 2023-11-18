@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ExcercisesComponent } from './excercises/excercises.component';
+import { SpecificInfoComponent } from './excercises/info/specific-info/specific-info.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'excercise',
     component: ExcercisesComponent
+  },
+  {
+    path: 'specificInfo',
+    component: SpecificInfoComponent
   }
 ];
 

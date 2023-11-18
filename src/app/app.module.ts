@@ -17,6 +17,9 @@ import { RegisterComponent } from './login/register/register.component';
 import { ExcercisesComponent } from './excercises/excercises.component';
 import { NavBarComponent } from './excercises/nav-bar/nav-bar.component';
 import { InfoComponent } from './excercises/info/info.component';
+import { SpecificInfoComponent } from './excercises/info/specific-info/specific-info.component';
+import { SearchBarComponent } from './excercises/search-bar/search-bar.component';
+import { RoutinesComponent } from './routines/routines.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { InfoComponent } from './excercises/info/info.component';
     RegisterComponent,
     ExcercisesComponent,
     NavBarComponent,
-    InfoComponent
+    InfoComponent,
+    SpecificInfoComponent,
+    SearchBarComponent,
+    RoutinesComponent,
   ],
   imports: [
     BrowserModule,
