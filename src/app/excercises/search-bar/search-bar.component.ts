@@ -16,12 +16,16 @@ export class SearchBarComponent implements OnInit {
     const miInput = document.getElementById('search') as HTMLInputElement;
     buscar?.addEventListener('click', () => this.buscarEjercicio(miInput));
   }
+  
+
   buscarEjercicio(miInput: HTMLInputElement){
     const exercise = miInput.value;    
     const position = this.excerciseService.searchEX(exercise);
     console.log("POSITION: "+position);
+    
     if(position>=0) {
       
     }
   }
+
 }

@@ -50,7 +50,7 @@ export class ExcerciseService {
     let i=0;
     let founded = false;    
     while(i<this.excercises.length && !founded) {
-      if(this.excercises[i].getName().toLowerCase() == nombre.toLowerCase()) {
+      if(this.excercises[i].getName().indexOf(nombre)) {
         founded = true;
       }else {
         i++;
