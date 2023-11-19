@@ -46,21 +46,17 @@ export class ExcerciseService {
     ];
   }
 
-  searchEX(nombre: any): number{
-    let i=0;
-    let founded = false;    
-    while(i<this.excercises.length && !founded) {
+  searchEX(nombre: any): Array<Excercise>{
+    let ejerciciosEncontrados: Array<Excercise>=[];
+    let i=0;  
+    while(i<this.excercises.length) {
       if(this.excercises[i].getName().indexOf(nombre)) {
-        founded = true;
-      }else {
+        console.log('Ejercicio:'+this.excercises[i].getName());
+        ejerciciosEncontrados.push(this.excercises[i]);
+      } 
         i++;
-      }
     }
-    if(founded){
-      return i;
-    }else{
-      return -1;
-    }
+    return ejerciciosEncontrados;
   }
 
   getExcercises() {

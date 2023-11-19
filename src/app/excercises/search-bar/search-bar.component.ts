@@ -20,11 +20,12 @@ export class SearchBarComponent implements OnInit {
 
   buscarEjercicio(miInput: HTMLInputElement){
     const exercise = miInput.value;    
-    const position = this.excerciseService.searchEX(exercise);
-    console.log("POSITION: "+position);
+    let ejerciciosEncontrados: Array<Excercise> = [];
+    ejerciciosEncontrados = this.excerciseService.searchEX(exercise);
+    console.log("POSITION: "+ejerciciosEncontrados.values);
     
-    if(position>=0) {
-      
+    if(ejerciciosEncontrados.length > 0) {
+      console.log('Mostrar ejercicios...');
     }
   }
 
