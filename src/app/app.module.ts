@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'; // Importa HttpClientModule
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'; // Importa HttpClientModule
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,7 +20,7 @@ import { InfoComponent } from './excercises/info/info.component';
 import { SpecificInfoComponent } from './excercises/info/specific-info/specific-info.component';
 import { SearchBarComponent } from './excercises/search-bar/search-bar.component';
 import { RoutinesComponent } from './routines/routines.component';
-import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +39,7 @@ import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.compo
     SpecificInfoComponent,
     SearchBarComponent,
     RoutinesComponent,
-    LoadingSpinnerComponent,
+    
   ],
   imports: [
     BrowserModule,

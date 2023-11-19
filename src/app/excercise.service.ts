@@ -50,7 +50,7 @@ export class ExcerciseService {
     let ejerciciosEncontrados: Array<Excercise>=[];
     let i=0;  
     while(i<this.excercises.length) {
-      if(this.excercises[i].getName().indexOf(nombre)) {
+      if(this.excercises[i].getName().indexOf(nombre) >0) {
         console.log('Ejercicio:'+this.excercises[i].getName());
         ejerciciosEncontrados.push(this.excercises[i]);
       } 
