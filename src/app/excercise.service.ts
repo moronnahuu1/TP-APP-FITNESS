@@ -5,13 +5,22 @@ import { Excercise } from './models/excercise';
 })
 export class ExcerciseService {
   private excercises: Excercise[] = []; // Aquí almacenarás tus datos de ejercicios
+  private defaultExerciseType = 'abdominals'; // Cambia esto al valor por defecto que desees
 
   constructor() {
     // Puedes cargar datos iniciales aquí o en un método separado.
   }
 
-   async loadExcercises(): Promise<void> {
-    const url = 'https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises?muscle=biceps';
+    async loadExercises(exerciseType?: string): Promise<void> {
+    let selectedExerciseType:string;
+    if(exerciseType){
+      selectedExerciseType = exerciseType;
+    }else {
+      selectedExerciseType = this.defaultExerciseType;
+    }
+    const baseUrl = 'https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises';
+    const url = `${baseUrl}?muscle=${selectedExerciseType}`;
+
     const options = {
       method: 'GET',
       headers: {

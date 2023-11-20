@@ -20,6 +20,7 @@ import { InfoComponent } from './excercises/info/info.component';
 import { SpecificInfoComponent } from './excercises/info/specific-info/specific-info.component';
 import { SearchBarComponent } from './excercises/search-bar/search-bar.component';
 import { RoutinesComponent } from './routines/routines.component';
+import { SelectMuscleComponent } from './excercises/select-muscle/select-muscle.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { RoutinesComponent } from './routines/routines.component';
     SpecificInfoComponent,
     SearchBarComponent,
     RoutinesComponent,
+    SelectMuscleComponent,
     
   ],
   imports: [

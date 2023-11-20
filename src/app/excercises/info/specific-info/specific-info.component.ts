@@ -15,7 +15,7 @@ export class SpecificInfoComponent implements OnInit {
   constructor(private excerciseService: ExcerciseService) {
   }
   async ngOnInit(): Promise<void> {
-    await this.excerciseService.loadExcercises();
+    await this.excerciseService.loadExercises();
     this.excerciseList = this.excerciseService.getExcercises();    
     const exercise: Excercise = this.excerciseService.getOneExercise(this.parameterNum);
     let titulo = document.getElementById("title");

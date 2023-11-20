@@ -11,6 +11,7 @@
         <h1>EXCERCISES AVAILABLE</h1>
         <p>Watch a list of excercises made by us for the best ever experience on fitness. You can see full description and details by clicking on any of those on the list. You can also add them to your routine list if that's what you want!</p>
     </div>
+    <app-select-muscle></app-select-muscle>
     <app-search-bar></app-search-bar>
     <div id="container">
         <div *ngFor="let exercise of excerciseList" class="exercise-item" (click) = changeWindow(exercise.getId())>

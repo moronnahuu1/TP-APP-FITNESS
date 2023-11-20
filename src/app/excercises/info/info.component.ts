@@ -11,9 +11,10 @@ export class InfoComponent implements OnInit {
   constructor(private excerciseService: ExcerciseService) {
   }
   async ngOnInit(): Promise<void> {
-    await this.excerciseService.loadExcercises();
+    await this.excerciseService.loadExercises();
     this.excerciseList = this.excerciseService.getExcercises();    
   }
+  
   changeWindow(parametro: number){
     window.location.href = `specificInfo?parametro=${parametro}`;
   }
