@@ -1,26 +1,30 @@
 import { Injectable, OnInit } from '@angular/core';
 import { Excercise } from './models/excercise';
+import { ExerciseDataService } from './exercise-data-service.service';
 @Injectable({
   providedIn: 'root'
 })
 export class ExcerciseService {
   private excercises: Excercise[] = []; // Aquí almacenarás tus datos de ejercicios
   private defaultExerciseType = 'abdominals'; // Cambia esto al valor por defecto que desees
+  offset = 0;
 
-  constructor() {
+  constructor(private excerciseDataService : ExerciseDataService) {
     // Puedes cargar datos iniciales aquí o en un método separado.
   }
 
-    async loadExercises(exerciseType?: string): Promise<void> {
-    let selectedExerciseType:string;
+    async loadExercises(exerciseType?: string, newOffset?:number): Promise<void> {
+  
     if(exerciseType){
-      selectedExerciseType = exerciseType;
-    }else {
-      selectedExerciseType = this.defaultExerciseType;
+      this.defaultExerciseType = exerciseType;
     }
-    const baseUrl = 'https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises';
-    const url = `${baseUrl}?muscle=${selectedExerciseType}`;
 
+    if(newOffset){
+      this.offset = newOffset;
+    }
+    const baseUrl = `https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises`;
+    const url = `${baseUrl}?muscle=${this.defaultExerciseType}&offset=${this.offset}`;
+    
     const options = {
       method: 'GET',
       headers: {
@@ -44,6 +48,7 @@ export class ExcerciseService {
           this.addExcercise(exercise);
         }
       }
+      this.excerciseDataService.notifyDataChanged();
     } catch (error) {
       console.error(error);
     }
@@ -80,6 +85,22 @@ export class ExcerciseService {
 
   addExcercise(newExcercise: Excercise) {
     this.excercises.push(newExcercise); // Agrega un nuevo ejercicio a la lista
+  }
+
+  getOffset(){
+    return this.offset;
+  }
+
+  incrementOffset(){
+    this.offset ++;
+  }
+
+  decrementOffset(){
+    this.offset --;
+  }
+
+  getActualMuscle(){
+    return this.defaultExerciseType;
   }
 
   // Agrega otros métodos para actualizar, eliminar o interactuar con los datos de ejercicios según tus necesidades.

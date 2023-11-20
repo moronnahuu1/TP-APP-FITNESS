@@ -9,6 +9,7 @@ export class ExerciseDataService {
   private exercises: Excercise[] = [];
   private exercisesSubject = new Subject<Excercise[]>();
 
+
   getExercises(): Excercise[] {
     console.log('recibido: '+this.exercises);
     return this.exercises;
@@ -26,5 +27,10 @@ export class ExerciseDataService {
 
   resetExercises(){
     this.exercises.splice(0,this.exercises.length);
+  }
+
+  notifyDataChanged() {
+    this.exercisesSubject.next(this.exercises.slice()); // Emitir una copia del array para evitar mutaciones directas
+    console.log('Data changed. New data:', this.exercises);
   }
 }

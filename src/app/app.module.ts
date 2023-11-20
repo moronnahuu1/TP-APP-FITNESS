@@ -21,6 +21,7 @@ import { SpecificInfoComponent } from './excercises/info/specific-info/specific-
 import { SearchBarComponent } from './excercises/search-bar/search-bar.component';
 import { RoutinesComponent } from './routines/routines.component';
 import { SelectMuscleComponent } from './excercises/select-muscle/select-muscle.component';
+import { PaginationComponent } from './excercises/pagination/pagination.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { SelectMuscleComponent } from './excercises/select-muscle/select-muscle.
     SearchBarComponent,
     RoutinesComponent,
     SelectMuscleComponent,
+    PaginationComponent,
     
   ],
   imports: [
