@@ -20,12 +20,17 @@ export class PaginationComponent {
   //   this.exerciseDataService.setExercises(this.exerciseService.getExcercises());
   // }
 
-    previousPage (){
+    async previousPage (){
     let offset = this.excerciseService.getOffset();
     if(offset > 1){ //Verificamos que no estemos en una pagina menor a la principal
-      this.excerciseService.decrementOffset();
       this.exerciseDataService.resetExercises();
-       this.exerciseDataService.setExercises(this.excerciseService.getExcercises());
+      this.excerciseService.decrementOffset();
+      console.log('OFFSET:'+this.excerciseService.getOffset());
+      let typeMuscle = this.excerciseService.getActualMuscle();
+      await this.excerciseService.loadExercises(typeMuscle);
+      this.exerciseDataService.setExercises(this.excerciseService.getExcercises());
+
+      console.log('Nuevos ejercicios'+this.excerciseService.getExcercises());
     } 
   }
 
