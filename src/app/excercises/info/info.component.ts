@@ -34,7 +34,9 @@ export class InfoComponent implements OnInit{
   //   this.exerciseSubscription.unsubscribe();
   // }
 
-  changeWindow(parametro: number){
-    window.location.href = `specificInfo?parametro=${this.excerciseList}`;
+  changeWindow(ejercicio: Excercise){
+    const ejercicioSerializado = JSON.stringify(ejercicio);
+    const nuevaURL = `specificInfo?parametro=${encodeURIComponent(ejercicioSerializado)}`;
+    window.location.href = nuevaURL;
   }
 }

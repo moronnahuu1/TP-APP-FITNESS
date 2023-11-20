@@ -14,7 +14,7 @@
     <app-select-muscle></app-select-muscle>
     <app-search-bar></app-search-bar>
     <div id="container">
-        <div *ngFor="let exercise of excerciseList" class="exercise-item" (click) = changeWindow(exercise.getId())>
+        <div *ngFor="let exercise of excerciseList" class="exercise-item" (click) = changeWindow(exercise)>
             <h1 class="exercise-name"> {{exercise.getName()}}</h1>
             <p class="exercise-type"> {{exercise.getType()}}</p>
             <p class="exercise-difficulty">{{exercise.getDifficulty()}}</p>
