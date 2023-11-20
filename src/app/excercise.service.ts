@@ -70,7 +70,6 @@ export class ExcerciseService {
 
   getExcercises() {
     console.log(this.excercises);
-    
     return this.excercises; // Devuelve la lista de ejercicios almacenados
   }
 
