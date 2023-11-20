@@ -26,13 +26,9 @@
     /* Agrega cualquier otro estilo según tus preferencias */
   }
 
-/* .btn-check label:hover {
-    cursor: pointer;
-    background-color: rgb(242, 250, 215);
-}
-   */
 
-   .btn-outline-primary:hover {
+  
+  .btn-outline-primary:hover {
     background-color: rgb(216, 224, 184); /* Cambia el color a crema al pasar el mouse */
   }
 
@@ -42,5 +38,41 @@
     /* Por ejemplo, el siguiente estilo cambia el color de fondo */
     background-color: #e5ff00;
     color: #292525; /* Cambia el color del texto si es necesario */
+  }
+
+  /* .btn-outline-primary ::after {
+    content: '';
+    z-index: -1;
+    background-color: hsla(0, 0%, 100%, 0.2);
+    position: absolute;
+    top: -50%;
+    bottom: -50%;
+    width: 1.25em;
+    transform: translate3d(-525%, 0, 0) rotate(35deg);
+  }
+   */
+ 
+
+   .btn-outline-primary::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #a3fc2f;
+    transform-origin: center bottom;
+    transform: scaleY(0);
+    transition: transform 0.25s ease-in-out;
+  }
+  
+  .btn-outline-primary:hover {
+    cursor: pointer;
+  }
+  
+  .btn-outline-primary:hover::before {
+    transform-origin: center top;
+    transform: scaleY(1);
   }
   
