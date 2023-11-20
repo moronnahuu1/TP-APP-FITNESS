@@ -60,6 +60,9 @@ body {
     height: 230px; /* Altura fija en píxeles o cualquier unidad deseada */
 }
 
+.exercise-item:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
 /* Media query para ajustar el tamaño en pantallas más pequeñas */
 @media (max-width: 768px) {
     .exercise-item {
