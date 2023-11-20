@@ -18,6 +18,9 @@
 
 .exercise-item{
     display: grid;
+    /* grid-template-columns: repeat(5, 1fr); */
     align-items: center;
     justify-content: center;
+    gap: 10px; /* Añadido espacio entre los elementos */
+    margin-top: 20px; /* Añadido espacio entre #head y #container */
 }
