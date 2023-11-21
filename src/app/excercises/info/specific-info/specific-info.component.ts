@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Excercise } from 'src/app/models/excercise';
+import { Usuario } from 'src/app/models/usuario';
 
 @Component({
   selector: 'app-specific-info',
@@ -11,6 +12,11 @@ export class SpecificInfoComponent implements OnInit {
   urlParams = new URLSearchParams(window.location.search);
   ejercicioSerializado = this.urlParams.get('parametro');
   async ngOnInit(): Promise<void> {
+    const userSerializado = localStorage.getItem("oneUser");
+    let user: Usuario = new Usuario("","","");
+    if(userSerializado){
+      user = JSON.parse(userSerializado);
+    }
   if (this.ejercicioSerializado) { 
     const exercise: Excercise = JSON.parse(decodeURIComponent(this.ejercicioSerializado));    
     let titulo = document.getElementById("title");

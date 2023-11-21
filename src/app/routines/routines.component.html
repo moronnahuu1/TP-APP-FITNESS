@@ -1,18 +1,47 @@
-<app-nav-bar></app-nav-bar>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="notLogged">
+        <app-nav-bar></app-nav-bar>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1>TO WATCH, ADD OR EDIT ROUTINES YOU HAVE TO BE LOGGED FIRST</h1>
+        <button (click)="changeWindow()" id="optionLogin">LOGIN HERE</button>
+      </div>
+      <div id="logged" style="display: none;">
+        <app-nav-bar-logged></app-nav-bar-logged>
+      </div>
     <br>
     <br>
     <br>
-     <button (click)="crearRutina()" id="optionCreate">ADD ROUTINE</button>
-     <button id="optionLook">LOOK OTHERS ROUTINES</button>
-    <div id="noRoutines">
+    <div id="options">
+        <button (click)="displayCreate()" id="optionCreate" class="optionButton" style="display: none;">ADD ROUTINE</button>
+        <button id="optionLook" class="optionButton" style="display: none;">LOOK OTHERS ROUTINES</button>
+    </div>
+  
+    <div id="noRoutines" style="display: none;">
         <h1 id="noRoutineMessage">YOU HAVE NO ROUTINES CREATED</h1>
     </div>
-    <div id="routinesFounded">
-        <h1>LIST: </h1>
+    <div id="routinesFounded" style="display: none;">
+        <div id="container">
+            <div *ngFor="let routine of routinesList" class="routine-item" (click) = changeWindow()>
+                <h1 class="routine-name"> {{routine.name}}</h1>
+                <p class="routine-amountEX"> {{routine.excerciseList.length}} excercises</p>
+            </div>
+        </div>
     </div>
     <div id="create" style="display: none;">
         <label for="nameRoutine">Name</label>
         <input type="text" name="nameRoutine" id="nameRoutine" placeholder="Set a name for your routine">
-        <button id="createRoutine">Create</button>
+        <button id="createRoutine" (click)="crearRutina()">Create</button>
     </div>
     <app-footer></app-footer>
+</body>
+</html>

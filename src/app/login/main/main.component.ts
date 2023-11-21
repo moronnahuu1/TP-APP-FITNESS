@@ -28,6 +28,7 @@ export class MainComponent implements OnInit{
     if(this.register == true) {
       let nuevoUsuario: Usuario = new Usuario (this.email, this.userName, this.password);
       this.userService.agregarUsuario(nuevoUsuario);
+      this.userService.persistirDatos();
       this.userList = this.userService.obtenerUsuarios();
       ///localStorage.setItem('key', JSON.stringify(this.userService));
       console.log(this.userList);
@@ -55,25 +56,31 @@ export class MainComponent implements OnInit{
     console.log(this.emailAux);
     console.log(this.passAux);
     console.log(this.userList);
-    this.verifyUserLogin(this.emailAux, this.passAux);
+    let position = this.verifyUserLogin(this.emailAux, this.passAux);
     if(this.access) {
       ///Arranca el programa
-      console.log("INICIO EXITOSO");
-      
+      localStorage.setItem("oneUser", JSON.stringify(this.userList[position]));
+      /*const usuarioSerializado = JSON.stringify(this.userList[position]);
+      const nuevaURL = `?parametro=${encodeURIComponent(usuarioSerializado)}`;*/
+      window.location.href = '';
     }else {
-      console.log("ERROR AL INICIAR SESION");
     }
   }
-  verifyUserLogin(emailAux1: string, passAux1: string) {
+  verifyUserLogin(emailAux1: string, passAux1: string): number {
     let i = 0
     while(i<this.userList.length && this.access == false) {
       if(emailAux1 == this.userList[i].email) {
         if(passAux1 == this.userList[i].password) {
           this.access = true;
+          console.log("ACCESO CONCEDIDO");
+        }else {
         }
-      }else {
-        i++;
       }
+      i++;
     }
+    if(!this.access){
+      console.log("EMAIL O CONTRASEÑA INCORRECTOS");
+    }
+    return i-1;
   }
 }
