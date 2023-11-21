@@ -1,5 +1,3 @@
-
-
 #navBar{
     position: fixed; /* Establece la posición fija */
     z-index: 999; /* Asegura que la barra de navegación esté sobre otros elementos de la página */
@@ -17,8 +15,20 @@
     color: #ffffff; /* Cambia el color cuando el mouse pasa por encima */
   }
 
-body{
-    background-color: #d6e8ee;
+/* Media query para pantallas más pequeñas, ajusta el tamaño del texto y el espaciado entre enlaces */
+@media only screen and (max-width: 600px) {
+    #navBar a {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
+
+/* Media query para pantallas medianas, ajusta el tamaño del texto y el espaciado entre enlaces */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    #navBar a {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
 }
 
 #logo{
@@ -30,4 +40,3 @@ body{
     height: 90px;
     width: 100px;
 }
-

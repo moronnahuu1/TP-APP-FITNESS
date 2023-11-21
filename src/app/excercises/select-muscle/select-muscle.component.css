@@ -1,0 +1,64 @@
+.btn-group{
+    margin-left: 5px;
+    margin-top: -3px;
+}
+
+
+/* Oculta los botones de radio predeterminados */
+.btn-check {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    pointer-events: none;
+  }
+  
+  /* Estiliza los botones de etiquetas para simular botones de radio */
+  .btn-outline-primary {
+    color: #111111;
+    font-family: 'Quicksand', sans-serif;
+    /* Agrega los estilos deseados para los botones de radio simulados */
+    /* Por ejemplo, el siguiente estilo agrega un borde sólido y esquinas redondeadas */
+    border: 1px solid #111111;
+    border-radius: 0.25rem;
+    /* Agrega cualquier otro estilo según tus preferencias */
+    
+  }
+
+  .btn-outline-primary:hover {
+    background-color: rgb(216, 224, 184); /* Cambia el color a crema al pasar el mouse */
+  }
+
+  /* Estiliza el botón de etiqueta activo para indicar el estado seleccionado */
+  .btn-check:checked + .btn-outline-primary {
+    /* Agrega los estilos deseados para el botón de radio seleccionado */
+    /* Por ejemplo, el siguiente estilo cambia el color de fondo */
+    background-color: #e5ff00;
+    color: #292525; /* Cambia el color del texto si es necesario */
+  }
+ 
+
+   .btn-outline-primary::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #a3fc2f;
+    transform-origin: center bottom;
+    transform: scaleY(0);
+    transition: transform 0.25s ease-in-out;
+  }
+  
+  .btn-outline-primary:hover {
+    cursor: pointer;
+  }
+  
+  .btn-outline-primary:hover::before {
+    transform-origin: center top;
+    transform: scaleY(1);
+  }
+
+
+
+

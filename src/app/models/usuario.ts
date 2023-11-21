@@ -18,11 +18,13 @@ export class Usuario {
       this.userName = userName;
       this.password = password;
     }
+<<<<<<< HEAD
 
     getFirstName(){
       return this.firstName;
     }
     
     
+=======
+>>>>>>> 687eed939d074bb2d0f98807bf930303bda95304
   }
-  

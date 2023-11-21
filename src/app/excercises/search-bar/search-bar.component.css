@@ -1,0 +1,78 @@
+input{
+    background-color: white;
+    /* color: black; */
+    float:right;
+    /* border-radius: 8px;
+    margin-right: 10px; */
+    /* height: 35px; */
+    /* margin-top: 2px; */
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 14px;
+    vertical-align: baseline;
+    font-weight: 400;
+    line-height: 1.29;
+    letter-spacing: .16px;
+    border-radius: 0;
+    outline: 2px solid transparent;
+    outline-offset: -2px;
+    width: 20%;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid #8d8d8d;
+    background-color: #f4f4f4;
+    padding: 0 16px;
+    color: #161616;
+    transition: background-color 70ms cubic-bezier(.2,0,.38,.9),outline 70ms cubic-bezier(.2,0,.38,.9);  
+    :focus{
+        outline: 2px solid #0f62fe;
+        outline-offset: -2px;
+    }
+
+}
+
+
+button {
+    float: right;
+    margin-right: 5px;
+    border-radius: 8px;
+    border: 0px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+button {
+    z-index: 1;
+    font-size: inherit;
+    font-family: inherit;
+    color: rgb(14, 9, 9);
+    padding: 0.2em 1em;
+    outline: none;
+    border: none;
+    background-color: hsl(68, 97%, 60%);
+  }
+  
+  button:hover {
+    cursor: pointer;
+    animation: jelly 0.5s;
+  }
+  
+  @keyframes jelly {
+    0%,
+    100% {
+      transform: scale(1, 1);
+    }
+    25% {
+      transform: scale(0.9, 1.1);
+    }
+    50% {
+      transform: scale(1.1, 0.9);
+    }
+    75% {
+      transform: scale(0.95, 1.05);
+    }
+  }
+  
+/* #searchBar {
+    background-color: black;
+} */
