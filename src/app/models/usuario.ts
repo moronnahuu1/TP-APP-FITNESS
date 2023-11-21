@@ -22,4 +22,8 @@ export class Usuario {
       this.password = password;
       this.userRoutines = [];
     }
+
+    getEmail(){
+      return this.email;
+    }
   }

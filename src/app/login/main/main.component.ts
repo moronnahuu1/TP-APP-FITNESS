@@ -7,10 +7,10 @@ import { UserService } from '../../user.service'; // Ruta relativa para navegar 
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit{
+  userList: Array<Usuario> = [];
   ngOnInit(): void {
     
   }
-  userList: Array<Usuario> = [];
   //storedData = localStorage.getItem('key'); // Obtiene los datos del almacenamiento local
   //private userService: UserService =  this.storedData ? JSON.parse(this.storedData) : null;
   constructor(private userService: UserService) {

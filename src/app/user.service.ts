@@ -28,7 +28,6 @@ export class UserService {
   agregarUsuario(nuevoUsuario: Usuario) {
     this.users.push(nuevoUsuario); // Agrega un nuevo usuario a la lista
   }
-
   // Agrega otros métodos para actualizar, eliminar o interactuar con los datos de usuarios según tus necesidades.
 }
 
