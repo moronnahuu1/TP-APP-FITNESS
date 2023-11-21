@@ -13,7 +13,7 @@
         <br>
         <br>
         <h1>TO WATCH, ADD OR EDIT ROUTINES YOU HAVE TO BE LOGGED FIRST</h1>
-        <button (click)="changeWindow()" id="optionLogin">LOGIN HERE</button>
+        <button id="optionLogin">LOGIN HERE</button>
       </div>
       <div id="logged" style="display: none;">
         <app-nav-bar-logged></app-nav-bar-logged>
@@ -29,9 +29,18 @@
     <div id="noRoutines" style="display: none;">
         <h1 id="noRoutineMessage">YOU HAVE NO ROUTINES CREATED</h1>
     </div>
+
+    <div id="selectRoutine" style="display: none;">
+        <h1 id="selectH1">Select a routine to add your exercise</h1>
+    </div>
+
+    <div id="repeated" style="display: none;">
+        <h1>The exercise you're trying to add is already added on your routine</h1>
+    </div>
+
     <div id="routinesFounded" style="display: none;">
         <div id="container">
-            <div *ngFor="let routine of routinesList" class="routine-item" (click) = changeWindow()>
+            <div *ngFor="let routine of routinesList" class="routine-item" (click) = addEx(routine)>
                 <h1 class="routine-name"> {{routine.name}}</h1>
                 <p class="routine-amountEX"> {{routine.excerciseList.length}} excercises</p>
             </div>
@@ -41,6 +50,11 @@
         <label for="nameRoutine">Name</label>
         <input type="text" name="nameRoutine" id="nameRoutine" placeholder="Set a name for your routine">
         <button id="createRoutine" (click)="crearRutina()">Create</button>
+    </div>
+    <div id="repsEx" style="display: none;">
+        <label for="reps">Set how many reps you want to do</label>
+        <input type="text" name="reps" id="reps">
+        <button id="repsOn">Set</button>
     </div>
     <app-footer></app-footer>
 </body>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Excercise } from '../models/excercise';
 import { Block } from '@angular/compiler';
 import { routine } from '../models/routine';
@@ -13,6 +13,7 @@ import { Usuario } from '../models/usuario';
 export class RoutinesComponent {
   urlParams = new URLSearchParams(window.location.search);
   ejercicioSerializado = this.urlParams.get('parametro');
+  exerciseAdded = this.urlParams.get('access');
   routinesList: routine[] = [];
   usersList: Usuario[] = [];
   position = -1;
@@ -30,6 +31,9 @@ export class RoutinesComponent {
       console.log(this.user);
       
       if(this.position>=0){ ///ENCONTRO EL USUARIO 
+        if(this.ejercicioSerializado){
+          this.displayBlock("selectRoutine");
+        }
         this.routinesList = this.user.userRoutines;
         this.displayBlock("logged");
         this.displayNone("notLogged");
@@ -47,10 +51,6 @@ export class RoutinesComponent {
         }else {
           this.displayBlock('noRoutines')
         }
-      if (this.ejercicioSerializado) { 
-        const exercise: Excercise = JSON.parse(decodeURIComponent(this.ejercicioSerializado));  
-        console.log(exercise.name);
-      }
       }else { ///NO HAY UN USUARIO LOGUEADO
         console.log("Para acceder a las rutinas debes estar logueado");
       }
@@ -96,7 +96,43 @@ export class RoutinesComponent {
       }      
       return position;
   }
-  changeWindow() {
-    window.location.href = 'login';
+  changeWindow(rutina: routine) {
+      const rutinaSerializada = JSON.stringify(rutina);
+      const nuevaURL = `specificRoutine?parametro=${encodeURIComponent(rutinaSerializada)}`;
+      window.location.href = nuevaURL;
+  }
+  verificarEjercicioExistente(exercise: Excercise, rutina: routine): boolean{
+    let access = true;
+    if(rutina.excerciseList.length>0){
+      let i = 0;
+      while(i<rutina.excerciseList.length && access){
+        if(rutina.excerciseList[i].id == exercise.id){
+          access = false;
+        }
+        i++;
+      }
+    }
+    return access;
+  }
+  addEx(rutina: routine){
+    this.displayNone("selectRoutine");
+    if (this.ejercicioSerializado) { 
+      const exercise: Excercise = JSON.parse(decodeURIComponent(this.ejercicioSerializado));
+      let acceso = this.verificarEjercicioExistente(exercise, rutina);
+      if(acceso){
+      rutina.excerciseList.push(exercise);
+      this.routinesList[rutina.id] = rutina;
+      this.user.userRoutines = this.routinesList;
+      localStorage.setItem("oneUser", JSON.stringify(this.user));
+      this.usersList[this.position] = this.user;
+      localStorage.setItem("users", JSON.stringify(this.usersList));
+      this.changeWindow(rutina);
+      }else{
+        this.displayNone("selected");
+        this.displayBlock("repeated");
+      }
+    }else{
+      this.changeWindow(rutina);
+    }
   }
 }

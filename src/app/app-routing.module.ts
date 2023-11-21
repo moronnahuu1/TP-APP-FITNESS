@@ -9,6 +9,7 @@ import { ExcercisesComponent } from './excercises/excercises.component';
 import { SpecificInfoComponent } from './excercises/info/specific-info/specific-info.component';
 import { RoutinesComponent } from './routines/routines.component';
 import { BmiComponent } from './bmi/bmi.component';
+import { SpecificInformationComponent } from './routines/specific-information/specific-information.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path: 'BMI',
     component: BmiComponent
+  },
+  {
+    path: 'specificRoutine',
+    component: SpecificInformationComponent
   }
 ];
 
