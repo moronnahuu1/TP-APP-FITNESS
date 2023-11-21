@@ -40,5 +40,12 @@ export class SpecificInfoComponent implements OnInit {
     }
   }
   }
-
+  agregarArutina(){
+    if (this.ejercicioSerializado) { 
+      const exercise: Excercise = JSON.parse(decodeURIComponent(this.ejercicioSerializado)); 
+      const nuevoEJ = JSON.stringify(exercise);
+      const nuevaURL = `routines?parametro=${encodeURIComponent(nuevoEJ)}`;
+      window.location.href = nuevaURL; 
+    }
+  }
 }

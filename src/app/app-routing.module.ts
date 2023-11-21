@@ -7,6 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ExcercisesComponent } from './excercises/excercises.component';
 import { SpecificInfoComponent } from './excercises/info/specific-info/specific-info.component';
+import { RoutinesComponent } from './routines/routines.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path: 'specificInfo',
     component: SpecificInfoComponent
+  },
+  {
+    path: 'routines',
+    component: RoutinesComponent
   }
 ];
 

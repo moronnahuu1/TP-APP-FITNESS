@@ -1,3 +1,5 @@
+import { routine } from "./routine";
+
 export class Usuario {
     firstName: string | undefined;
     lastName: string | undefined;
@@ -7,7 +9,8 @@ export class Usuario {
     email: string;
     userName: string;
     password: string;
-  
+    userRoutines: Array<routine>
+
     constructor(email: string,userName: string,password: string,firstName?: string,lastName?: string,age?: number,weight?: number,height?: number ) {
       this.firstName = firstName;
       this.lastName = lastName;
@@ -17,5 +20,6 @@ export class Usuario {
       this.email = email;
       this.userName = userName;
       this.password = password;
+      this.userRoutines = [];
     }
   }

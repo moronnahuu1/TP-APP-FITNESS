@@ -58,3 +58,4 @@ button:hover{
 #chk:checked ~ .login label{
 	transform: scale(1);	
 }
+

@@ -1,1 +1,18 @@
-<p>routines works!</p>
+<app-nav-bar></app-nav-bar>
+    <br>
+    <br>
+    <br>
+     <button (click)="crearRutina()" id="optionCreate">ADD ROUTINE</button>
+     <button id="optionLook">LOOK OTHERS ROUTINES</button>
+    <div id="noRoutines">
+        <h1 id="noRoutineMessage">YOU HAVE NO ROUTINES CREATED</h1>
+    </div>
+    <div id="routinesFounded">
+        <h1>LIST: </h1>
+    </div>
+    <div id="create" style="display: none;">
+        <label for="nameRoutine">Name</label>
+        <input type="text" name="nameRoutine" id="nameRoutine" placeholder="Set a name for your routine">
+        <button id="createRoutine">Create</button>
+    </div>
+    <app-footer></app-footer>
