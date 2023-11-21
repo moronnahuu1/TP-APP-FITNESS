@@ -23,6 +23,7 @@ import { RoutinesComponent } from './routines/routines.component';
 import { SelectMuscleComponent } from './excercises/select-muscle/select-muscle.component';
 import { PaginationComponent } from './excercises/pagination/pagination.component';
 import { NavBarLoggedComponent } from './nav-bar-logged/nav-bar-logged.component';
+import { BmiComponent } from './bmi/bmi.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { NavBarLoggedComponent } from './nav-bar-logged/nav-bar-logged.component
     SelectMuscleComponent,
     PaginationComponent,
     NavBarLoggedComponent,
+    BmiComponent,
     
   ],
   imports: [

@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { ExcercisesComponent } from './excercises/excercises.component';
 import { SpecificInfoComponent } from './excercises/info/specific-info/specific-info.component';
 import { RoutinesComponent } from './routines/routines.component';
+import { BmiComponent } from './bmi/bmi.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path: 'routines',
     component: RoutinesComponent
+  },
+  {
+    path: 'BMI',
+    component: BmiComponent
   }
 ];
 
