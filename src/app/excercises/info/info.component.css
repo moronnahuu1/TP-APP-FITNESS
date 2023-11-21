@@ -16,10 +16,13 @@ body {
 }
 
 #head h1 {
+    background: -webkit-linear-gradient(#181414, #70791f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     color: rgb(51, 64, 75);
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-size: 3em;
-    font-weight: 500;
+    font-weight: 700;
     margin-top: 3%;
     letter-spacing: 2px;
     text-align: center;
@@ -29,6 +32,7 @@ body {
 
 #head p {
     color: rgb(51, 57, 70);
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 1.3rem;
     font-weight: 700;
     letter-spacing: -.01em;
@@ -58,11 +62,15 @@ body {
     width: 100%; /* Ancho del 100% para ser responsive */
     max-width: 200px; /* Ancho máximo en píxeles o cualquier unidad deseada */
     height: 230px; /* Altura fija en píxeles o cualquier unidad deseada */
+    background: rgb(229,233,170);
+    background: linear-gradient(0deg, rgba(229,233,170,1) 0%, rgba(229,237,34,1) 35%);
 }
 
 .exercise-item:hover{
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
+
+
 /* Media query para ajustar el tamaño en pantallas más pequeñas */
 @media (max-width: 768px) {
     .exercise-item {
@@ -73,18 +81,19 @@ body {
 
 .exercise-name {
     font-size: 1.5rem;
-    font-weight: 100;
-    font-family: 'Lato', sans-serif;
-    line-height: 58px;
+    /* font-weight: 300; */
+    font-family: 'Readex Pro', sans-serif;
+    margin-bottom: 30px;
 }
 
 .exercise-type {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Readex Pro', sans-serif;
     color: rgb(36, 43, 49);
 }
 
 .exercise-difficulty {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Readex Pro', sans-serif;
     color: rgb(36, 43, 49);
 
 }
+
