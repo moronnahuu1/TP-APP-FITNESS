@@ -3,6 +3,8 @@ import { Subscription } from 'rxjs';
 import { ExcerciseService } from 'src/app/excercise.service';
 import { ExerciseDataService } from 'src/app/exercise-data-service.service';
 import { Excercise } from 'src/app/models/excercise';
+import { Usuario } from 'src/app/models/usuario';
+import { UserService } from 'src/app/user.service';
 
 @Component({
   selector: 'app-info',
@@ -12,12 +14,22 @@ import { Excercise } from 'src/app/models/excercise';
 export class InfoComponent implements OnInit{
   excerciseList: Array<Excercise>=[];
   private exerciseSubscription: Subscription = new Subscription;
-
-  
-  constructor(private excerciseService: ExcerciseService,private exerciseDataService: ExerciseDataService) {
+  usersList: Usuario[] = [];
+  constructor(private excerciseService: ExcerciseService,private exerciseDataService: ExerciseDataService, private userService: UserService) {
+    this.usersList = userService.obtenerUsuarios();    
   }
-  
   async ngOnInit(): Promise<void> {
+    const userSerializado = localStorage.getItem("oneUser");
+    let user: Usuario = new Usuario("","","");
+    if(userSerializado){
+      user = JSON.parse(userSerializado);
+      this.displayBlock("logged");
+      this.displayNone("notLogged");
+      
+    }
+      console.log(user);
+      let position = this.verificarUsuarioExistente(user); 
+      console.log(position);
     await this.excerciseService.loadExercises();
     this.excerciseList = this.exerciseDataService.getExercises();  
     
@@ -27,6 +39,29 @@ export class InfoComponent implements OnInit{
         this.excerciseList = exercises;
       }
     );
+  }
+  displayBlock(name: string){
+    let miDiv = document.getElementById(name);
+        if(miDiv){
+        miDiv.style.display = 'block';
+        }
+  }
+  displayNone(name: string){
+    let miDiv = document.getElementById(name);
+        if(miDiv){
+        miDiv.style.display = 'none';
+        }
+  }
+  verificarUsuarioExistente(user: Usuario): number{
+    let i=0;
+    let position = -1;
+      while(i<this.usersList.length && user.email != this.usersList[i].email){
+        i++;
+      }
+      if(i<this.usersList.length) {        
+        position = i;
+      }      
+      return position;
   }
 
   // ngOnDestroy(): void {
