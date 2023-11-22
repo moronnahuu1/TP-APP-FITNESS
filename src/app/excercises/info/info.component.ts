@@ -64,10 +64,6 @@ export class InfoComponent implements OnInit{
       return position;
   }
 
-  // ngOnDestroy(): void {
-  //   // Asegúrate de desuscribirte para evitar posibles problemas de memoria
-  //   this.exerciseSubscription.unsubscribe();
-  // }
 
   changeWindow(ejercicio: Excercise){
     const ejercicioSerializado = JSON.stringify(ejercicio);

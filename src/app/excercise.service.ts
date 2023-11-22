@@ -14,7 +14,6 @@ export class ExcerciseService {
   }
 
     async loadExercises(exerciseType?: string, newOffset?:number): Promise<void> {
-  
     if(exerciseType){
       this.defaultExerciseType = exerciseType;
     }
@@ -22,6 +21,7 @@ export class ExcerciseService {
     if(newOffset){
       this.offset = newOffset;
     }
+
     const baseUrl = `https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises`;
     const url = `${baseUrl}?muscle=${this.defaultExerciseType}&offset=${this.offset}`;
     
@@ -92,11 +92,11 @@ export class ExcerciseService {
   }
 
   incrementOffset(){
-    this.offset ++;
+    this.offset = this.offset+10;
   }
 
   decrementOffset(){
-    this.offset --;
+    this.offset = this.offset-10;
   }
 
   getActualMuscle(){
