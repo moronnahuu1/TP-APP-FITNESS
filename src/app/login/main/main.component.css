@@ -80,3 +80,16 @@ button:hover{
 #chk:checked ~ .signup label{
 	transform: scale(.6);
 }
+#messages {
+	position: absolute;
+	margin-top: -110px;
+	margin-left: -27px;
+	color: rgb(255, 255, 255);
+	width: 400px;
+	height: 100px;
+	text-align: center;
+	border-radius: 15px;
+}
+.message {
+	margin-top: 35px;
+}

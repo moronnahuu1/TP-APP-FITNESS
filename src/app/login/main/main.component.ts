@@ -9,7 +9,24 @@ import { UserService } from '../../user.service'; // Ruta relativa para navegar 
 export class MainComponent implements OnInit{
   userList: Array<Usuario> = [];
   ngOnInit(): void {
-    
+    let registeredMessage = localStorage.getItem('registered');
+    if(registeredMessage){
+      this.displayMessages("messages", "green");
+      this.displayBlock("registeredMessage");
+      localStorage.removeItem("registered");
+    }
+    let repeatedMessage = localStorage.getItem('repeated');
+    if(repeatedMessage){
+      this.displayMessages("messages", "red");
+      this.displayBlock("repeatedMessage");
+      localStorage.removeItem('repeated');
+    }
+    let wrongAccess = localStorage.getItem('wrongAccess');
+    if(wrongAccess){
+      this.displayMessages("messages", "red");
+      this.displayBlock("wrongLogIn");
+      localStorage.removeItem('wrongAccess');
+    }
   }
   //storedData = localStorage.getItem('key'); // Obtiene los datos del almacenamiento local
   //private userService: UserService =  this.storedData ? JSON.parse(this.storedData) : null;
@@ -30,12 +47,11 @@ export class MainComponent implements OnInit{
       this.userService.agregarUsuario(nuevoUsuario);
       this.userService.persistirDatos();
       this.userList = this.userService.obtenerUsuarios();
-      ///localStorage.setItem('key', JSON.stringify(this.userService));
-      console.log(this.userList);
-      
+      localStorage.setItem('registered', 'You have been registered successfully');
     } else {
-
+      localStorage.setItem('repeated', 'The email is already used by another account');
     }
+    location.reload();    
   }
   verifyUserRegistration() {
     let i = 0
@@ -64,6 +80,8 @@ export class MainComponent implements OnInit{
       const nuevaURL = `?parametro=${encodeURIComponent(usuarioSerializado)}`;*/
       window.location.href = '';
     }else {
+      localStorage.setItem('wrongAccess', 'The email or password is incorrect');
+      location.reload();
     }
   }
   verifyUserLogin(emailAux1: string, passAux1: string): number {
@@ -82,5 +100,24 @@ export class MainComponent implements OnInit{
       console.log("EMAIL O CONTRASEÑA INCORRECTOS");
     }
     return i-1;
+  }
+  displayBlock(name: string){
+    let miDiv = document.getElementById(name);
+        if(miDiv){
+        miDiv.style.display = 'block';
+        }
+  }
+  displayNone(name: string){
+    let miDiv = document.getElementById(name);
+        if(miDiv){
+        miDiv.style.display = 'none';
+        }
+  }
+  displayMessages(name: string, color: string){
+    let miDiv = document.getElementById(name);
+        if(miDiv){
+        miDiv.style.display = 'block';                
+        miDiv.style.backgroundColor = color;
+        }
   }
 }

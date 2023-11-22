@@ -6,7 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="main">  	
+	<div id="messages" style="display: none;">
+		<p id="registeredMessage" class="message" style="display: none;">You have been successfully registered</p>
+		<p id="repeatedMessage" class="message" style="display: none;">The email is already used on another account</p>
+		<p id="wrongLogIn" class="message" style="display: none;">The email or password is incorrect</p>
+	</div>
+    <div class="main">
 		<input type="checkbox" id="chk" aria-hidden="true">
 
 			<div class="signup">
