@@ -10,6 +10,7 @@ import { SpecificInfoComponent } from './excercises/info/specific-info/specific-
 import { RoutinesComponent } from './routines/routines.component';
 import { BmiComponent } from './bmi/bmi.component';
 import { SpecificInformationComponent } from './routines/specific-information/specific-information.component';
+import { SpecificInfoUserComponent } from './chineseff4/specific-info-user/specific-info-user.component';
 
 const routes: Routes = [
   {
@@ -43,6 +44,10 @@ const routes: Routes = [
   {
     path: 'specificRoutine',
     component: SpecificInformationComponent
+  },
+  {
+    path: 'specificInfoUser',
+    component: SpecificInfoUserComponent
   }
 ];
 

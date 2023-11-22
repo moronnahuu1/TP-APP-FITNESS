@@ -18,8 +18,8 @@ export class Chineseff4Component implements OnInit {
       user = JSON.parse(userSerializado);
       this.displayBlock("logged");
       this.displayNone("notLogged");
+      this.showUserData(user);
     }else {
-
     }
   }
   displayBlock(name: string){
@@ -33,5 +33,18 @@ export class Chineseff4Component implements OnInit {
     if(miDiv){
       miDiv.style.display = 'none';
     }
+  }
+  showUserData(user: Usuario){
+    let name = document.getElementById("userName");
+    if(name) {
+      name.innerHTML = user.userName.toUpperCase();
+    }
+    let routinesList = document.getElementById("routinesAmount");
+    if(routinesList) {
+      routinesList.innerHTML = user.userRoutines.length + " routines";
+    }
+  }
+  changeWindow(name: string){
+    window.location.href = name;
   }
 }

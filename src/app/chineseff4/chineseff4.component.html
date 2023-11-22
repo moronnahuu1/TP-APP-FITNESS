@@ -11,6 +11,35 @@
   </div>
   <div id="logged" style="display: none;">
     <app-nav-bar-logged></app-nav-bar-logged>
+    <br><br><br>
+    <div id="divInfo">
+
+      <div id="userInfo" class="miniBar" (click)="changeWindow('specificInfoUser')">
+        <div id="userImage"></div>
+        <h1 id="userName"></h1>
+        <p id="routinesAmount"></p>
+      </div>
+      <img src="../../assets/Logo transparente.png" id="logoInfo" alt="">
+      <div id="bmi" class="miniBar">
+        <p id="bmiMessage">Calculate your BMI here!</p>
+      </div>
+
+    </div>
+
+
+    <div id="linksInfo">
+
+      <div id="exerciseInfo" (click)="changeWindow('excercise')">
+        <p id="exInfo">Watch the newest exercises on the site!</p>
+        <img src="..//..//assets/exercises.jpg" id="exImage" alt="">
+      </div>
+
+      <div id="routinesInfo" (click)="changeWindow('routines')">
+        <p id="routineInfo">Watch your routines to start work out!</p>
+      </div>
+
+    </div>
+    <app-footer></app-footer>
   </div>
 </body>
 </html>
