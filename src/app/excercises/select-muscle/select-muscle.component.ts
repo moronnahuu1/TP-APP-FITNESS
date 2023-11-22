@@ -19,6 +19,7 @@ export class SelectMuscleComponent {
   }
 
   async handleButtonClick(event: MouseEvent): Promise<void> {
+    this.exerciseService.resetOffset();
     const target = event.target as HTMLLabelElement;
     const innerHtml = target.innerHTML;
     console.log('target.innerHTML'+target.innerHTML);

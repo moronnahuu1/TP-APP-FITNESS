@@ -103,5 +103,8 @@ export class ExcerciseService {
     return this.defaultExerciseType;
   }
 
+  resetOffset(){
+    this.offset =0;
+  }
   // Agrega otros métodos para actualizar, eliminar o interactuar con los datos de ejercicios según tus necesidades.
 }

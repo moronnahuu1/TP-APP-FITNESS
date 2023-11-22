@@ -30,7 +30,7 @@ export class InfoComponent implements OnInit{
       console.log(user);
       let position = this.verificarUsuarioExistente(user); 
       console.log(position);
-    await this.excerciseService.loadExercises();
+    // await this.excerciseService.loadExercises();
     this.excerciseList = this.exerciseDataService.getExercises();  
     
     this.exerciseSubscription = this.exerciseDataService.getExercisesSubject().subscribe(
