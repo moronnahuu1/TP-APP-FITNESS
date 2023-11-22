@@ -30,4 +30,8 @@ export class SpecificInformationComponent implements OnInit{
   backToList(){
     window.location.href = 'routines';
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 381db34d054f0f096e0eaa25d7d32a9d4f06d8da

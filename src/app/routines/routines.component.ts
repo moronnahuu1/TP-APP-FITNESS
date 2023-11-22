@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Excercise } from '../models/excercise';
 import { Block } from '@angular/compiler';
 import { routine } from '../models/routine';
@@ -97,6 +97,7 @@ export class RoutinesComponent {
       return position;
   }
   changeWindow(rutina: routine) {
+<<<<<<< HEAD
     const rutinaSerializada = JSON.stringify(rutina);
     const nuevaURL = `specificRoutine?parametro=${encodeURIComponent(rutinaSerializada)}`;
     window.location.href = nuevaURL;
@@ -133,6 +134,45 @@ addEx(rutina: routine){
     }
   }else{
     this.changeWindow(rutina);
+=======
+      const rutinaSerializada = JSON.stringify(rutina);
+      const nuevaURL = `specificRoutine?parametro=${encodeURIComponent(rutinaSerializada)}`;
+      window.location.href = nuevaURL;
+  }
+  verificarEjercicioExistente(exercise: Excercise, rutina: routine): boolean{
+    let access = true;
+    if(rutina.excerciseList.length>0){
+      let i = 0;
+      while(i<rutina.excerciseList.length && access){
+        if(rutina.excerciseList[i].id == exercise.id){
+          access = false;
+        }
+        i++;
+      }
+    }
+    return access;
+  }
+  addEx(rutina: routine){
+    this.displayNone("selectRoutine");
+    if (this.ejercicioSerializado) { 
+      const exercise: Excercise = JSON.parse(decodeURIComponent(this.ejercicioSerializado));
+      let acceso = this.verificarEjercicioExistente(exercise, rutina);
+      if(acceso){
+      rutina.excerciseList.push(exercise);
+      this.routinesList[rutina.id] = rutina;
+      this.user.userRoutines = this.routinesList;
+      localStorage.setItem("oneUser", JSON.stringify(this.user));
+      this.usersList[this.position] = this.user;
+      localStorage.setItem("users", JSON.stringify(this.usersList));
+      this.changeWindow(rutina);
+      }else{
+        this.displayNone("selected");
+        this.displayBlock("repeated");
+      }
+    }else{
+      this.changeWindow(rutina);
+    }
+>>>>>>> 381db34d054f0f096e0eaa25d7d32a9d4f06d8da
   }
 }
 }
