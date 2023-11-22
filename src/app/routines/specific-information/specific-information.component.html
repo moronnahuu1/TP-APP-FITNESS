@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="routine-item">
+        <h1 class="routine-name" id="name"></h1>
+        <div *ngFor="let exercise of excerciseList" class="exercise-item">
+            <h1 class="exercise-name"> {{exercise.name}}</h1>
+            <p class="exercise-type"> {{exercise.type}}</p>
+            <p class="exercise-difficulty">{{exercise.difficulty}}</p>
+            <p class="exercise-muscle">{{exercise.muscle}}</p>
+            <p class="exercise-reps">{{exercise.reps}}</p>
+            <p class="exercise-instructions">{{exercise.instructions}}</p>
+        </div>
+    </div>
+    <div id="noExercises" style="display: none;">
+        <h1>YOU HAVE NO EXERCISES UPLOADED ON THIS ROUTINE YET</h1>
+    </div>
+    <div id="backToList" (click)="backToList()">
+        <button>BACK TO PREVIOUS PAGE</button>
+    </div>
+</body>
+</html>

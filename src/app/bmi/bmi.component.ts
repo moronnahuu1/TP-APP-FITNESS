@@ -11,6 +11,8 @@ export class BmiComponent {
   usersList: Usuario[] = [];
   user: Usuario = new Usuario('','','');
   position = -1;
+  element = false;
+  logged = false;
 
   constructor(userService: UserService){
     this.usersList = userService.obtenerUsuarios();
@@ -25,10 +27,18 @@ export class BmiComponent {
       console.log(this.user);
       
       if(this.position>=0){ ///ENCONTRO EL USUARIO 
+        this.logged = true;
         //formulario de carga de datos corporales
       }else { ///NO HAY UN USUARIO LOGUEADO
-        document.body.style.backgroundColor = 'rgba(76, 175, 80, 0.3)';
-        alert("You must be loged to try the BMI calculator");
+        this.element = true;
+        
+        // let respuesta = window.confirm('You must be loged to try the BMI calculator \n Quieres loguearte?');
+        // if(respuesta ===true){
+        //   window.location.href = 'login';
+        // } else {
+        //   alert('Volviendo a la página de inicio..');
+        //   window.location.href = '';
+        // }
       }
     }
 
@@ -43,4 +53,9 @@ export class BmiComponent {
         }      
         return position;
     }
+
+    changeWindow(name: string) {
+      window.location.href = `${name}`;
+    }
+   
 }

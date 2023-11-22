@@ -24,6 +24,7 @@ import { SelectMuscleComponent } from './excercises/select-muscle/select-muscle.
 import { PaginationComponent } from './excercises/pagination/pagination.component';
 import { NavBarLoggedComponent } from './nav-bar-logged/nav-bar-logged.component';
 import { BmiComponent } from './bmi/bmi.component';
+import { SpecificInformationComponent } from './routines/specific-information/specific-information.component';
 
 
 @NgModule({
@@ -47,7 +48,7 @@ import { BmiComponent } from './bmi/bmi.component';
     PaginationComponent,
     NavBarLoggedComponent,
     BmiComponent,
-    
+    SpecificInformationComponent
   ],
   imports: [
     BrowserModule,
