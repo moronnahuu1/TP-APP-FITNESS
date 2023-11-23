@@ -43,7 +43,7 @@ export class MainComponent implements OnInit{
     event.preventDefault();
     this.verifyUserRegistration();
     if(this.register == true) {
-      let nuevoUsuario: Usuario = new Usuario (this.email, this.userName, this.password);
+      let nuevoUsuario: Usuario = new Usuario (this.email, this.userName, this.password, this.userList.length);
       this.userService.agregarUsuario(nuevoUsuario);
       this.userService.persistirDatos();
       this.userList = this.userService.obtenerUsuarios();

@@ -26,7 +26,8 @@ import { NavBarLoggedComponent } from './nav-bar-logged/nav-bar-logged.component
 import { BmiComponent } from './bmi/bmi.component';
 import { SpecificInformationComponent } from './routines/specific-information/specific-information.component';
 import { SpecificInfoUserComponent } from './chineseff4/specific-info-user/specific-info-user.component';
-
+import { SettingsComponent } from './chineseff4/specific-info-user/settings/settings.component';
+import { PrivacyComponent } from './chineseff4/specific-info-user/privacy/privacy.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,8 @@ import { SpecificInfoUserComponent } from './chineseff4/specific-info-user/speci
     BmiComponent,
     SpecificInformationComponent,
     SpecificInfoUserComponent,
+    SettingsComponent,
+    PrivacyComponent,
   ],
   imports: [
     BrowserModule,

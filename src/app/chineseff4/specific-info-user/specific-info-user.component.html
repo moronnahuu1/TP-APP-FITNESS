@@ -1,1 +1,24 @@
-<p>specific-info-user works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="userInfo">
+        <h1 id="userName"></h1>
+        <p id="firstName"></p>
+        <p id="lastName"></p>
+        <p id="age"></p>
+        <p id="weight"></p>
+        <p id="height"></p>
+        <p id="email"></p>
+        <p id="routinesAmount" (click)="changeWindow('routines')"></p>
+    </div>
+    <div id="buttons">
+        <button id="privacyButton" (click)="changeWindow('privacy')">Privacy</button>
+        <button id="settingsButton" (click)="changeWindow('settings')">Settings</button>
+    </div>
+</body>
+</html>

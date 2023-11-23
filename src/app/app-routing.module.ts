@@ -11,6 +11,8 @@ import { RoutinesComponent } from './routines/routines.component';
 import { BmiComponent } from './bmi/bmi.component';
 import { SpecificInformationComponent } from './routines/specific-information/specific-information.component';
 import { SpecificInfoUserComponent } from './chineseff4/specific-info-user/specific-info-user.component';
+import { SettingsComponent } from './chineseff4/specific-info-user/settings/settings.component';
+import { PrivacyComponent } from './chineseff4/specific-info-user/privacy/privacy.component';
 
 const routes: Routes = [
   {
@@ -48,6 +50,14 @@ const routes: Routes = [
   {
     path: 'specificInfoUser',
     component: SpecificInfoUserComponent
+  },
+  {
+    path: 'settings',
+    component: SettingsComponent
+  },
+  {
+    path: 'privacy',
+    component: PrivacyComponent
   }
 ];
 
