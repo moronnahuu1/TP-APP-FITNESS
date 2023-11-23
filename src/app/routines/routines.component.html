@@ -24,6 +24,7 @@
     <div id="options">
         <button (click)="displayCreate()" id="optionCreate" class="optionButton" style="display: none;">ADD ROUTINE</button>
         <button id="optionLook" class="optionButton" style="display: none;" (click)="showRoutines()">LOOK OTHERS ROUTINES</button>
+        <button (click)="displayCreate()" id="optionDelete" class="optionButton" style="display: none;">DELETE ROUTINE</button>
     </div>
   
     <div id="noRoutines" style="display: none;">
@@ -43,11 +44,11 @@
     </div>
 
     <div id="routinesFounded" style="display: none;">
+        <h1 id="myRoutines">My routines</h1>
         <div id="container">
             <div *ngFor="let routine of routinesList" class="routine-item" (click) = addEx(routine)>
                 <h1 class="routine-name"> {{routine.name}}</h1>
                 <p class="routine-amountEX"> {{routine.excerciseList.length}} excercises</p>
-                <p class="routine-access"> {{routine.publicRoutine}} </p>
             </div>
         </div>
     </div>

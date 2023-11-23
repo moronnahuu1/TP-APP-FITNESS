@@ -24,31 +24,47 @@
     margin-right: 10px;
 }
 .optionButton {
-    background-color: blueviolet;
+    background-color: rgb(43, 84, 146);
     color: white;
-    border-radius: 15px;
-    width: 300px;
-    height: 100px;
+    border-radius: 10px;
+    width: 180px;
+    height: 80px;
     border: 0px;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 100;
     font-family: 'Lato', sans-serif;
     line-height: 58px;
     cursor: pointer;
+    transition: transform 0.5s ease; /* Agrega una transición suave para una animación más agradable */
+}
+#myRoutines {
+    color: white;
+    text-align: center;
+    background-color: rgb(43, 43, 56);
+    margin-top: 10px;
+}
+#routinesFounded {
+    margin-top: 30px;
+    border-top: 1px solid grey;
+    background-color: rgb(43, 43, 56);
+
+}
+.optionButton:hover {
+    transform: scale(1.05); /* Escala el div al 120% del tamaño original */
 }
 #optionLook {
     font-size: 20px;
+    line-height: 30px;
 }
 #container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    align-items: center;
-    justify-content: center;
     gap: 10px; /* Añadido espacio entre los elementos */
     margin-top: 20px; /* Añadido espacio entre #head y #container */
+    border-top: 2px solid rgb(118, 197, 0);
+    background-color: rgb(43, 43, 56);
+    height: 550px;
 }
-
-
 .routine-item {
     text-align: center;
     margin: 1em; /* Margen en unidades em */
@@ -62,10 +78,14 @@
     height: 230px; /* Altura fija en píxeles o cualquier unidad deseada */
     background: rgb(229,233,170);
     background: linear-gradient(0deg, rgba(229,233,170,1) 0%, rgba(229,237,34,1) 35%);
+    transition: transform 0.5s ease; /* Agrega una transición suave para una animación más agradable */
+    
 }
 
 .routine-item:hover{
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    transform: scale(1.03); /* Escala el div al 120% del tamaño original */
+
 }
 
 
@@ -100,4 +120,8 @@
 #selectH1{
     text-align: center;
     font-size: 30px;
+}
+body{
+    background-color: rgb(21, 21, 28);
+    height: 810px;
 }

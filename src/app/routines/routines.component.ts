@@ -41,6 +41,7 @@ export class RoutinesComponent {
         this.displayNone("notLoggedMessage");
         this.displayBlock('optionCreate');
         this.displayBlock('optionLook');
+        this.displayBlock("optionDelete");
         if(this.routinesList.length>0){
           this.displayBlock('routinesFounded');
           let info = document.getElementById("routineName");

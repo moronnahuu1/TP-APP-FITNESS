@@ -27,7 +27,7 @@ export class SpecificInformationComponent implements OnInit{
     }
     }
   }
-  backToList(){
-    window.location.href = 'routines';
+  backToList(name: string){
+    window.location.href = name;
   }
 }
