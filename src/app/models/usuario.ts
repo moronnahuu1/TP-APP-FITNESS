@@ -10,9 +10,11 @@ export class Usuario {
     userName: string;
     password: string;
     userRoutines: Array<routine>
+    bmi: number | undefined;
     id: number | undefined;
+    bmiStatus: string | undefined;
 
-    constructor(email: string,userName: string,password: string, id?: number, firstName?: string,lastName?: string,age?: number,weight?: number,height?: number ) {
+    constructor(email: string,userName: string,password: string, id?: number, firstName?: string,lastName?: string,age?: number,weight?: number,height?: number, bmi?: number, bmiStatus?: string) {
       this.firstName = firstName;
       this.lastName = lastName;
       this.age = age;
@@ -23,6 +25,8 @@ export class Usuario {
       this.password = password;
       this.userRoutines = [];
       this.id = id;
+      this.bmi = bmi;
+      this.bmiStatus = bmiStatus;
     }
     
     getEmail(){

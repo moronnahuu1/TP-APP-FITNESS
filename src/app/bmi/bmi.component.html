@@ -7,18 +7,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Domine:wght@600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
 </head>
 <body>
    <app-chineseff4  *ngIf="element == true"></app-chineseff4>
    <app-nav-bar-logged  *ngIf="logged == true"></app-nav-bar-logged>
+
+   <div id="last-update"  *ngIf="storedHeight">
+        <h1>Your latest BMI update</h1>
+        <div id="last-update-box">
+            <p id="altura">Height: {{storedHeight}} cm</p>
+            <p id="peso">Weight: {{storedWeight}} kg</p>
+            <p>Your last IBM result: {{result}}</p>
+            <p>Status: {{bmiStatus}}</p>
+        </div>
+   </div>
+
     <div class="container" *ngIf="logged == true">  
-        <h1>BMI Calculator</h1>
+        <h1 id="principal-title">BMI Calculator</h1>
         <label>
             <input id="h-input" type="number" placeholder="Enter Your Height in Centimeters: " required>
         </label>        

@@ -13,12 +13,16 @@ export class BmiComponent {
   position = -1;
   element = false;
   logged = false;
+  storedHeight: string | null = '';
+  storedWeight: string | null = '';
+  result: string | null  =  '';
+  bmiStatus: string | null  =  '';
 
   constructor(userService: UserService){
     this.usersList = userService.obtenerUsuarios();
   }
 
-  async ngOnInit(): Promise<void> {
+  ngOnInit(): void{
     const userSerializado = localStorage.getItem("oneUser");
     // this.user = new Usuario("","","");
     if(userSerializado){
@@ -28,11 +32,15 @@ export class BmiComponent {
       console.log(this.user);
       
       if(this.position>=0){ ///ENCONTRO EL USUARIO 
-        const userKey = `user_${this.user.email}`;
-        const storedHeight = localStorage.getItem(`${userKey}_userHeight`);
-        const storedWeight = localStorage.getItem(`${userKey}_userWeight`);
-        console.log('Altura'+storedHeight, 'Peso:'+storedWeight);
         this.logged = true;
+
+        const userKey = `user_${this.user.email}`;
+         this.storedHeight = localStorage.getItem(`${userKey}_userHeight`);
+         this.storedWeight = localStorage.getItem(`${userKey}_userWeight`);
+         this.result = localStorage.getItem(`${userKey}_userBmi`);
+         this.bmiStatus = localStorage.getItem(`${userKey}_userBmiStatus`);
+         
+         console.log('Altura:'+ this.storedHeight+'Peso: '+this.storedWeight);
 
         //formulario de carga de datos corporales
       }else { ///NO HAY UN USUARIO LOGUEADO
@@ -89,20 +97,29 @@ export class BmiComponent {
       this.user.weight = weight;
       
       // localStorage.setItem("oneUser", JSON.stringify(this.usersList[this.position]));
-      const result: number = weight / ((height / 100) ** 2);
-  
-      if (!isNaN(result)) {
-          bmiOutput.innerHTML = result.toString();
-          if (result < 18.5) {
+      let number  = weight / ((height / 100) ** 2);
+      this.result = number.toFixed(2);
+      console.log('Result: '+this.result);
+      if (!isNaN(number)) {
+          bmiOutput.innerHTML = this.result.toString();
+          if (number < 18.5) {
+            this.bmiStatus ="Underweight";
               bmiStatus.innerHTML = "Underweight";
-          } else if (result < 25) {
-              bmiStatus.innerHTML = "Healthy";
-          } else if (result < 30) {
+          } else if (number< 25) {
+            this.bmiStatus ="Healthy";
+            bmiStatus.innerHTML = "Healthy";
+          } else if (number < 30) {
+            this.bmiStatus ="Overweight";
               bmiStatus.innerHTML = "Overweight";
           } else {
-              bmiStatus.innerHTML = "Obesity";
+            this.bmiStatus ="Obesity";
+              bmiStatus.innerHTML = "Obesity" ;
           }
       }
-  }
-  
+      
+      localStorage.setItem(`${userKey}_userBmi`, String(this.result));
+      localStorage.setItem(`${userKey}_userBmiStatus`, String(this.bmiStatus));
+    }
+
+
 }
