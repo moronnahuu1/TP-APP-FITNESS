@@ -13,6 +13,7 @@ import { SpecificInformationComponent } from './routines/specific-information/sp
 import { SpecificInfoUserComponent } from './chineseff4/specific-info-user/specific-info-user.component';
 import { SettingsComponent } from './chineseff4/specific-info-user/settings/settings.component';
 import { PrivacyComponent } from './chineseff4/specific-info-user/privacy/privacy.component';
+import { PublicRoutinesShowComponent } from './routines/public-routines-show/public-routines-show.component';
 
 const routes: Routes = [
   {
@@ -58,6 +59,10 @@ const routes: Routes = [
   {
     path: 'privacy',
     component: PrivacyComponent
+  },
+  {
+    path: 'publicRoutinesShow',
+    component: PublicRoutinesShowComponent
   }
 ];
 

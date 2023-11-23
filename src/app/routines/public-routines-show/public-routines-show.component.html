@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <div *ngFor="let routine of publicRoutinesList" class="routine-item" (click) = showRoutine(routine)>
+            <h1 class="routine-name"> {{routine.name}}</h1>
+            <p class="routine-amountEX"> {{routine.excerciseList.length}} excercises</p>
+            <p class="routine-access">From {{routine.userName}}</p>
+        </div>
+    </div>
+</body>
+</html>
