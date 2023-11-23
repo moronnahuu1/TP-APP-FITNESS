@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="change">
+        <button id="changePassword" (click)="changeWindow('lastPassButton')">CHANGE PASSWORD</button>
+        <button id="changeEmail" (click)="changeWindow('lastPassButtonMail')">CHANGE EMAIL</button>
+    </div>
+
+    <div id="lastPasswordSet" style="display: none;">
+        <label for="lastPass">Set your current password</label>
+        <input type="password" name="lastPass" id="lastPassInp">
+        <button id="lastPassButton" (click)="checkPassword()">Enter</button>
+    </div>
+
+    <div id="lastPasswordSetMail" style="display: none;">
+        <label for="lastPassMail">Set your current password</label>
+        <input type="password" name="lastPass" id="lastPassInpMail">
+        <button id="lastPassButtonMail" (click)="checkPasswordForMail()">Enter</button>
+    </div>
+
+    <div id="passwordChange" style="display: none;">
+        <label for="newPass">Set your new password</label>
+        <input type="password" name="newPass" id="newPassInp">
+        <button id="newPassButton" (click)="changePassword()">Enter</button>
+    </div>
+
+    <div id="emailChange" style="display: none;">
+        <label for="newMail">Set your new email</label>
+        <input type="email" name="newMail" id="newMailInp">
+        <button id="newMailButton" (click)="changeEmail()">Enter</button>
+    </div>
+</body>
+</html>

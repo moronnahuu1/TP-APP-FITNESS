@@ -5,7 +5,7 @@ import { Usuario } from './models/usuario';
   providedIn: 'root'
 })
 export class UserService {
-  private users: Usuario[] = []; 
+  users: Usuario[] = []; 
 
   constructor() {
   }

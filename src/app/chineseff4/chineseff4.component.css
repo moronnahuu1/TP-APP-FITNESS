@@ -1,0 +1,92 @@
+body{
+    background-color: rgb(21, 21, 28);
+}
+#logged {
+    background-color: rgb(21, 21, 28);
+    height: 808px;
+}
+#divInfo {
+    background-color: rgb(21, 21, 28);
+    height: fit-content;
+    color: white;
+    transition: transform 0.5s ease; /* Agrega una transición suave para una animación más agradable */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#bmi {
+    margin-right: 15px;
+}
+#logoInfo {
+    width: 12%;
+    height: 12%;
+}
+.miniBar {
+    background-color: rgb(43, 43, 56);
+    color: white;
+    width: 300px;
+    height: 150px;
+    margin-left: 15px;
+    margin-top: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#divInfo :hover{
+    transform: scale(1.03); /* Escala el div al 120% del tamaño original */
+}
+#userImage {
+    background-color: grey;
+    border-radius: circle;
+}
+h1{
+    text-align: right;
+    width: fit-content;
+    height: fit-content;
+    margin-left: 170px;
+    font-size: 30px;
+}
+p{
+    text-align: center;
+}
+#routinesAmount {
+    text-align: right;
+    width: fit-content;
+    height: fit-content;
+    margin-left: 215px;
+}
+#exerciseInfo {
+    background-color: rgb(43, 43, 56);
+    color: white;
+    width: 50%;
+    height: 490px;
+    margin-left: 15px;
+    margin-top: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+#exInfo {
+    text-align: center;
+    margin-left: 170px;
+}
+#linksInfo {
+    background-color: rgb(21, 21, 28);
+    transition: transform 0.5s ease; /* Agrega una transición suave para una animación más agradable */
+    display: flex;
+}
+#linksInfo :hover {
+    transform: scale(1.03); /* Escala el div al 120% del tamaño original */
+}
+#routinesInfo {
+    background-color: rgb(43, 43, 56);
+    color: white;
+    width: 50%;
+    height: 490px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+}

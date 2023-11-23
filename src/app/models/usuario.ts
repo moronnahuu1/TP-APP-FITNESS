@@ -6,13 +6,13 @@ export class Usuario {
     age: number | undefined;
     weight: number | undefined;
     height: number | undefined;
-    gender: string | undefined;
     email: string;
     userName: string;
     password: string;
     userRoutines: Array<routine>
+    id: number | undefined;
 
-    constructor(email: string, userName: string, password: string, firstName?: string, lastName?: string, age?: number, weight?: number, height?:number, gender?:string) {
+    constructor(email: string,userName: string,password: string, id?: number, firstName?: string,lastName?: string,age?: number,weight?: number,height?: number ) {
       this.firstName = firstName;
       this.lastName = lastName;
       this.age = age;
@@ -21,8 +21,8 @@ export class Usuario {
       this.email = email;
       this.userName = userName;
       this.password = password;
-      this.gender = gender;
       this.userRoutines = [];
+      this.id = id;
     }
     
     getEmail(){
