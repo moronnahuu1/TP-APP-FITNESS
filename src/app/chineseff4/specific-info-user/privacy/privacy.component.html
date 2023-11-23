@@ -6,33 +6,52 @@
     <title>Document</title>
 </head>
 <body>
+    <app-nav-bar-logged></app-nav-bar-logged>
+    <br><br><br><br>
+    <div id="messages">
+        <h1 id="changeMessageH1">CHOOSE AN OPTION</h1>
+        <p id="currentPass" class="pMessage" style="display: none;">To change this type of information from your profile, you must enter your password first to continue</p>
+        <p id="newPass" class="pMessage" style="display: none;">Enter your new password for this account</p>
+        <p id="newMail" class="pMessage" style="display: none;">Enter your new email for this account</p>
+        <p id="passChanged" class="greenMessage" style="display: none;">Your password has been succesfully changed</p>
+        <p id="emailChanged" class="greenMessage" style="display: none;">Your email has been succesfully changed</p>
+        <p id="samePass" class="redMessage" style="display: none;">ERROR. Your password can't be the same password</p>
+        <p id="emailNotChanged" class="redMessage" style="display: none;">ERROR. There's another account already using that email</p>
+        <p id="sameEmail" class="redMessage" style="display: none;">ERROR. You're already using that email</p>
+        <p id="incorrectPass" class="redMessage" style="display: none;">The password you set is incorrect</p>
+    </div>
     <div id="change">
-        <button id="changePassword" (click)="changeWindow('lastPassButton')">CHANGE PASSWORD</button>
-        <button id="changeEmail" (click)="changeWindow('lastPassButtonMail')">CHANGE EMAIL</button>
+        <div id="changePassword" (click)="changeWindow('lastPassButton')"><p class="changeP">CHANGE PASSWORD</p></div>
+        <div id="changeEmail" (click)="changeWindow('lastPassButtonMail')"><p class="changeP">CHANGE EMAIL</p></div>
     </div>
 
-    <div id="lastPasswordSet" style="display: none;">
+    <div id="lastPasswordSet" class="lastPassSetted" style="display: none;">
         <label for="lastPass">Set your current password</label>
+        <br>
         <input type="password" name="lastPass" id="lastPassInp">
         <button id="lastPassButton" (click)="checkPassword()">Enter</button>
     </div>
 
-    <div id="lastPasswordSetMail" style="display: none;">
+    <div id="lastPasswordSetMail" class="lastPassSetted" style="display: none;">
         <label for="lastPassMail">Set your current password</label>
+        <br>
         <input type="password" name="lastPass" id="lastPassInpMail">
         <button id="lastPassButtonMail" (click)="checkPasswordForMail()">Enter</button>
     </div>
 
-    <div id="passwordChange" style="display: none;">
+    <div id="passwordChange" class="lastPassSetted" style="display: none;">
         <label for="newPass">Set your new password</label>
+        <br>
         <input type="password" name="newPass" id="newPassInp">
         <button id="newPassButton" (click)="changePassword()">Enter</button>
     </div>
 
-    <div id="emailChange" style="display: none;">
+    <div id="emailChange" class="lastPassSetted" style="display: none;">
         <label for="newMail">Set your new email</label>
+        <br>
         <input type="email" name="newMail" id="newMailInp">
         <button id="newMailButton" (click)="changeEmail()">Enter</button>
     </div>
+    <div id="backToMenu" (click)="changeWindow('')" style="display: block;">Back to principal menu</div>
 </body>
 </html>

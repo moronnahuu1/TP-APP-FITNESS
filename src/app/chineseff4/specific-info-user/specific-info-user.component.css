@@ -1,0 +1,76 @@
+body {
+    background-color: rgb(21, 21, 28);
+    height: 840px;
+}
+#userInfo {
+    color: white;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+#userName {
+    padding-right: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 30px;
+    width: fit-content;
+    border-radius: 10px;
+}
+#main {
+    background-color: rgb(21, 21, 28);
+    width: 50%;
+    height: 600px;
+    margin-left: 360px;
+    margin-top: 20px;
+    border: 1px solid rgb(0, 161, 35);
+    border-radius: 15px;
+}
+#userName:hover {
+    border: 1.5px solid rgb(134, 134, 134);
+}
+#yourAcc {
+    margin-top: 20px;
+}
+#userNameImage {
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+#image {
+    background-color: rgb(67, 67, 67);
+    border: 2px solid grey;
+    width: 150px;
+    height: 150px;
+    margin-left: -100px;
+    margin-top: 20px;
+}
+#buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+#privacyButton {
+    margin-right: 10px;
+}
+#settingsButton {
+    margin-left: 10px;
+}
+.button {
+    background-color: white;
+    border-radius: 10px;
+    border: 0;
+    cursor: pointer;
+    transition: transform 0.4s ease; /* Agrega una transición suave para una animación más agradable */
+}
+.button:hover {
+    background-color: red;
+    color: white;
+    transform: scale(1.08); /* Escala el div al 120% del tamaño original */
+}
+#routinesAmount{
+    cursor: pointer;
+}
+#routinesAmount:hover {
+    color: rgb(0, 150, 25);
+}

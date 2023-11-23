@@ -16,8 +16,8 @@ export class Chineseff4Component implements OnInit {
     let user: Usuario = new Usuario("","","");
     if(userSerializado){
       user = JSON.parse(userSerializado);
-      this.displayBlock("logged");
       this.displayNone("notLogged");
+      this.displayBlock("logged");
       this.showUserData(user);
     }else {
     }

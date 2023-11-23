@@ -14,15 +14,11 @@ export class SpecificInfoUserComponent implements OnInit {
       this.user = JSON.parse(this.userSerializado); 
       let miH1 = document.getElementById("userName");
       if(miH1){
-        miH1.innerHTML = this.user.userName;
+        miH1.innerHTML += this.user.userName;
       }
       let miP = document.getElementById("email");
       if(miP){
-        miP.innerHTML = this.user.email;
-      }
-      miP = document.getElementById("email");
-      if(miP){
-        miP.innerHTML = this.user.email;
+        miP.innerHTML += this.user.email;
       }
       miP = document.getElementById("password");
       if(miP){
@@ -31,43 +27,37 @@ export class SpecificInfoUserComponent implements OnInit {
       miP = document.getElementById("firstName");
       if(miP){
         if(this.user.firstName != undefined){
-          miP.innerHTML = this.user.firstName;
+          miP.innerHTML += this.user.firstName;
         }
       }
       miP = document.getElementById("lastName");
       if(miP){
         if(this.user.lastName != undefined){
-          miP.innerHTML = this.user.lastName;
-        }
-      }
-      miP = document.getElementById("firstName");
-      if(miP){
-        if(this.user.firstName != undefined){
-          miP.innerHTML = this.user.firstName;
+          miP.innerHTML += this.user.lastName;
         }
       }
       miP = document.getElementById("age");
       if(miP){
         if(this.user.age != undefined){
-          miP.innerHTML = ""+ this.user.age;
+          miP.innerHTML += this.user.age;
         }
       }
       miP = document.getElementById("weight");
       if(miP){
         if(this.user.weight != undefined){
-          miP.innerHTML = ""+ this.user.weight;
+          miP.innerHTML += this.user.weight;
         }
       }
       miP = document.getElementById("height");
       if(miP){
         if(this.user.height != undefined){
-          miP.innerHTML = ""+ this.user.height;
+          miP.innerHTML += this.user.height;
         }
       }
       miP = document.getElementById("routinesAmount");
       if(miP){
         if(this.user.userRoutines.length > 0){
-          miP.innerHTML = this.user.userRoutines.length + " routines";
+          miP.innerHTML += this.user.userRoutines.length;
         }
     }
   }
