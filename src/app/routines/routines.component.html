@@ -23,7 +23,7 @@
     <br>
     <div id="options">
         <button (click)="displayCreate()" id="optionCreate" class="optionButton" style="display: none;">ADD ROUTINE</button>
-        <button id="optionLook" class="optionButton" style="display: none;">LOOK OTHERS ROUTINES</button>
+        <button id="optionLook" class="optionButton" style="display: none;" (click)="showRoutines()">LOOK OTHERS ROUTINES</button>
     </div>
   
     <div id="noRoutines" style="display: none;">
@@ -38,17 +38,29 @@
         <h1>The exercise you're trying to add is already added on your routine</h1>
     </div>
 
+    <div id="messages">
+        <p id="repeatedRoutine" style="display: none;">You cannot have two or more routines with the same name</p>
+    </div>
+
     <div id="routinesFounded" style="display: none;">
         <div id="container">
             <div *ngFor="let routine of routinesList" class="routine-item" (click) = addEx(routine)>
                 <h1 class="routine-name"> {{routine.name}}</h1>
                 <p class="routine-amountEX"> {{routine.excerciseList.length}} excercises</p>
+                <p class="routine-access"> {{routine.publicRoutine}} </p>
             </div>
         </div>
     </div>
     <div id="create" style="display: none;">
         <label for="nameRoutine">Name</label>
         <input type="text" name="nameRoutine" id="nameRoutine" placeholder="Set a name for your routine">
+        <br>
+        <p>Select if you want your routine to be visible for everyone or private</p>
+        <input type="radio" name="publicAccess" id="publicAccessInp" (click)="desmarcarOpcion('privateAccess')">;
+        <label for="publicAccess">Public</label>
+        <br>
+        <input type="radio" name="privateAccess" id="privateAccessInp" (click)="desmarcarOpcion('publicAccess')">;
+        <label for="privateAccess">Private</label>
         <button id="createRoutine" (click)="crearRutina()">Create</button>
     </div>
     <div id="repsEx" style="display: none;">

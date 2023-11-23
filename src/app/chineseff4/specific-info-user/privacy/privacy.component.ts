@@ -24,70 +24,116 @@ export class PrivacyComponent implements OnInit {
   changeWindow(name: string){
     if(name == "lastPassButtonMail"){
       this.displayNone("change");
+      this.displayNone("changeMessageH1");
       this.displayBlock("lastPasswordSetMail");
     }else{
-      this.displayNone("change");
+      if(name == ''){
+        window.location.href = name;
+      }else{
+        this.displayNone("change");
+      this.displayNone("changeMessageH1");
       this.displayBlock("lastPasswordSet");
+      }
     }
+    this.displayBlock("currentPass");
   }
   checkPassword(){
     let miInput = document.getElementById("lastPassInp") as HTMLInputElement;
     if(miInput){
       let passAux = miInput.value;
+      this.displayNone("currentPass");
       if(this.user.password == passAux){
-        this.displayNone("lastPasswordSet");
+        this.displayBlock("newPass");
         this.displayBlock("passwordChange");
+        this.displayNone("lastPasswordSet");
+        this.displayNone("incorrectPass");
+      }else {
+        this.displayBlock("incorrectPass");
       }
     }
   }
   checkPasswordForMail(){
     let miInput = document.getElementById("lastPassInpMail") as HTMLInputElement;
     if(miInput){
-      let passAux = miInput.value;      
+      let passAux = miInput.value;  
+      this.displayNone("currentPass");    
       if(this.user.password == passAux){        
         this.displayNone("lastPasswordSetMail");
+        this.displayBlock("newMail");
         this.displayBlock("emailChange");
+        this.displayNone("incorrectPass");
+      }else {
+        this.displayBlock("incorrectPass");
       }
     }
   }
   changePassword(){
     let miInput = document.getElementById("newPassInp") as HTMLInputElement;
     if(miInput){
+      this.displayNone("newPass");
       let passAux = miInput.value;
-      this.user.password = passAux;
-      localStorage.setItem("oneUser", JSON.stringify(this.user));
-      if(this.user.id != undefined){
+      if (this.user.password == passAux) {
+        this.displayBlock("samePass");
+      }else {
+        this.displayNone("passwordChange");
+        this.displayNone("samePass");
+        this.user.password = passAux;
+        localStorage.setItem("oneUser", JSON.stringify(this.user));
+        if(this.user.id != undefined){
         this.usersList[this.user.id] = this.user;
         this.userService.users = this.usersList;
         this.userService.persistirDatos();
         console.log("PERSISTIDO NUEVAMENTE CON CONTRASENA CAMBIADA");
-        
+        this.displayBlock("passChanged");
+        }
       }
+      this.displayBlock("backToMenu");
+    }
+  }
+  verifyPass(password: string){
+    if (this.user.password == password) {
+      this.displayBlock("samePass");
     }
   }
   changeEmail(){
     let miInput = document.getElementById("newMailInp") as HTMLInputElement;
     if(miInput){
+      this.displayNone("newMail");
       let mailAux = miInput.value;
       let change = this.verifyMail(mailAux);
       if(change){
+        this.displayNone("emailChange");
+        this.displayNone("emailNotChanged");
+        this.displayNone("sameEmail");
         this.user.email = mailAux;
         localStorage.setItem("oneUser", JSON.stringify(this.user));
+        this.displayBlock("emailChanged");
         if(this.user.id != undefined) {
         this.usersList[this.user.id] = this.user;
         this.userService.users = this.usersList;
         this.userService.persistirDatos();
         console.log("PERSISTIDO NUEVAMENTE CON MAIL CAMBIADO");
         }
+      }else {
       }
+      this.displayBlock("backToMenu");
     }
   }
   verifyMail(email: string): boolean{
     let i = 0
     let change = true;
+    if(this.user.id != undefined){
+      if(this.usersList[this.user.id].email = email){
+        change = false;
+        this.displayNone("emailNotChanged");
+        this.displayBlock("sameEmail");
+      }
+    }
     while(i<this.usersList.length && change == true) {
       if(email == this.usersList[i].email) {
         change = false;
+        this.displayNone("sameEmail");
+        this.displayBlock("emailNotChanged");
       }else {
         i++;
       }

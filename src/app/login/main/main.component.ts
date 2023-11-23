@@ -41,17 +41,59 @@ export class MainComponent implements OnInit{
   //Cuando se sube el formulario, se crea el nuevo Usuario y lo agrega a la lista de usuarios:
   onSubmit(event: Event){
     event.preventDefault();
-    this.verifyUserRegistration();
-    if(this.register == true) {
-      let nuevoUsuario: Usuario = new Usuario (this.email, this.userName, this.password, this.userList.length);
-      this.userService.agregarUsuario(nuevoUsuario);
-      this.userService.persistirDatos();
-      this.userList = this.userService.obtenerUsuarios();
-      localStorage.setItem('registered', 'You have been registered successfully');
+    if(!this.validateEmail(this.email)){
+      alert('Please enter a valid email');
+    }else{
+      if(!this.validateInput(this.userName)){
+        alert('Please enter a userName');
+      }else{
+        if(!this.validatePassword(this.password)){
+        }else {
+          this.verifyUserRegistration();
+          if(this.register == true) {
+          let nuevoUsuario: Usuario = new Usuario (this.email, this.userName, this.password, this.userList.length);
+          this.userService.agregarUsuario(nuevoUsuario);
+          this.userService.persistirDatos();
+          this.userList = this.userService.obtenerUsuarios();
+          localStorage.setItem('registered', 'You have been registered successfully');
     } else {
       localStorage.setItem('repeated', 'The email is already used by another account');
     }
-    location.reload();    
+    location.reload(); 
+        }
+      }
+    }   
+  }
+   validateInput(input: string): boolean {
+    return input.length > 0;
+  }
+  validatePassword(password: string) {
+    const regexMayuscula = /[A-Z]/;
+  const regexNumero = /[0-9]/;
+  if(password.length == 0){
+    alert("No puedes dejar en blanco la contraseña");
+  }else{
+    if(password.length<8){
+      alert("La contraseña debe tener 8 caracteres como minimo");
+    }else {
+      if(!regexMayuscula.test(password)){
+        alert("La contraseña debe contener al menos una mayuscula");
+      }else{
+        if(!regexNumero.test(password)){
+          alert("la contraseña debe contener al menos un numero");
+        }
+      }
+    }
+  }
+  return (
+    password.length >= 8 &&
+    regexMayuscula.test(password) &&
+    regexNumero.test(password)
+  )
+  }
+  validateEmail(email: string){
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regexEmail.test(email);
   }
   verifyUserRegistration() {
     let i = 0

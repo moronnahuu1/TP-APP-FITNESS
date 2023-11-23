@@ -12,6 +12,6 @@ export class NavBarLoggedComponent {
   logOut() {
     localStorage.removeItem("oneUser");
     console.log("REMOVED");
-    location.reload();
+    window.location.href = 'login';
   }
 }

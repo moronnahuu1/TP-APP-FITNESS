@@ -15,6 +15,7 @@ export class RoutinesComponent {
   ejercicioSerializado = this.urlParams.get('parametro');
   exerciseAdded = this.urlParams.get('access');
   routinesList: routine[] = [];
+  publicRoutinesList: routine[] = [];
   usersList: Usuario[] = [];
   position = -1;
   user: Usuario = new Usuario("","","");
@@ -26,7 +27,7 @@ export class RoutinesComponent {
     this.user = new Usuario("","","");
     if(userSerializado){
       this.user = JSON.parse(userSerializado);
-    }    
+    } 
       this.position = this.verificarUsuarioExistente(this.user);
       console.log(this.user);
       
@@ -54,6 +55,17 @@ export class RoutinesComponent {
       }else { ///NO HAY UN USUARIO LOGUEADO
         console.log("Para acceder a las rutinas debes estar logueado");
       }
+      for(let i = 0; i<this.usersList.length; i++){
+        console.log("PRIMER FOR");
+        for(let m = 0; m<this.usersList[i].userRoutines.length; m++){
+          console.log("SEGUNDO FOR");
+          if(this.usersList[i].userRoutines[m].publicRoutine == true) {
+            this.usersList[i].userRoutines[m].userName = this.usersList[i].userName;
+            this.publicRoutinesList.push(this.usersList[i].userRoutines[m]);
+          }
+        }
+      }
+      localStorage.setItem("publicRoutines", JSON.stringify(this.publicRoutinesList));
     }
   displayBlock(name: string){
     let miDiv = document.getElementById(name);
@@ -76,14 +88,45 @@ export class RoutinesComponent {
   crearRutina(){
     var inputValor = <HTMLInputElement>document.getElementById("nameRoutine");
     let input = inputValor.value;
-    let rutina: routine = new routine(input, this.routinesList.length);
-    this.routinesList.push(rutina);
+    var privateOptionAccess = <HTMLInputElement>document.getElementById("privateAccessInp");
+    var publicOptionAccess = <HTMLInputElement>document.getElementById("publicAccessInp");
+    let optionAccessValue = false;
+    if(privateOptionAccess.checked){
+      console.log("PRIVADO");
+      
+      optionAccessValue = false;
+    }else {
+      if(publicOptionAccess.checked){
+        console.log("PUBLICO");
+        
+        optionAccessValue = true;
+      }
+    }
+    let rutina: routine = new routine(input, this.routinesList.length, optionAccessValue);
+    let access = this.verificarRutina(rutina);
+    if(access){
+      this.routinesList.push(rutina);
     this.user.userRoutines = this.routinesList;
     localStorage.setItem("oneUser", JSON.stringify(this.user));
     this.usersList[this.position] = this.user;
     localStorage.setItem("users", JSON.stringify(this.usersList));
+    this.displayNone("repeatedRoutine");
     location.reload();
-    console.log(this.routinesList);
+    }else{
+      this.displayBlock("repeatedRoutine");
+    }
+  }
+  verificarRutina(rutina: routine): boolean{
+    let i = 0;
+    let access = true;
+    while(i<this.routinesList.length && access == true){
+      if(this.routinesList[i].name == rutina.name){
+        access = false;
+      }else{
+        i++;
+      }
+    }
+    return access;
   }
   verificarUsuarioExistente(user: Usuario): number{
     let i=0;
@@ -134,5 +177,14 @@ addEx(rutina: routine){
   }else{
     this.changeWindow(rutina);
   }
+}
+ desmarcarOpcion(otraOpcion: any) {
+  let opcion = document.getElementById(otraOpcion) as HTMLInputElement;
+  if(opcion){
+    opcion.checked = false;
+  }
+}
+showRoutines(){
+  window.location.href = 'publicRoutinesShow';
 }
 }
