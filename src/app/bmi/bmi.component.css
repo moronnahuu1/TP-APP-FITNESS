@@ -15,13 +15,15 @@ html, body {
      grid-template-columns: 30vw;
      grid-template-rows: repeat(3,10vh) 5vh repeat(2,10vh);
      grid-gap: 10px;
-     
 }
 
 h1{
     text-align: center;
+    font-family: 'Agbalumo';
     color: rgb(5, 4, 4);
 }
+
+
 .submit-btn{
     background-color: turquoise;
 }
@@ -29,13 +31,22 @@ h1{
     background-color: yellow;
     display: grid;
     grid-template-rows: 50% 50%;
+    font-family: 'Agbalumo';
 }
 .status{
     background-color: aquamarine;
     display: grid;
     grid-template-rows: 50% 50%;
+    font-family: 'Agbalumo';
     
 }
+
+.result{
+    font-family: 'Quicksand';
+    font-size: 15px;
+    margin-top: 5px;
+}
+
 .container > div{
     padding: 10px;
     font-size: 20px;
@@ -50,13 +61,17 @@ button,input{
     outline: none;
     font-size: 1.5vw;
     border-radius: 8px;
+    font-family: 'Carter One';
+    
 }
 input{
-    background: #ffdd99;
+    background: rgb(245, 210, 157);
     text-indent: 0.5em;
     max-width:100% ;
-    color: black;
+    color: rgb(0, 0, 0);
     outline: none;
+    font-family: 'Quicksand';
+    font-size: 15px;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -77,9 +92,13 @@ button:hover{
 
 
 
+
 body{
-    background-color: #FBAB7E;
-    background-image: linear-gradient(62deg, #fce044 0%, #f5b208 100%);
+    /* background-color: #FBAB7E;
+    background-image: linear-gradient(62deg, #fce044 0%, #f5b208 100%); */
+    background-color: #FEE140;
+background-image: linear-gradient(90deg, #FEE140 0%, #FA709A 100%);
+
     /* background-color: #85FFBD;
 background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%); */
 /* background-color: #FFE53B;
@@ -113,3 +132,14 @@ background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%); */
     color: #222;  
     margin-top: 10px;
 }
+
+
+
+
+
+
+
+
+
+
+

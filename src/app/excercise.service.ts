@@ -63,13 +63,15 @@ export class ExcerciseService {
   searchEX(nombre: any): Array<Excercise>{
     let ejerciciosEncontrados: Array<Excercise>=[];
     let i=0;  
-    while(i<this.excercises.length) {
-      if(this.excercises[i].getName().indexOf(nombre) >0) {
-        console.log('Ejercicio:'+this.excercises[i].getName());
-        ejerciciosEncontrados.push(this.excercises[i]);
-      } 
-        i++;
-    }
+
+      while(i<this.excercises.length) {
+        console.log('Tamaño:'+this.excercises.length);
+        if(this.excercises[i].getName().includes(nombre)) {
+          console.log('Ejercicio:'+this.excercises[i].getName());
+          ejerciciosEncontrados.push(this.excercises[i]);
+        } 
+          i++;
+      }
     return ejerciciosEncontrados;
   }
 
@@ -105,6 +107,14 @@ export class ExcerciseService {
 
   resetOffset(){
     this.offset =0;
+  }
+
+  getTotalLength(){
+    let lenght = 0;
+    for (let offset = 0; this.excercises.length > 0; offset+10){
+      lenght += this.excercises.length;
+    }
+      return lenght;
   }
   // Agrega otros métodos para actualizar, eliminar o interactuar con los datos de ejercicios según tus necesidades.
 }

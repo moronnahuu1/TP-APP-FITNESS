@@ -7,28 +7,38 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Domine:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
 </head>
 <body>
    <app-chineseff4  *ngIf="element == true"></app-chineseff4>
-    <!-- <div class="container" *ngIf="logged == true">  
+   <app-nav-bar-logged  *ngIf="logged == true"></app-nav-bar-logged>
+    <div class="container" *ngIf="logged == true">  
         <h1>BMI Calculator</h1>
         <label>
-            <input id="h-input" type="number" placeholder="Enter Your Height in Centimeters: ">
+            <input id="h-input" type="number" placeholder="Enter Your Height in Centimeters: " required>
         </label>        
         <label>
-            <input id="w-input" type="number" placeholder="Enter Your Weight in Kilogrames: ">
+            <input id="w-input" type="number" placeholder="Enter Your Weight in Kilogrames: " required>
         </label>            
-        <button type="submit" onclick="Calculate()">Calculate BMI</button>
+        <button type="submit" (click)="Calculate()">Calculate BMI</button>
             
         <div class="bmi-value">
             <h4>BMI Value: </h4>
-            <div id="bmi-output"></div>
+            <div class="result" id="bmi-output"></div>
         </div>
         <div class="status">
             <h4>Status: </h4>
-            <div id="bmi-status"></div>
+            <div class="result" id="bmi-status"></div>
         </div> 
-    </div> -->
+    </div>
+
+    
+    
     <div id="not-logged-form"  *ngIf="element == true">
         <h1 id="warning">You must be loged to try the BMI calculator</h1>
         <button class="logged" (click)="changeWindow('login')">Log In</button>

@@ -37,7 +37,7 @@ export class PaginationComponent {
    async nextPage (){
     let offset = this.excerciseService.getOffset();
     console.log('OFFSET:'+offset);
-    if(offset < 100){ //Verificamos que no estemos en una pagina menor a la principal
+    if(offset < 1000){ //Verificamos que no estemos en una pagina menor a la principal
       this.exerciseDataService.resetExercises();
       this.excerciseService.incrementOffset();
       console.log('OFFSET:'+this.excerciseService.getOffset());
