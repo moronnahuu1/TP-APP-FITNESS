@@ -52,18 +52,6 @@
             </div>
         </div>
     </div>
-    <div id="create" style="display: none;">
-        <label for="nameRoutine">Name</label>
-        <input type="text" name="nameRoutine" id="nameRoutine" placeholder="Set a name for your routine">
-        <br>
-        <p>Select if you want your routine to be visible for everyone or private</p>
-        <input type="radio" name="publicAccess" id="publicAccessInp" (click)="desmarcarOpcion('privateAccess')">;
-        <label for="publicAccess">Public</label>
-        <br>
-        <input type="radio" name="privateAccess" id="privateAccessInp" (click)="desmarcarOpcion('publicAccess')">;
-        <label for="privateAccess">Private</label>
-        <button id="createRoutine" (click)="crearRutina()">Create</button>
-    </div>
     <div id="repsEx" style="display: none;">
         <label for="reps">Set how many reps you want to do</label>
         <input type="text" name="reps" id="reps">

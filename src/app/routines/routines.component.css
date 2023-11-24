@@ -1,19 +1,23 @@
 #noRoutineMessage {
-    color: black;
+    margin-top: 210px;
 }
 #noRoutines {
-    background-color: rgb(203, 203, 203);
+    background-color: rgb(43, 43, 56);
+    color: white;
     width: 80%;
     height: 500px;
     margin-left: 138px;
     margin-top: 40px;
     border-radius: 15px;
-    border: 3px solid grey;
+    border: 1px solid grey;
     box-shadow: rgba(22, 20, 20, 0.5) 10px 10px 10px 10px; 
     text-align: center;
+    transition: transform 0.5s ease; /* Agrega una transición suave para una animación más agradable */
 }
-#noRoutineMessage {
-    margin-top: 210px;
+#noRoutines:hover {
+    color: greenyellow;
+    border: 1px solid rgb(166, 166, 166);
+    transform: scale(1.05); /* Escala el div al 120% del tamaño original */
 }
 
 #options {
@@ -109,12 +113,12 @@
     color: rgb(36, 43, 49);
 }
 #selectRoutine {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin-top: 20px;
+    margin-left: 510px;
+    text-align: center;
     background-color: rgb(0, 181, 0);
-    border-radius: 60px;
-    width: 50%;
+    border-radius: 5px;
+    width: 30%;
     height: 100px;
 }
 #selectH1{
@@ -123,5 +127,5 @@
 }
 body{
     background-color: rgb(21, 21, 28);
-    height: 810px;
+    height: 850px;
 }

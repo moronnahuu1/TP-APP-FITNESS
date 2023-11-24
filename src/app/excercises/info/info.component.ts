@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { Display } from 'src/app/display/display';
 import { ExcerciseService } from 'src/app/excercise.service';
 import { ExerciseDataService } from 'src/app/exercise-data-service.service';
 import { Excercise } from 'src/app/models/excercise';
@@ -23,8 +24,8 @@ export class InfoComponent implements OnInit{
     let user: Usuario = new Usuario("","","");
     if(userSerializado){
       user = JSON.parse(userSerializado);
-      this.displayBlock("logged");
-      this.displayNone("notLogged");
+      Display.displayBlock("logged");
+      Display.displayNone("notLogged");
       
     }
       console.log(user);
@@ -39,18 +40,6 @@ export class InfoComponent implements OnInit{
         this.excerciseList = exercises;
       }
     );
-  }
-  displayBlock(name: string){
-    let miDiv = document.getElementById(name);
-        if(miDiv){
-        miDiv.style.display = 'block';
-        }
-  }
-  displayNone(name: string){
-    let miDiv = document.getElementById(name);
-        if(miDiv){
-        miDiv.style.display = 'none';
-        }
   }
   verificarUsuarioExistente(user: Usuario): number{
     let i=0;

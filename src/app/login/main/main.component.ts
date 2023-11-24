@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
 import { UserService } from '../../user.service'; // Ruta relativa para navegar hacia atrás y luego al servicio
 import { Validators } from 'src/app/validators/validators';
+import { Display } from 'src/app/display/display';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -13,19 +14,19 @@ export class MainComponent implements OnInit{
     let registeredMessage = localStorage.getItem('registered');
     if(registeredMessage){
       this.displayMessages("messages", "green");
-      this.displayBlock("registeredMessage");
+      Display.displayBlock("registeredMessage");
       localStorage.removeItem("registered");
     }
     let repeatedMessage = localStorage.getItem('repeated');
     if(repeatedMessage){
       this.displayMessages("messages", "red");
-      this.displayBlock("repeatedMessage");
+      Display.displayBlock("repeatedMessage");
       localStorage.removeItem('repeated');
     }
     let wrongAccess = localStorage.getItem('wrongAccess');
     if(wrongAccess){
       this.displayMessages("messages", "red");
-      this.displayBlock("wrongLogIn");
+      Display.displayBlock("wrongLogIn");
       localStorage.removeItem('wrongAccess');
     }
   }
@@ -42,14 +43,13 @@ export class MainComponent implements OnInit{
   //Cuando se sube el formulario, se crea el nuevo Usuario y lo agrega a la lista de usuarios:
   onSubmit(event: Event){
     event.preventDefault();
-    if(Validators.validateEmail(this.email)){
+    if(!Validators.validateEmail(this.email)){
       alert('Please enter a valid email');
     }else{
-      if(Validators.validateInput(this.userName)){
+      if(!Validators.validateInput(this.userName)){
         alert('Please enter a userName');
       }else{
         if(Validators.validatePassword(this.password)){
-        }else {
           this.verifyUserRegistration();
           if(this.register == true) {
           let nuevoUsuario: Usuario = new Usuario (this.email, this.userName, this.password, this.userList.length);
@@ -112,18 +112,6 @@ export class MainComponent implements OnInit{
       console.log("EMAIL O CONTRASEÑA INCORRECTOS");
     }
     return i-1;
-  }
-  displayBlock(name: string){
-    let miDiv = document.getElementById(name);
-        if(miDiv){
-        miDiv.style.display = 'block';
-        }
-  }
-  displayNone(name: string){
-    let miDiv = document.getElementById(name);
-        if(miDiv){
-        miDiv.style.display = 'none';
-        }
   }
   displayMessages(name: string, color: string){
     let miDiv = document.getElementById(name);
