@@ -30,6 +30,10 @@
         <p id="created" class="message" style="display: none;">Routine successfully created</p>
         <p id="repeated" class="message" style="display: none;">The routine is already defined</p>
     </div>
+    <div id="backToListDiv">
+        <button id="backToList" class="back" (click)="backToList('routines')">BACK TO PREVIOUS PAGE</button>
+        <button id="backToMenu" class="back" (click)="backToList('')">BACK TO THE PRINCIPAL MENU</button>
+    </div>
     <app-footer></app-footer>
 </body>
 </html>

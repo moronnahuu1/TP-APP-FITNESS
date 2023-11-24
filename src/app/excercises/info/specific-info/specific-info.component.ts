@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Display } from 'src/app/display/display';
 import { Excercise } from 'src/app/models/excercise';
 import { Usuario } from 'src/app/models/usuario';
 
@@ -46,12 +47,21 @@ export class SpecificInfoComponent implements OnInit {
     }
   }
   }
+  agregarArutinaDisplay(){
+    Display.displayBlock("repsDiv");
+  }
   agregarArutina(){
-    if (this.ejercicioSerializado) { 
-      const exercise: Excercise = JSON.parse(decodeURIComponent(this.ejercicioSerializado)); 
-      const nuevoEJ = JSON.stringify(exercise);
-      const nuevaURL = `routines?parametro=${encodeURIComponent(nuevoEJ)}`;
-      window.location.href = nuevaURL; 
+    let input = document.getElementById("repsInp") as HTMLInputElement;
+    if(input){
+      let inputValue = input.value;
+      let inputNumber = parseInt(inputValue);
+      if (this.ejercicioSerializado) { 
+        const exercise: Excercise = JSON.parse(decodeURIComponent(this.ejercicioSerializado)); 
+        exercise.reps = inputNumber;
+        const nuevoEJ = JSON.stringify(exercise);
+        const nuevaURL = `routines?parametro=${encodeURIComponent(nuevoEJ)}`;
+        window.location.href = nuevaURL;
+      }
     }
   }
 }

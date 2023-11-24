@@ -11,10 +11,10 @@
     <div class="routine-item">
         <div *ngFor="let exercise of excerciseList" class="exercise-item">
             <h1 class="exercise-name"> {{exercise.name}}</h1>
-            <p class="exercise-type"> {{exercise.type}}</p>
-            <p class="exercise-difficulty">{{exercise.difficulty}}</p>
-            <p class="exercise-muscle">{{exercise.muscle}}</p>
-            <p class="exercise-reps">{{exercise.reps}}</p>
+            <p class="exercise-type">Type: {{exercise.type}}</p>
+            <p class="exercise-difficulty">Difficulty: {{exercise.difficulty}}</p>
+            <p class="exercise-muscle">Muscle: {{exercise.muscle}}</p>
+            <p class="exercise-reps">Repetitions: {{exercise.reps}}</p>
             <p class="exercise-instructions">{{exercise.instructions}}</p>
         </div>
     </div>

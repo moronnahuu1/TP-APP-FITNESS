@@ -125,4 +125,7 @@ export class CreateRoutineComponent {
         opcion.checked = false;
       }
     }
+    backToList(name: string){
+      window.location.href = name;
+    }
 }

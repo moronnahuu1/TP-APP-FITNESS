@@ -1,10 +1,6 @@
 body {
     margin: 0;
 	padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    justify-items: center;
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
 	background: linear-gradient(to bottom, #001b48, #02457a, #018abe);
@@ -26,7 +22,8 @@ body {
     border: 3px solid rgb(130, 130, 130);
     border-radius: 8px;
     text-align: center;
-    margin-top: 70px;
+    margin-top: 130px;
+    margin-left: 470px;
     width: 500px;
     box-shadow: rgba(22, 20, 20, 0.5) 12px 12px 12px 12px; 
 }
@@ -43,15 +40,37 @@ body {
 #addToRoutine {
     position: fixed;
     text-align: center;
-    margin-top: -500px;
+    margin-top: 15px;
+    margin-left: 595px;
     border-radius: 20px;
     border: 2px solid rgb(124, 124, 124);
-    background-color: rgb(177, 177, 177);
+    background-color: rgb(43, 43, 56);
+    color: white;
     width: 250px;
     cursor: pointer;
+    transition: transform 0.5s ease; /* Agrega una transición suave para una animación más agradable */
     height: 85px;
+}
+#addToRoutine:hover {
+    border: 2px solid rgb(189, 189, 189);
+    transform: scale(1.03); /* Escala el div al 120% del tamaño original */
 }
 #h1add {
     margin-top: 27px;
     font-size: 20px;
+}
+#repsDiv {
+    background-color: rgb(21, 21, 28);
+    color: white;
+    border-radius: 10px;
+    border: 1px solid grey;
+    margin-left: 15px;
+    width: fit-content;
+    padding: 15px;
+}
+button {
+    margin-top: 15px;
+    border-radius: 5px;
+    background-color: greenyellow;
+    border: 0px;
 }
