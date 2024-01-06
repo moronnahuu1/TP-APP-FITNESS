@@ -68,8 +68,8 @@ export class RoutinesComponent {
       }
       localStorage.setItem("publicRoutines", JSON.stringify(this.publicRoutinesList));
     }
-  displayCreate(){
-    window.location.href = 'createRoutine';
+  displayCreate(name: string){
+    window.location.href = name;
   }
   verificarUsuarioExistente(user: Usuario): number{
     let i=0;

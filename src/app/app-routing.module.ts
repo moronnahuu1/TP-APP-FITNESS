@@ -15,6 +15,8 @@ import { SettingsComponent } from './chineseff4/specific-info-user/settings/sett
 import { PrivacyComponent } from './chineseff4/specific-info-user/privacy/privacy.component';
 import { PublicRoutinesShowComponent } from './routines/public-routines-show/public-routines-show.component';
 import { CreateRoutineComponent } from './routines/create-routine/create-routine.component';
+import { DeleteRoutineComponent } from './routines/delete-routine/delete-routine.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
 const routes: Routes = [
   {
@@ -68,6 +70,14 @@ const routes: Routes = [
   {
     path: 'createRoutine',
     component: CreateRoutineComponent
+  },
+  {
+    path: 'deleteRoutine',
+    component: DeleteRoutineComponent
+  },
+  {
+    path: 'calendar',
+    component: CalendarComponent
   }
 ];
 
