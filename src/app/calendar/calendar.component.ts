@@ -3,6 +3,7 @@ import { day } from '../models/day';
 import { week } from '../models/week';
 import { month } from '../models/month';
 import { season } from '../models/season';
+import { style } from '@angular/animations';
 
 @Component({
   selector: 'app-calendar',
@@ -22,6 +23,11 @@ ngOnInit(): void {
   if(newSeasonStorage){
     newSeason = JSON.parse(newSeasonStorage);
     this.months = newSeason.months;
+    for(let i=0; i<this.months.length; i++){
+      this.moveDays(this.months[i]);
+    }
+    /*newSeason.months = this.months;
+    localStorage.setItem("2024", JSON.stringify(newSeason));*/
   }
 }
 isCurrentDay(dayNumber: number, monthNumber: number): boolean{
@@ -31,6 +37,12 @@ isCurrentDay(dayNumber: number, monthNumber: number): boolean{
     return true;
   }else{
     return false;
+  }
+}
+moveDays(month: month){
+  for(let i=0; i<month.startDayNumb-1; i++){
+    let dayAux1 = new day(0, '', 0);
+    month.days.unshift(dayAux1);
   }
 }
 currentDateStyle(month: number, date: number){
@@ -44,62 +56,62 @@ createCalendar(){
     switch(i){
       case 1:
         days = this.createDaysAndWeeks(31, 1);
-        let january = new month('January', days, 1);
+        let january = new month('January', days, 1, days[0].weekDay);
         months.push(january);
         break;
       case 2:
         days = this.createDaysAndWeeks(29, 4);
-        let february = new month('February', days, 2);
+        let february = new month('February', days, 2,  days[0].weekDay);
         months.push(february);
         break;
       case 3:
         days = this.createDaysAndWeeks(31, 5);
-        let march = new month('March', days, 3);
+        let march = new month('March', days, 3,  days[0].weekDay);
         months.push(march);
         break;
       case 4:
         days = this.createDaysAndWeeks(30, 1);
-        let april = new month('April', days, 4);
+        let april = new month('April', days, 4,  days[0].weekDay);
         months.push(april);
         break;
       case 5: 
         days = this.createDaysAndWeeks(31, 3);
-        let may = new month('May', days, 5);
+        let may = new month('May', days, 5,  days[0].weekDay);
         months.push(may);
         break;
       case 6:
         days = this.createDaysAndWeeks(30, 6);
-        let june = new month('June', days, 6);
+        let june = new month('June', days, 6,  days[0].weekDay);
         months.push(june);
         break;
       case 7:
         days = this.createDaysAndWeeks(31, 1);
-        let july = new month('July', days, 7);
+        let july = new month('July', days, 7,  days[0].weekDay);
         months.push(july);
         break;
       case 8:
         days = this.createDaysAndWeeks(31, 4);
-        let august = new month('August', days, 8);
+        let august = new month('August', days, 8,  days[0].weekDay);
         months.push(august);
         break;
       case 9:
         days = this.createDaysAndWeeks(30, 7);
-        let september = new month('September', days, 9);
+        let september = new month('September', days, 9,  days[0].weekDay);
         months.push(september);
         break;
       case 10:
         days = this.createDaysAndWeeks(31, 2);
-        let october = new month('October', days, 10);
+        let october = new month('October', days, 10,  days[0].weekDay);
         months.push(october);
         break;
       case 11:
         days = this.createDaysAndWeeks(30, 5);
-        let november = new month('November', days, 11);
+        let november = new month('November', days, 11,  days[0].weekDay);
         months.push(november);
         break;
       case 12:
         days = this.createDaysAndWeeks(31, 7);
-        let december = new month('December', days, 12);
+        let december = new month('December', days, 12,  days[0].weekDay);
         months.push(december);
         break;
     }
@@ -117,36 +129,40 @@ createDaysAndWeeks(daysNumber: number, dayAux: number){
     }
     switch(dayAux){
       case 1:
-        let monday = new day(i, 'Monday');
+        let monday = new day(i, 'Monday', 1);
         days.push(monday);
         break;
       case 2:
-        let tuesday = new day(i, 'Tuesday');
+        let tuesday = new day(i, 'Tuesday', 2);
         days.push(tuesday);
         break;
       case 3:
-        let wednesday = new day(i, 'Wednesday');
+        let wednesday = new day(i, 'Wednesday', 3);
         days.push(wednesday);
         break;
       case 4:
-        let thursday = new day(i, 'Thursday');
+        let thursday = new day(i, 'Thursday', 4);
         days.push(thursday);
         break;
       case 5:
-        let friday = new day(i, 'Friday');
+        let friday = new day(i, 'Friday', 5);
         days.push(friday);
         break;
       case 6:
-        let saturday = new day(i, 'Saturday');
+        let saturday = new day(i, 'Saturday', 6);
         days.push(saturday);
         break;
       case 7:
-        let sunday = new day(i, 'Sunday');
+        let sunday = new day(i, 'Sunday', 7);
         days.push(sunday);
         break;
     }
     dayAux++;
   }
   return days;
+}
+changeWindow(name: string, month: month){
+  localStorage.setItem("monthSelected", JSON.stringify(month));
+  window.location.href = name;
 }
 }

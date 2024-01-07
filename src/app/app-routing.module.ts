@@ -17,6 +17,7 @@ import { PublicRoutinesShowComponent } from './routines/public-routines-show/pub
 import { CreateRoutineComponent } from './routines/create-routine/create-routine.component';
 import { DeleteRoutineComponent } from './routines/delete-routine/delete-routine.component';
 import { CalendarComponent } from './calendar/calendar.component';
+import { SingleMonthComponent } from './calendar/single-month/single-month.component';
 
 const routes: Routes = [
   {
@@ -78,6 +79,10 @@ const routes: Routes = [
   {
     path: 'calendar',
     component: CalendarComponent
+  },
+  {
+    path: 'singleMonth',
+    component: SingleMonthComponent
   }
 ];
 
