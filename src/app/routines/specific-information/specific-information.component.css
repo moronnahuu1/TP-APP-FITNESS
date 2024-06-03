@@ -6,6 +6,7 @@ body {
     justify-items: center;
 	font-family: 'Jost', sans-serif;
     background-image: url('../../../assets/gym5.jpg');
+    min-height: 830px;
 
 }
 #infoRoutine{
@@ -108,22 +109,29 @@ body {
     transform: scale(1.05); /* Escala el div al 120% del tamaño original */
 }
 #noExercises {
-    color: white;
-    background-color: rgb(43, 43, 56);
-    background-color: none;
-    border: 1px solid rgb(130, 130, 130);
-    border-radius: 8px;
-    text-align: center;
-    margin: 5px;
-    margin-left: 495px;
-    width: 470px;
-    height: 150px;
-    box-shadow: rgba(22, 20, 20, 0.5) 12px 12px 12px 12px; 
-    text-align: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 1em; /* Margen en unidades em */
+  padding: 1em; /* Relleno en unidades em */
+  box-shadow: 0px 13px 27px -5px rgba(50,50,93,0.25) , 0px 8px 16px -8px rgba(0,0,0,0.3) , 0px -6px 16px -6px rgba(0,0,0,0.025);
+  width: 50%; /* Ancho del 100% para ser responsive */
+  height: 230px; /* Altura fija en píxeles o cualquier unidad deseada */
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.7); /* Fondo blanco semitransparente */
+  backdrop-filter: blur(2px); /* Efecto de desenfoque */
+}
+#alignNE{
+  display: flex;
+  justify-content: center;
 }
 #noExercisesH1 {
-    margin-top: 20px;
     font-size: 30px;
+    font-family: "globerBold";
+    letter-spacing: 2px;
+}
+#swiperID{
+  width: 100%;
 }
 .btn {
     border: none;
@@ -233,6 +241,9 @@ body {
     #infoRoutine{
       padding-top: 2%;
     }
+    #noExercises{
+      width: 70%;
+    }
   }
   @media (min-width: 481px) and (max-width: 767px) {
     #swiperContainer{
@@ -253,6 +264,9 @@ body {
     }
     #infoRoutine{
       padding-top: 10%;
+    }
+    #noExercises{
+      width: 85%;
     }
   }
   @media (max-width: 480px) and (min-width: 280px) {
@@ -275,5 +289,11 @@ body {
     }
     #infoRoutine{
       padding-top: 10%;
+      h1{
+        font-size: 40px;
+      }
+    }
+    #noExercises{
+      width: 95%;
     }
   }

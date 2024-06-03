@@ -27,8 +27,10 @@ export class SpecificInformationComponent implements OnInit{
       this.excerciseList = routine.excerciseList;
     }else {
       let miDiv = document.getElementById("noExercises");
-      if(miDiv){
-        miDiv.style.display = 'block';
+      let swiper = document.getElementById("swiperID");
+      if(miDiv && swiper){
+        miDiv.style.display = 'flex';
+        swiper.style.display = 'none';
       }
     }
     }
