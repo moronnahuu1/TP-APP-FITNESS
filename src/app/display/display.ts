@@ -11,4 +11,10 @@ export class Display {
             miDiv.style.display = 'none';
             }
       }
+      static displayGrid(name: string){
+        let miDiv = document.getElementById(name);
+            if(miDiv){
+            miDiv.style.display = 'grid';
+            }
+      }
 }

@@ -1,4 +1,6 @@
 import { routine } from "./routine";
+import { routineScheduled } from "./routineScheduled";
+import { season } from "./season";
 
 export class Usuario {
     firstName: string | undefined;
@@ -13,7 +15,10 @@ export class Usuario {
     bmi: number | undefined;
     id: number | undefined;
     bmiStatus: string | undefined;
-
+    newSeason: season | undefined;
+    routinesXcalendar: Array<routineScheduled> = [];
+    image: string = ''
+    
     constructor(email: string,userName: string,password: string, id?: number, firstName?: string,lastName?: string,age?: number,weight?: number,height?: number, bmi?: number, bmiStatus?: string) {
       this.firstName = firstName;
       this.lastName = lastName;
@@ -26,14 +31,11 @@ export class Usuario {
       this.userRoutines = [];
       this.id = id;
       this.bmi = bmi;
-      this.bmiStatus = bmiStatus;
+      this.bmiStatus = bmiStatus; 
     }
     
     getEmail(){
       return this.email;
     }
-    
-    
-    
   }
   

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <app-nav-bar-logged></app-nav-bar-logged>
+    <br><br><br><br>
+    <div id="align">
+        <div id="container">
+            <div id="actualizeInfo">
+                <div id="show">
+                    <h1 id="accSet">ACCOUNT SETTINGS</h1>
+                </div>
+                <label for="firstName">First name</label>
+                <br>
+                <input type="text" name="firstName" id="firstNameInp" [value]="user.firstName">
+                <button class="btn btn-sep icon-save" (click)="setInfo('firstName')">SAVE</button>
+                <p id="savedFN" class="saved" style="display: none;">Saved!</p>
+                <br>
+                <label for="lastName">Last name</label>
+                <br>
+                <input type="text" name="lastName" id="lastNameInp" [value]="user.lastName">
+                <button class="btn btn-sep icon-save" (click)="setInfo('lastName')">SAVE</button>
+                <p id="savedLN" class="btn btn-sep icon-save" style="display: none;">Saved!</p>
+                <br>
+                <label for="age">Age</label>
+                <br>
+                <input type="text" name="age" id="ageInp" [value]="user.age">
+                <button class="btn btn-sep icon-save" (click)="setInfo('age')">SAVE</button>
+                <p id="savedAge" class="saved" style="display: none;">Saved!</p>
+                <br>
+                <label for="weight">Weight</label>
+                <br>
+                <input type="text" name="weight" id="weightInp" [value]="user.weight">
+                <button class="btn btn-sep icon-save" (click)="setInfo('weight')">SAVE</button>
+                <p id="savedWeight" class="saved" style="display: none;">Saved!</p>
+                <br>
+                <label for="height">Height</label>
+                <br>
+                <input type="text" name="height" id="heightInp" [value]="user.height">
+                <button class="btn btn-sep icon-save" (click)="setInfo('height')">SAVE</button>
+                <p id="savedHeight" class="saved" style="display: none;">Saved!</p>
+            </div>
+            <div id="backToMenu" class="btm btm-sep icon-all" (click)="changeWindow('')" style="display: block;">Principal menu</div>
+        </div>
+    </div>
+</body>
+</html>

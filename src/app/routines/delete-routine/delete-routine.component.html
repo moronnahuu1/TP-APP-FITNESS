@@ -6,26 +6,25 @@
     <title>Delete</title>
 </head>
 <body>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <app-nav-bar-logged></app-nav-bar-logged>
     <br><br><br><br>
-    <div id="container">
-        <h1 id="messageCreate">DELETE A ROUTINE</h1>
-    <div id="delete" style="display: none;">
-        <label for="nameRoutine" id="labelName">Name</label>
-        <br>
-        <input type="text" name="nameRoutine" id="nameRoutine" placeholder="Set the name of the routine to delete">
-        <br>
-        <button id="deleteRoutine" (click)="deleteRoutine()">Delete</button>
-    </div>
-    </div>
-    <br>
-    <div id="messages" style="display: none;">
-        <p id="deleted" class="message" style="display: none;">Routine successfully deleted</p>
-        <p id="notFounded" class="message" style="display: none;">Routine not founded</p>
+    <div id="align">
+        <div id="container">
+            <h1 id="messageCreate">DELETE A ROUTINE</h1>
+        <div id="delete" style="display: none;">
+            <label for="nameRoutine" id="labelName">Name</label>
+            <br>
+            <input type="text" name="nameRoutine" id="nameRoutine" placeholder="Set the name of the routine to delete">
+            <br>
+            <button id="deleteRoutine" (click)="deleteRoutine()" class="btn btn-3 btn-sep icon-delete">Delete</button>
+        </div>
+        </div>
     </div>
     <div id="backToListDiv">
-        <button id="backToList" class="back" (click)="backToList('routines')">BACK TO PREVIOUS PAGE</button>
-        <button id="backToMenu" class="back" (click)="backToList('')">BACK TO THE PRINCIPAL MENU</button>
+        <button id="backToList" class="btn btn-1 btn-sep icon-back" (click)="backToList('routines')">BACK TO PREVIOUS PAGE</button>
+        <button id="backToMenu" class="btn btn-2 btn-sep icon-backAll" (click)="backToList('')">BACK TO MAIN MENU</button>
     </div>
     <app-footer></app-footer>
 </body>

@@ -1,0 +1,192 @@
+body {
+    background: none;
+    background: url('../../../assets/gym7.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    min-height: 840px;
+}
+#align{
+    display: grid;
+    justify-items: center;
+}
+#container{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative;
+    left: 10%;
+}
+#userImage{
+    width: 100px;
+    padding: 10px;
+}
+#userImageDiv{
+    border: 1px solid white;
+    width: fit-content;
+    position: absolute;
+    margin: auto;
+}
+#userNameInfo{
+    text-align: center;
+    font-family: 'globerBold';
+    letter-spacing: 2px;
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+#userInfo {
+    position: relative;
+    flex: 1;
+    color: white;
+    display: grid;
+    text-align: left;
+    left: 20%;
+}
+#userName {
+    padding-right: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 30px;
+    width: fit-content;
+    border-radius: 10px;
+}
+#main {
+    text-align: center;
+    margin: 1em; /* Margen en unidades em */
+    padding: 1em; /* Relleno en unidades em */
+    box-shadow: 0px 13px 27px -5px rgba(50,50,93,0.25) , 0px 8px 16px -8px rgba(0,0,0,0.3) , 0px -6px 16px -6px rgba(0,0,0,0.025);
+    flex: 1 1 200px; /* Tamaño flexible con ancho mínimo y máximo */
+    /* opacity: 0.5; */
+    width: 50%; /* Ancho del 100% para ser responsive */
+    position: relative;
+    height: fit-content; /* Altura fija en píxeles o cualquier unidad deseada */
+    padding-bottom: 15%;
+    padding-top: 10px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.7); /* Fondo blanco semitransparente */
+    backdrop-filter: blur(2px); /* Efecto de desenfoque */
+    font-family: 'globerBold';
+    letter-spacing: 2px;
+}
+#userName:hover {
+    border: 1.5px solid rgb(134, 134, 134);
+}
+#yourAcc {
+    margin-top: 20px;
+}
+#userNameImage {
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+#image {
+    background-color: rgb(67, 67, 67);
+    border: 2px solid grey;
+    width: 150px;
+    height: 150px;
+    margin-left: -100px;
+    margin-top: 20px;
+}
+#buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+#privacyButton {
+    margin-right: 10px;
+}
+#settingsButton {
+    margin-left: 10px;
+}
+.button {
+    background-color: white;
+    border-radius: 10px;
+    border: 0;
+    cursor: pointer;
+    transition: transform 0.4s ease; /* Agrega una transición suave para una animación más agradable */
+}
+.button:hover {
+    background-color: rgb(200, 255, 0);
+    color: rgb(0, 0, 0);
+    transform: scale(1.08); /* Escala el div al 120% del tamaño original */
+}
+#routinesAmount{
+    cursor: pointer;
+}
+#routinesAmount:hover {
+    color: rgb(200, 255, 0);
+}
+
+@media (min-width: 1200px) {}
+@media (min-width: 768px) and (max-width: 1199px) {
+    #main{
+        width: 60%;
+        padding: 0;
+        margin: 0;
+        left: 0;
+        margin-top: 5%;
+    }
+    #userInfo{
+        font-size: 13px;
+        p{
+            max-width: 80%;
+            margin-left: 5%;
+        }
+    }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+    #main{
+        width: 80%;
+        padding: 0;
+        margin: 0;
+        left: 0;
+        margin-top: 15%;
+    }
+    #container{
+        left: 0;
+        display: grid;
+    }
+    #userImageDiv{
+        position: relative;
+        margin-left: 2%;
+        margin-bottom: 5%;
+    }
+    #userInfo{
+        left: 0;
+        p{
+            max-width: 80%;
+            margin-left: 2%;
+        }
+    }
+}
+@media (max-width: 480px) and (min-width: 280px) {
+    #main{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        left: 0;
+        margin-top: 10%;
+    }
+    #container{
+        left: 0;
+        display: grid;
+    }
+    #userImageDiv{
+        position: relative;
+        margin-left: 2%;
+        margin-bottom: 5%;
+    }
+    #userInfo{
+        left: 0;
+        font-size: 12px;
+        p{
+            max-width: 80%;
+            margin-left: 2%;
+        }
+    }
+}
+@media (max-width: 279px) {}

@@ -6,6 +6,11 @@ import { ExcerciseService } from '../excercise.service'; // Ruta relativa para n
   templateUrl: './excercises.component.html',
   styleUrls: ['./excercises.component.css']
 })
-export class ExcercisesComponent {
-  
+export class ExcercisesComponent implements OnInit{
+  ngOnInit(): void {
+    window.addEventListener('scroll', (): void => {
+      const yPos: number = -window.scrollY / 8; 
+      document.body.style.backgroundPositionY = yPos + 'px';
+    });
+  }
 }

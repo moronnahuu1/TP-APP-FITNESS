@@ -1,11 +1,5 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: rgb(48, 48, 56);
-  margin: 0;
-  padding: 0;
-  height: 870px;
-}
 #calendar {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 5px;
@@ -13,6 +7,7 @@ body {
   display: flex;
   text-align: center;
   justify-content: center;
+  z-index: 0;
 }
 #options{
   color: white;
@@ -63,22 +58,209 @@ padding-top: 3px;
 margin-top: -3px;
 height: 70%;
 }
-.button{
+
+.btn {
+  border: none;
+  font-family: 'Lato';
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  padding: 25px 80px;
   display: inline-block;
-    background-color: rgb(3, 186, 0);
-    width: 190px;
-    padding: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: transform 0.5s ease; /* Agrega una transición suave para una animación más agradable */
+  margin: 15px 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
 }
-.button:hover{
-  background-color: white;
-  color: black;
-  transform: scale(1.07); /* Escala el div al 120% del tamaño original */
+
+.btn:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
 }
+
+/* Pseudo elements for icons */
+.btn:before {
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* Icon separator */
+.btn-sep {
+  padding: 25px 60px 25px 120px;
+}
+
+.btn-sep:before {
+  background: rgba(0,0,0,0.15);
+}
+
+.btn:before {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  line-height: 3;
+  font-size: 140%;
+  width: 60px;
+}
+
+#deleteRoutine, #options{
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0px 13px 27px -5px rgba(50,50,93,0.25) , 0px 8px 16px -8px rgba(0,0,0,0.3) , 0px -6px 16px -6px rgba(0,0,0,0.025);
+  flex: 1 1 200px; /* Tamaño flexible con ancho mínimo y máximo */
+  /* opacity: 0.5; */
+  max-width: 200px;
+  height: fit-content; /* Altura fija en píxeles o cualquier unidad deseada */
+  max-height: 450px;
+  padding-bottom: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.7); /* Fondo blanco semitransparente */
+  backdrop-filter: blur(2px); /* Efecto de desenfoque */
+  position: absolute;
+  right: 1%;
+  margin-top: 20px;
+  z-index: 999;
+  overflow-y: auto;
+  overflow-x: auto;
+  #selectDelete, #selectStart, #selectFinish{
+    font-family: 'globerBold';
+    letter-spacing: 2px;
+  }
+  #selectStart, #selectFinish{
+    font-size: 15px;
+  }
+}
+
+.alert-1, .alert-2{
+  margin: 0;
+  color: white;
+  width: 75%;
+  height: 60px;
+  padding-left: 70px;
+  padding-top: 20px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.alert-1{
+  background: #e74c3c;
+}
+.alert-2{
+  background: #2ecc71;
+}
+.btn-1 {
+  background: #34495e;
+  color: #fff;
+}
+
+.btn-1:hover {
+  background: #2c3e50;
+}
+
+.btn-1:active {
+  background: #2c3e50;
+  top: 2px;
+}
+.btn-2 {
+  background: #3498db;
+  color: #fff;
+}
+
+.btn-2:hover {
+  background: #2980b9;
+}
+
+.btn-2:active {
+  background: #2980b9;
+  top: 2px;
+}
+
+/* Button 3 */
+.btn-3 {
+  background: #34495e;
+  color: #fff;
+}
+
+.btn-3:hover {
+  background: #2c3e50;
+}
+
+.btn-3:active {
+  background: #2c3e50;
+  top: 2px;
+}
+
+.btn-4 {
+  background: #2ecc71;
+  color: #fff;
+}
+
+.btn-4:hover {
+  background: #27ae60;
+}
+
+.btn-4:active {
+  background: #27ae60;
+  top: 2px;
+}
+
+.btn-5 {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.btn-5:hover {
+  background: #c0392b;
+}
+
+.btn-5:active {
+  background: #c0392b;
+  top: 2px;
+}
+
+/* Icons */
+
+.icon-previous:before {
+  content: "\f0a8";
+}
+
+.icon-select:before {
+  content: "\f0ea";
+}
+
+.icon-all:before {
+  content: "\f122";
+}
+
+.icon-next:before {
+  content: "\f0a9";
+}
+
+.icon-add:before {
+  content: "\f055";
+}
+.icon-delete:before {
+  content: "\f014";
+}
+
 #monthNav{
   display: flex;
     justify-content: space-between;
@@ -107,16 +289,245 @@ height: 70%;
     bottom: 0;
     text-align: center;
 }
-#days{
-  height: fit-content;
-  width: fit-content;
-  text-align: center;
-  border-radius: 30px;
-
-}
 #dayNumb{
   width: 30px;
   height: 5px;
   padding: 5px;
   padding-bottom: 12px;
 }
+#days{
+  height: fit-content;
+  width: fit-content;
+  text-align: center;
+  margin-left: 42px;
+}
+.occuped{
+    border-radius: 30px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: 3px solid;
+    
+}
+.dayZero{
+  color: rgb(206, 206, 206);
+}
+.selectedDay{
+  background-color: grey;
+}
+
+#dayNumb{
+  width: 30px;
+  height: 5px;
+  padding: 5px;
+  padding-bottom: 12px;
+}
+.borderCircle{
+  border-radius: 30px;
+
+}
+#info2{
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 14px;
+  color: white;
+}
+#info{
+  display: inline-block;
+}
+#daysAndName{
+  margin-left: 20px;
+}
+#green{
+  text-align: center;
+  width: 15px;
+  height: 15px;position: absolute;
+  margin-top: 2px;
+}
+#routineName{
+  cursor: pointer;
+}
+#routineName:hover{
+  color: rgb(170, 226, 0);
+}
+
+#routineDeleteName{
+  cursor: pointer;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+#routineDeleteName:hover{
+  color: rgb(195, 255, 0);
+}
+
+.selectedRoutine{
+  color: #3498db;
+  cursor: pointer;
+}
+
+#container{
+  display: flex;
+  margin-top: 5%;
+}
+
+@media (min-width: 1200px) {}
+@media (min-width: 768px) and (max-width: 1199px) {
+  #container{
+    position: relative;
+  }
+  #month{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 columnas iguales */
+    width: 100%;
+    text-align: center;
+    background-color: rgb(206, 206, 206);
+    color: rgb(0, 0, 0);
+    font-size: 10px;
+    border-radius: 10px;
+    height: 450px;
+    margin-left: 0;
+    } 
+    #days{
+      height: fit-content;
+      width: fit-content;
+      text-align: center;
+      margin-left: 30%;
+      margin-right: 0%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    #dayNumb{
+      width: 30px;
+      height: 5px;
+      padding: 5px;
+      padding-bottom: 12px;
+    }
+    .dayType{
+      margin: 0;
+      padding: 0;
+    }
+  #allButtons{
+    display: grid;
+    justify-content: center;
+    margin-left: -30%;
+    margin-right: 15%;
+    .btn{
+      font-size: 14px;
+      margin-left: 0;
+      width: 20%;
+      margin-right: 5%;
+      padding-left: 20%;
+      padding-right: 45%;
+    }
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  #container{
+    margin-top: 10%;
+    position: relative;
+    display: grid;
+  }
+  #month{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 columnas iguales */
+    width: 100%;
+    text-align: center;
+    background-color: rgb(206, 206, 206);
+    color: rgb(0, 0, 0);
+    font-size: 8px;
+    border-radius: 10px;
+    height: 450px;
+    margin-left: 0;
+    } 
+    #days{
+      height: fit-content;
+      width: fit-content;
+      text-align: center;
+      margin-left: 25%;
+      margin-right: 0%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    #dayNumb{
+      width: 30px;
+      height: 5px;
+      padding: 5px;
+      padding-bottom: 12px;
+    }
+    .dayType{
+      margin: 0;
+      padding: 0;
+    }
+  #buttons{
+    display: grid;
+    justify-content: center;
+    .btn{
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  #allButtons{
+    display: grid;
+    justify-items: left;
+  }
+  #monthNav{
+    display: grid;
+    justify-content: center;
+    .btn{
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+@media (max-width: 480px) and (min-width: 280px) {
+  #container{
+    margin-top: 10%;
+    position: relative;
+    display: grid;
+  }
+  #month{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 columnas iguales */
+    width: 100%;
+    text-align: center;
+    background-color: rgb(206, 206, 206);
+    color: rgb(0, 0, 0);
+    font-size: 8px;
+    border-radius: 10px;
+    height: 450px;
+    margin-left: 0;
+    } 
+    #days{
+      height: fit-content;
+      width: fit-content;
+      text-align: center;
+      margin-left: 0%;
+      margin-right: 0%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .dayType{
+      margin: 0;
+      padding: 0;
+    }
+  #buttons{
+    display: grid;
+    justify-content: center;
+    .btn{
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  #allButtons{
+    display: grid;
+    justify-items: center;
+  }
+  #monthNav{
+    display: grid;
+    justify-content: center;
+    .btn{
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+@media (max-width: 279px) {}

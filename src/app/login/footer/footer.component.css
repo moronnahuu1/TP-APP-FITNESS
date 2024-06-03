@@ -1,11 +1,13 @@
+
 #footer{
-    position: absolute;
+    position: fixed;
     left:0px;
-    bottom:0px;
-    height: 2rem;
+    bottom:0;
+    height: 32px;
     width:100%;
     text-align: center;
-    background-color: #001b48;
+    background: rgba(255, 255, 255, 0.5); /* Fondo blanco semitransparente */
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.3); /* Sombra con color semitransparente */
 }
 
 #footer a{
@@ -13,9 +15,46 @@
     
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 15px;
-    color: #bcd7f7;
+    font-size: 15px;
+    color: #000000;
 }
 
 #footer a:hover{
     color: #fff;
 }
+
+@media (min-width: 1200px) {}
+@media (min-width: 768px) and (max-width: 1199px) {
+    #footer{
+        height: calc(0.64 * 32px);
+    }
+    #footer a{
+        margin: calc(0.64 * 15px);
+        font-size: calc(0.64 * 15px);
+    }
+}
+@media (max-width: 767px) and (min-width: 481px) {
+    #footer a{
+        margin: calc(0.4 * 15px);
+        font-size: calc(0.4 * 15px);
+    }
+}
+@media (max-width: 480px) and (min-width: 280px) {
+    #footer a{
+        margin: calc(0.24 * 15px);
+        font-size: calc(0.4 * 15px);
+    }
+}
+@media (max-width: 279px) {
+    #footer a{
+        margin: calc(0.2 * 15px);
+        font-size: calc(0.3 * 15px);
+    }
+}
+
+/*
+@media (min-width: 1200px) {}
+@media (min-width: 768px) and (max-width: 1199px) {}
+@media (max-width: 767px) and (min-width: 481px) {}
+@media (max-width: 480px) and (min-width: 280px) {}
+*/

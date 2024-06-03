@@ -2,5 +2,11 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    /* Otros estilos del footer */
+}
+body{
+    background-image: none;
+    background-image: url('..//..//assets/gym4.jpg');
+    background-size: cover; /* Para que la imagen cubra todo el contenedor */
+    background-position: center; /* Para centrar la imagen */
+    background-attachment: fixed; 
 }

@@ -17,44 +17,41 @@ export class CreateRoutineComponent {
   constructor(userService: UserService){
     this.usersList = userService.obtenerUsuarios();
   }
-  async ngOnInit(): Promise<void> {
-    const userSerializado = localStorage.getItem("oneUser");
-    if(userSerializado){
-      this.user = JSON.parse(userSerializado);
-    } 
-      this.position = this.verificarUsuarioExistente(this.user);
-      console.log(this.user);
-      
+  async ngOnInit(): Promise<void> { 
+    this.getUser();     
       if(this.position>=0){ ///ENCONTRO EL USUARIO 
         this.routinesList = this.user.userRoutines;
-        let created = localStorage.getItem("created");
-        let repeated = localStorage.getItem("repeated");
-        if(created){
-          let createdBoolean =  JSON.parse(created);          
-          if(createdBoolean){
-            this.displayMessage("green");
-            Display.displayNone("repeated");
-            Display.displayBlock("created");
-          }
-        }else{
-          if(repeated){            
-            let repeatedBoolean = JSON.parse(repeated);
-            if(repeatedBoolean){
-              this.displayMessage("red");
-              Display.displayNone("created");
-              Display.displayBlock("repeated");
-            }
-          }else {
-            Display.displayNone("messages");
-            Display.displayNone("created");
-            Display.displayNone("repeated");
-          }
-        }
-        localStorage.removeItem("created");
-        localStorage.removeItem("repeated");
-          Display.displayBlock("create");
+        this.displaySettings();
+        Display.displayBlock("create");
      }
     }
+getUser(){
+  const userSerializado = localStorage.getItem("oneUser");
+  if(userSerializado){
+    this.user = JSON.parse(userSerializado);
+  } 
+    this.position = this.verificarUsuarioExistente(this.user);
+}
+displaySettings(){
+let created = localStorage.getItem("created");
+let repeated = localStorage.getItem("repeated");
+if(created){
+  let createdBoolean =  JSON.parse(created);          
+  if(createdBoolean){
+    alert("Routine successfully created");
+    window.location.href = 'routines';
+  }
+}else{
+  if(repeated){            
+    let repeatedBoolean = JSON.parse(repeated);
+    if(repeatedBoolean){
+     alert("You're trying to add a routine that already have the same name");
+    }
+  }
+}
+localStorage.removeItem("created");
+localStorage.removeItem("repeated");
+}
     displayMessage(color: string){
       let miDiv = document.getElementById("messages");
       if(miDiv){

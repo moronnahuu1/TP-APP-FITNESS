@@ -1,15 +1,15 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'; // Importa HttpClientModule
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { Chineseff4Component } from './chineseff4/chineseff4.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { Usuario } from './models/usuario';
 import { FooterComponent } from './login/footer/footer.component';
 import { MainComponent } from './login/main/main.component';
+import { MenuComponent } from './menu/menu.component';
 import { ExcercisesComponent } from './excercises/excercises.component';
 import { NavBarComponent } from './excercises/nav-bar/nav-bar.component';
 import { InfoComponent } from './excercises/info/info.component';
@@ -21,9 +21,9 @@ import { PaginationComponent } from './excercises/pagination/pagination.componen
 import { NavBarLoggedComponent } from './nav-bar-logged/nav-bar-logged.component';
 import { BmiComponent } from './bmi/bmi.component';
 import { SpecificInformationComponent } from './routines/specific-information/specific-information.component';
-import { SpecificInfoUserComponent } from './chineseff4/specific-info-user/specific-info-user.component';
-import { SettingsComponent } from './chineseff4/specific-info-user/settings/settings.component';
-import { PrivacyComponent } from './chineseff4/specific-info-user/privacy/privacy.component';
+import { SpecificInfoUserComponent } from './menu/specific-info-user/specific-info-user.component';
+import { SettingsComponent } from './menu/specific-info-user/settings/settings.component';
+import { PrivacyComponent } from './menu/specific-info-user/privacy/privacy.component';
 import { PublicRoutinesShowComponent } from './routines/public-routines-show/public-routines-show.component';
 import { CreateRoutineComponent } from './routines/create-routine/create-routine.component';
 import { DeleteRoutineComponent } from './routines/delete-routine/delete-routine.component';
@@ -33,7 +33,8 @@ import { SingleMonthComponent } from './calendar/single-month/single-month.compo
 @NgModule({
   declarations: [
     AppComponent,
-    Chineseff4Component,
+    MainComponent,
+    MenuComponent,
     LoginComponent,
     FooterComponent,
     MainComponent,
@@ -61,9 +62,10 @@ import { SingleMonthComponent } from './calendar/single-month/single-month.compo
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule { }

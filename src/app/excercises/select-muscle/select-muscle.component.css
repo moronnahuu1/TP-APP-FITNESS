@@ -1,9 +1,6 @@
-.btn-group{
-    margin-left: 5px;
-    margin-top: -3px;
+#container{
+  background-color: black;
 }
-
-
 /* Oculta los botones de radio predeterminados */
 .btn-check {
     position: absolute;
@@ -13,12 +10,12 @@
   
   /* Estiliza los botones de etiquetas para simular botones de radio */
   .btn-outline-primary {
-    color: #111111;
+    color: #ffffff;
     font-family: 'Quicksand', sans-serif;
     /* Agrega los estilos deseados para los botones de radio simulados */
     /* Por ejemplo, el siguiente estilo agrega un borde sólido y esquinas redondeadas */
     border: 1px solid #111111;
-    border-radius: 0.25rem;
+    border-radius: 4px;
     /* Agrega cualquier otro estilo según tus preferencias */
     
   }
@@ -31,8 +28,8 @@
   .btn-check:checked + .btn-outline-primary {
     /* Agrega los estilos deseados para el botón de radio seleccionado */
     /* Por ejemplo, el siguiente estilo cambia el color de fondo */
-    background-color: #e5ff00;
-    color: #292525; /* Cambia el color del texto si es necesario */
+    background-color: #e2da00;
+    color: #000000; /* Cambia el color del texto si es necesario */
   }
  
 
@@ -44,7 +41,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #a3fc2f;
+    background-color: #ffffff;
     transform-origin: center bottom;
     transform: scaleY(0);
     transition: transform 0.25s ease-in-out;
@@ -52,6 +49,7 @@
   
   .btn-outline-primary:hover {
     cursor: pointer;
+    color: rgb(0, 0, 0);
   }
   
   .btn-outline-primary:hover::before {
@@ -59,6 +57,22 @@
     transform: scaleY(1);
   }
 
-
-
-
+@media (min-width: 1200px) {}
+@media (min-width: 768px) and (max-width: 1199px) {
+    #container{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  #container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 480px) and (min-width: 280px) {
+  #container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

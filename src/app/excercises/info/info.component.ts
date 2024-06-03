@@ -16,6 +16,7 @@ export class InfoComponent implements OnInit{
   excerciseList: Array<Excercise>=[];
   private exerciseSubscription: Subscription = new Subscription;
   usersList: Usuario[] = [];
+  mostrarDiv: boolean = false;
   constructor(private excerciseService: ExcerciseService,private exerciseDataService: ExerciseDataService, private userService: UserService) {
     this.usersList = userService.obtenerUsuarios();    
   }
@@ -40,6 +41,10 @@ export class InfoComponent implements OnInit{
         this.excerciseList = exercises;
       }
     );
+    
+    setTimeout(() => {
+      this.mostrarDiv = true;
+    }, 1000);  
   }
   verificarUsuarioExistente(user: Usuario): number{
     let i=0;

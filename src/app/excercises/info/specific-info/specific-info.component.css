@@ -3,12 +3,7 @@ body {
 	padding: 0;
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
-	background: linear-gradient(to bottom, #001b48, #02457a, #018abe);
-    background-image: url('../../../../assets/blue background.jpg');
-    background-repeat: no repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center center;
+    background-image: url('..//..//..//..//assets/gym4.jpg');
 }
 .exercise-name {
     font-size: 3rem;
@@ -19,53 +14,75 @@ body {
 }
 .exercise-item {
     background-color: none;
-    border: 3px solid rgb(130, 130, 130);
+    border: 1px solid rgb(130, 130, 130);
     border-radius: 8px;
-    text-align: center;
-    margin-top: 130px;
-    margin-left: 470px;
-    width: 500px;
-    box-shadow: rgba(22, 20, 20, 0.5) 12px 12px 12px 12px; 
+    width: 35%;
+    height: 700px;
+    background: rgba(0, 0, 0, 0.7); /* Fondo blanco semitransparente */
+    backdrop-filter: blur(2px); /* Efecto de desenfoque */
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.3); /* Sombra con color semitransparente */
+    overflow-y: auto;
+    overflow-x: auto;
+    p, h1{
+        margin-left: 2%;
+        font-family: 'yolk';
+    }
+    h1{
+        margin-top: 2%;
+        font-family: 'globerBold';
+        font-size: 40px;
+        letter-spacing: 2px;
+        width: 95%;
+        border-bottom: 1px solid rgb(130, 130, 130);
+    }
+}
+#align{
+    display: flex;
+    justify-content: center;
 }
 .exercise-type {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: rgb(36, 43, 49);
 }
 
 .exercise-difficulty {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: rgb(36, 43, 49);
-
 }
 #addToRoutine {
-    position: fixed;
+    background-color: rgb(200, 244, 0);
+    color: black;
+    width: 30%;
+    height: 55px;
+    border-radius: 30px;
     text-align: center;
-    margin-top: 15px;
-    margin-left: 595px;
-    border-radius: 20px;
-    border: 2px solid rgb(124, 124, 124);
-    background-color: rgb(43, 43, 56);
-    color: white;
-    width: 250px;
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
+    margin-left: 1%;
     cursor: pointer;
     transition: transform 0.5s ease; /* Agrega una transición suave para una animación más agradable */
-    height: 85px;
+    transition: background-color 0.5s ease;
 }
 #addToRoutine:hover {
-    border: 2px solid rgb(189, 189, 189);
-    transform: scale(1.03); /* Escala el div al 120% del tamaño original */
+    transform: scale(1.05); /* Escala el div al 120% del tamaño original */
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }
 #h1add {
-    margin-top: 27px;
-    font-size: 20px;
+    font-family: 'globerBold';
+    letter-spacing: 1px;
+    margin-top: 12%;
+    font-size: 15px;
 }
 #repsDiv {
     background-color: rgb(21, 21, 28);
+    position: absolute;
+    top: 40%;
     color: white;
     border-radius: 10px;
     border: 1px solid grey;
     margin-left: 15px;
     width: fit-content;
+    height: 20%;
     padding: 15px;
 }
 button {
@@ -74,3 +91,61 @@ button {
     background-color: greenyellow;
     border: 0px;
 }
+@media (min-width: 1200px) {}
+@media (min-width: 768px) and (max-width: 1199px) {
+    .exercise-item{
+        margin-top: 2%;
+        width: 60%;
+        max-height: 550px;
+    }
+    #alignReps{
+        display: flex;
+        justify-content: center;
+    }
+    #repsDiv{
+        position: relative;
+        margin: 0;
+        margin-top: 2%;
+    }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+    .exercise-item{
+        margin-top: 10%;
+        width: 75%;
+        max-height: 500px;
+        #addToRoutine{
+            width: 45%;
+            margin-bottom: 2%;
+        }
+    }
+    #alignReps{
+        display: flex;
+        justify-content: center;
+    }
+    #repsDiv{
+        position: relative;
+        margin: 0;
+        margin-top: 2%;
+    }
+}
+@media (max-width: 480px) and (min-width: 280px) {
+    .exercise-item{
+        margin-top: 10%;
+        width: 95%;
+        max-height: 500px;
+        #addToRoutine{
+            width: 45%;
+            margin-bottom: 2%;
+        }
+    }
+    #alignReps{
+        display: flex;
+        justify-content: center;
+    }
+    #repsDiv{
+        position: relative;
+        margin: 0;
+        margin-top: 2%;
+    }
+}
+@media (max-width: 279px) {}

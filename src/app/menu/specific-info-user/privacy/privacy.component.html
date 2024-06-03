@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <app-nav-bar-logged></app-nav-bar-logged>
+    <br><br><br><br>
+    <div id="alignAll" class="align">
+        <div id="change">
+            <h1 id="changeMessageH1">CHOOSE AN OPTION</h1>
+            <div id="changePassword" (click)="changeWindow('lastPassButton')"><p class="btn btn-1 btn-sep icon-pass">CHANGE PASSWORD</p></div>
+            <div id="changeEmail" (click)="changeWindow('lastPassButtonMail')"><p class="btn btn-2 btn-sep icon-mail">CHANGE EMAIL</p></div>
+        </div>
+    </div>
+
+    <div id="alignMessage" class="align">
+        <div id="lastPasswordSet" class="lastPassSetted" style="display: none;">
+            <p id="currentPass" class="pMessage">To change this type of information from your profile, you must enter your password first to continue</p>
+            <label for="lastPass">Set your current password</label>
+            <br>
+            <input type="password" name="lastPass" id="lastPassInp">
+            <button id="lastPassButton" class="btnE btnE-sep icon-enter" (click)="checkPassword()">Enter</button>
+        </div>
+    
+        <div id="lastPasswordSetMail" class="lastPassSetted" style="display: none;">
+            <p id="currentPass" class="pMessage">To change this type of information from your profile, you must enter your password first to continue</p>
+            <label for="lastPassMail">Set your current password</label>
+            <br>
+            <input type="password" name="lastPass" id="lastPassInpMail">
+            <button id="lastPassButtonMail" class="btnE btnE-sep icon-enter" (click)="checkPasswordForMail()">Enter</button>
+        </div>
+    </div>
+
+    <div id="alignChange" class="align">
+        <div id="passwordChange" class="lastPassSetted" style="display: none;">
+            <p id="newPass" class="pMessage">Enter your new password for this account</p>
+            <label for="newPass">Set your new password</label>
+            <br>
+            <input type="password" name="newPass" id="newPassInp">
+            <button id="newPassButton" class="btnE btnE-sep icon-enter" (click)="changePassword()">Enter</button>
+        </div>
+    
+        <div id="emailChange" class="lastPassSetted" style="display: none;">
+            <p id="newMail" class="pMessage">Enter your new email for this account</p>
+            <label for="newMail">Set your new email</label>
+            <br>
+            <input type="email" name="newMail" id="newMailInp">
+            <button id="newMailButton" class="btnE btnE-sep icon-enter" (click)="changeEmail()">Enter</button>
+        </div>
+    </div>
+
+    <div id="messages">
+        <p id="passChanged" class="btn btn-sep greenMessage icon-check" style="display: none;" >Your password has been succesfully changed</p>
+        <p id="emailChanged" class="btn btn-sep greenMessage icon-check" style="display: none;">Your email has been succesfully changed</p>
+        <p id="samePass" class="btn btn-sep redMessage icon-err" style="display: none;">ERROR. Your password can't be the same password</p>
+        <p id="emailNotChanged" class="btn btn-sep redMessage icon-err" style="display: none;">ERROR. There's another account already using that email</p>
+        <p id="sameEmail" class="btn btn-sep redMessage icon-err" style="display: none;">ERROR. You're already using that email</p>
+        <p id="incorrectPass" class="btn btn-sep redMessage icon-err" style="display: none;">The password you set is incorrect</p>
+    </div>
+    <div id="align-2">
+        <div id="backToMenu" (click)="changeWindow('')" class="btn btn-sep btn-3 icon-all" style="display: block;">Back to main menu</div>
+    </div>
+</body>
+</html>

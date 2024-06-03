@@ -72,7 +72,22 @@ button {
       transform: scale(0.95, 1.05);
     }
   }
-  
+@media (min-width: 1200px) {}
+@media (min-width: 768px) and (max-width: 1199px) {
+  #searchBar{
+    margin-left: -10%;
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  #searchBar{
+    margin-left: -70%;
+  }
+}
+@media (max-width: 480px) and (min-width: 280px) {
+  #searchBar{
+    margin-left: -200%;
+  }
+}
 /* #searchBar {
     background-color: black;
 } */

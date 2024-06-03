@@ -17,44 +17,41 @@ export class DeleteRoutineComponent implements OnInit {
   constructor(userService: UserService){
     this.usersList = userService.obtenerUsuarios();
   }
-  ngOnInit(): void {
-    const userSerializado = localStorage.getItem("oneUser");
-    if(userSerializado){
-      this.user = JSON.parse(userSerializado);
-    } 
-      this.position = this.verificarUsuarioExistente(this.user);
-      console.log(this.user);
-      
-      if(this.position>=0){ ///ENCONTRO EL USUARIO 
-        this.routinesList = this.user.userRoutines;
-        let created = localStorage.getItem("deleted");
+ngOnInit(): void {
+  this.getUser();
+  if(this.position>=0){ ///ENCONTRO EL USUARIO 
+    this.routinesList = this.user.userRoutines;
+    Display.displayBlock("delete");
+  }
+  this.verifyDelete();
+}
+getUser(){
+  const userSerializado = localStorage.getItem("oneUser");
+  if(userSerializado){
+  this.user = JSON.parse(userSerializado);
+  }
+  this.position = this.verificarUsuarioExistente(this.user);
+}
+verifyDelete(){
+      let created = localStorage.getItem("deleted");
         let repeated = localStorage.getItem("notFounded");
         if(created){
           let createdBoolean =  JSON.parse(created);          
           if(createdBoolean){
-            this.displayMessage("green");
-            Display.displayNone("notFounded");
-            Display.displayBlock("deleted");
+            alert("Routine successfully deleted");
+            window.location.href = 'routines';
           }
         }else{
           if(repeated){            
             let repeatedBoolean = JSON.parse(repeated);
             if(repeatedBoolean){
-              this.displayMessage("red");
-              Display.displayNone("deleted");
-              Display.displayBlock("notFounded");
+              alert("The routine you are aiming to delete is not on your list");
             }
-          }else {
-            Display.displayNone("messages");
-            Display.displayNone("deleted");
-            Display.displayNone("notFounded");
           }
         }
         localStorage.removeItem("deleted");
         localStorage.removeItem("notFounded");
-          Display.displayBlock("delete");
-     }
-    }
+}
     deleteRoutine(){
       let input = document.getElementById("nameRoutine") as HTMLInputElement;
       let routineName = '';

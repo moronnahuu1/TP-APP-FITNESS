@@ -2,6 +2,12 @@
     position: fixed; /* Establece la posición fija */
     z-index: 999; /* Asegura que la barra de navegación esté sobre otros elementos de la página */
     width: 100%; /* Asegura que la barra de navegación ocupe todo el ancho */
+    display: flex;
+    height: fit-content;
+    background: rgba(0, 0, 0, 0.7); /* Fondo blanco semitransparente */
+    backdrop-filter: blur(2px); /* Efecto de desenfoque */
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.3); /* Sombra con color semitransparente */
+    margin-bottom: 0;
 }
 
 #navBar div {
@@ -9,35 +15,155 @@
     color: #bbb7b7; /* Color de los enlaces cuando no se les pasa el mouse por encima */
     transition: color 0.3s; /* Agrega una transición suave de color */
     cursor: pointer;
-    
+    font-size: 16px;
+    margin-top: 2%;
 }
-
+#navBarElements{
+    display: flex;
+}
+#navBarElements div{
+    display: flex;
+    margin-left: 20%;
+    margin-right: 20%;
+}
 #navBar div:hover {
     color: #ffffff; /* Cambia el color cuando el mouse pasa por encima */
   }
 
-/* Media query para pantallas más pequeñas, ajusta el tamaño del texto y el espaciado entre enlaces */
-@media only screen and (max-width: 600px) {
-    #navBar div {
-        font-size: 14px;
-        padding: 8px 12px;
-    }
-}
-
-/* Media query para pantallas medianas, ajusta el tamaño del texto y el espaciado entre enlaces */
-@media only screen and (min-width: 601px) and (max-width: 1024px) {
-    #navBar div {
-        font-size: 16px;
-        padding: 10px 15px;
-    }
-}
-
-#logo{
-    padding: -50px;
-    margin-top: -20px;
-    margin-bottom: -15px;
-    margin-left: 4px;
-    margin-right: 5px;
+.logo{
+    margin-left: 1%;
     height: 90px;
-    width: 100px;
+    width: 6%;
+}
+#leftimg{
+    margin-right: 3%;
+}
+#rightimg{
+    margin-left: 4%;
+}
+.user{
+    border: 1px solid rgb(200, 244, 0);
+    width: 10%;
+    padding-top: 0.7%;
+    padding-bottom: 0.7%;
+    margin-left: 1%;
+    border-radius: 20px;
+    transition: color 0.4s;
+    position: absolute;
+    right: 1%;
+    margin-top: 1.1%;
+    cursor: pointer;
+    transition: transform 0.5s ease; /* Agrega una transición suave para una animación más agradable */
+}
+.user:hover{
+    transform: scale(1.03); /* Escala el div al 120% del tamaño original */
+}
+.user:before {
+    font-family: 'FontAwesome';
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+  }
+.icon-user:before {
+    content: "\f007";
+    margin-left: 15px;
+    margin-right: 5px;
+  }
+  #imageDiv{
+    width: fit-content;
+    height: fit-content;
+    padding-top: 3%;
+  }
+  #imagenProfile{
+    position: relative;
+    width: 50px;
+    text-align: center;
+  }
+  #userNameImage{
+    text-align: center;
+    font-size: 12px;
+  }
+@media (min-width: 1200px) {
+    #imageDiv {
+        display: none;
+    }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+    #imageDiv {
+        display: none;
+    }
+    #navBar{
+        height: fit-content;
+    }
+    #navBarElements div{
+        margin-left: 6%;
+        margin-right: 6%;
+    }
+    .logo{
+        width: 9%;
+        height: fit-content;
+    }
+    .user{
+        margin-top: 2%;
+    }
+}
+@media (max-width: 767px) and (min-width: 481px) {
+    .user {
+        display: none;
+    }
+    #navBar div {
+        margin-left: 5.3%;
+        margin-right: 5.3%;
+    }
+    #navBarElements{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+    }
+    .logo{
+        width: 20%;
+        height: fit-content;
+    }
+}
+@media (max-width: 480px) and (min-width: 280px) {
+    #navBar{
+        position: fixed;
+        padding-top: 2%;
+    }
+    #navBarElements{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        font-size: 10px;
+        text-align: center;
+    }
+    #navBar div {
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+    #navBarElements div {
+        text-align: center;
+    }
+    .logo{
+        width: 25%;
+    }
+    .user{
+        display: none;
+    }
+}
+@media (max-width: 279px) {
+    #navBar{
+        height: calc(0.2 * 80px);
+    }
+    #navBar div {
+        font-size: calc(0.2 * 16px);
+        margin-left: 5.1%;
+        margin-right: 5.1%;
+    }
+    .logo{
+        height: calc((0.2 * 90px));
+    }
 }

@@ -6,16 +6,29 @@
     <title>Document</title>
 </head>
 <body>
-    <app-nav-bar-logged></app-nav-bar-logged>
-    <br><br><br><br>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <app-nav-bar-logged id="navBar"></app-nav-bar-logged>
+    <br><br><br>
     <div id="routinesFounded">
-        <h1 id="messageFounded">PUBLIC ROUTINES</h1>
+        <div id="optionsPublic">
+            <h1 id="messageFounded">PUBLIC ROUTINES</h1>
+            <p id="messageMR">Here's how other's routines look like, some of them may help you!</p>
+            <div id="routineOptions" class="options">
+            <button (click)="changeWindowNoParams('routines')" id="optionCreate" class="btn btn-1 btn-sep icon-previous">BACK TO MY ROUTINES</button>
+            <button id="optionLook" class="btn btn-2 btn-sep icon-copy" (click)="copyRoutine()">COPY ROUTINE</button>
+            <button (click)="changeWindowNoParams('')" id="optionDelete" class="btn btn-3 btn-sep icon-menu">BACK TO MENU</button>
+            </div>
+        </div>
         <div id="container">
             <div *ngFor="let routine of publicRoutinesList" class="routine-item" (click) = showRoutine(routine)>
-                <h1 class="routine-name"> {{routine.name}}</h1>
+                <h1 class="routine-name"> {{routine.name.toUpperCase()}}</h1>
                 <p class="routine-amountEX"> {{routine.excerciseList.length}} excercises</p>
                 <p class="routine-access">From {{routine.userName}}</p>
             </div>
+        </div>
+        <div id="noRoutines" style="display: none;">
+            <h1>NO ROUTINES FOUNDED</h1>
         </div>
     </div>
     <app-footer></app-footer>

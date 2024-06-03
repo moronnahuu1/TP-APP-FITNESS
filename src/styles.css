@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'oneDay';
+    src: url('./assets/ONEDAY.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'glober';
+    src: url('./assets/GloberThinFree.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'globerBold';
+    src: url('./assets/GloberSemiBoldFree.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'yolk';
+    src: url('./assets/Yolk-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'yolkBold';
+    src: url('./assets/Yolk-SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    color: white;
+    background-image: url('./assets/gym6.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+}

@@ -2,44 +2,47 @@ body {
     text-align: center;
     display: flex;
     flex-direction: column;
-    /* min-height: 100vh; */
-    margin-bottom: 10px; /* Ajusta según sea necesario */
+    background-image: url('..//..//..//assets/gym4.jpg');
+    background-size: cover; /* Para que la imagen cubra todo el contenedor */
+    background-position: center; /* Para centrar la imagen */
+    background-attachment: fixed;
+    min-height: 670px;
 }
-
+#navBar{
+    #navBar{
+        background: none;
+        background-color: black;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.437);
+    }
+}
 #head {
-    margin-top: -20px;
     width: 100%;
     text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 20px; /* Añadido espacio interno al #head */
     box-sizing: border-box; /* Asegura que el padding no incremente el tamaño total */
+    background-color: black;
+
 }
 
 #head h1 {
-    background: -webkit-linear-gradient(#181414, #70791f);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: rgb(51, 64, 75);
-    font-family: 'Rubik', sans-serif;
-    font-size: 3em;
-    font-weight: 700;
+    color: rgb(255, 255, 255);
+    font-family: 'globerBold';
+    font-size: 40px;
     margin-top: 3%;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     text-align: center;
     text-transform: uppercase;
-    padding-top: 0.02rem;
 }
 
 #head p {
-    color: rgb(51, 57, 70);
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 700;
-    letter-spacing: -.01em;
-    line-height: 1.3;
+    color: rgb(255, 255, 255);
+    font-family: 'glober';
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: 1px;
     word-break: break-word;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 1%;
+    margin-right: 1%;
 }
 
 #container {
@@ -47,53 +50,75 @@ body {
     grid-template-columns: repeat(5, 1fr);
     align-items: center;
     justify-content: center;
-    gap: 10px; /* Añadido espacio entre los elementos */
-    margin-top: 20px; /* Añadido espacio entre #head y #container */
+    gap: 5%; /* Añadido espacio entre los elementos */
+    margin-top: 2%; /* Añadido espacio entre #head y #container */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
+#container.visible {
+    opacity: 1;
+}
 
 .exercise-item {
-    margin: 1em; /* Margen en unidades em */
-    padding: 1em; /* Relleno en unidades em */
+    margin: 5%; /* Margen en unidades em */
+    padding: 5%; /* Relleno en unidades em */
     cursor: pointer;
-    box-shadow: 0px 13px 27px -5px rgba(50,50,93,0.25) , 0px 8px 16px -8px rgba(0,0,0,0.3) , 0px -6px 16px -6px rgba(0,0,0,0.025);
-    flex: 1 1 200px; /* Tamaño flexible con ancho mínimo y máximo */
-    /* opacity: 0.5; */
     width: 100%; /* Ancho del 100% para ser responsive */
     max-width: 200px; /* Ancho máximo en píxeles o cualquier unidad deseada */
-    height: 230px; /* Altura fija en píxeles o cualquier unidad deseada */
-    background: rgb(229,233,170);
-    background: linear-gradient(0deg, rgba(229,233,170,1) 0%, rgba(229,237,34,1) 35%);
+    height: 250px; /* Altura fija en píxeles o cualquier unidad deseada */
+    border: 1px solid rgba(192, 192, 192, 0.493);
+    border-radius: 20px;
+    font-family: 'yolkBold';
+    background: rgba(0, 0, 0, 0.7); /* Fondo blanco semitransparente */
+    backdrop-filter: blur(2px); /* Efecto de desenfoque */
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.3); /* Sombra con color semitransparente */
+    transition: transform 0.5s ease; /* Agrega una transición suave para una animación más agradable */
 }
 
 .exercise-item:hover{
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    transform: scale(1.05); /* Escala el div al 120% del tamaño original */
 }
-
-
-/* Media query para ajustar el tamaño en pantallas más pequeñas */
-@media (max-width: 768px) {
-    .exercise-item {
-        max-width: 100%; /* Ajusta el ancho máximo según sea necesario */
-        height: auto; /* Permite que la altura se ajuste automáticamente */
-    }
-}
-
 .exercise-name {
-    font-size: 1.5rem;
+    font-size: 24px;
     /* font-weight: 300; */
-    font-family: 'Readex Pro', sans-serif;
     margin-bottom: 30px;
+    border-bottom: 1px solid black;
 }
 
 .exercise-type {
-    font-family: 'Readex Pro', sans-serif;
-    color: rgb(36, 43, 49);
+    color: white;
 }
 
 .exercise-difficulty {
-    font-family: 'Readex Pro', sans-serif;
-    color: rgb(36, 43, 49);
-
+    color: white;
 }
+@media (min-width: 1200px) {}
+@media (min-width: 768px) and (max-width: 1199px) {
+    #head{
+        padding-top: 5%;
+    }
+    #container{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5%;
+    }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+    #head{
+        padding: 0;
+        padding-top: 15%;
+    }
+    #container{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5%;
+    }
+}
+@media (max-width: 480px) and (min-width: 280px) {
+    #head{
+        padding-top: 15%;
+    }
+    #container{
+        grid-template-columns: repeat(1, 1fr);
 
+    }
+}

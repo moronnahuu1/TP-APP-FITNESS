@@ -4,11 +4,26 @@ body {
     align-items: center;
     justify-content: center;
     justify-items: center;
-	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
-    background-color: rgb(21, 21, 28);
+    background-image: url('../../../assets/gym5.jpg');
 
 }
+#infoRoutine{
+    margin-top: 0.5%;
+    padding-bottom: 1%;
+    background-color: black;
+    h1{
+        font-family: 'globerBold';
+        letter-spacing: 3px;
+    }
+    p{
+        text-align: center;
+        font-family: 'glober';
+        font-weight: 800;
+        letter-spacing: 1px;
+    }
+}
+
 .routine-name {
     font-size: 3rem;
     font-weight: 100;
@@ -27,29 +42,35 @@ body {
 
 }
 .routine-item {
-    color: white;
+    color: rgb(0, 0, 0);
     border-radius: 8px;
     text-align: center;
     margin-top: 20px;
-    width: 100%;
+    width: 40%;
     display: flex;
     flex-wrap: wrap;
-    box-shadow: rgba(22, 20, 20, 0.5) 12px 12px 12px 12px; 
 }
 .exercise-item {
-    background-color: rgb(43, 43, 56);
-    background-color: none;
-    border: 1px solid rgb(130, 130, 130);
-    border-radius: 8px;
+    padding-right: 10%;
+    padding-left: 10%;
     text-align: center;
-    margin: 5px;
-    width: 470px;
-    box-shadow: rgba(22, 20, 20, 0.5) 12px 12px 12px 12px; 
-    transition: transform 0.5s ease; /* Agrega una transición suave para una animación más agradable */
+    background: rgba(226, 226, 226, 0.7); /* Fondo blanco semitransparente */
+    backdrop-filter: blur(2px); /* Efecto de desenfoque */
+    color: black;
+    h1{
+        font-family: 'globerBold';
+        font-weight: 800;
+        margin-top: 5%;
+    }
+    p{
+        font-family: 'yolk';
+        font-weight: 300;
+    }
 }
-.exercise-item:hover{
-    border: 2px solid rgb(130, 130, 130);
-    transform: scale(1.03); /* Escala el div al 120% del tamaño original */
+#swiperContainer{
+    margin-top: 1%;
+    width: 50%;
+    height: 500px;
 }
 .exercise-type {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -77,7 +98,8 @@ body {
 }
 #backToListDiv {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin-bottom: 0;
 }
 .back:hover {
     background-color: black;
@@ -103,3 +125,155 @@ body {
     margin-top: 20px;
     font-size: 30px;
 }
+.btn {
+    border: none;
+    font-family: 'Lato';
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 25px 80px;
+    display: inline-block;
+    margin: 15px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  
+  .btn:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  
+  /* Pseudo elements for icons */
+  .btn:before {
+    font-family: 'FontAwesome';
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  
+  /* Icon separator */
+  .btn-sep {
+    padding: 25px 60px 25px 120px;
+  }
+  
+  .btn-sep:before {
+    background: rgba(0,0,0,0.15);
+  }
+  
+  .btn:before {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    line-height: 3;
+    font-size: 140%;
+    width: 60px;
+  }
+
+  .btn-1 {
+    background: #34495e;
+    color: #fff;
+  }
+  
+  .btn-1:hover {
+    background: #2c3e50;
+  }
+  
+  .btn-1:active {
+    background: #2c3e50;
+    top: 2px;
+  }
+  .btn-2 {
+    background: #3498db;
+    color: #fff;
+  }
+  
+  .btn-2:hover {
+    background: #2980b9;
+  }
+  
+  .btn-2:active {
+    background: #2980b9;
+    top: 2px;
+  }
+  .icon-previous:before {
+    content: "\f0a8";
+  }
+  
+  .icon-all:before {
+    content: "\f122";
+  } 
+
+  @media (min-width: 1200px) {}
+  @media (min-width: 768px) and (max-width: 1199px) {
+    #swiperContainer{
+      width: 60%;
+      height: 500px;
+      max-height: 550px;
+    }
+    .btn{
+      padding: 3% 9%;
+    }
+    #infoRoutine{
+      padding-top: 2%;
+    }
+  }
+  @media (min-width: 481px) and (max-width: 767px) {
+    #swiperContainer{
+      width: 80%;
+      height: 550px;
+      max-height: 600px;
+    }
+    #backToListDiv{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+    }
+    .btn{
+      width: 65%;
+      padding: 5% 15%;
+    }
+    #infoRoutine{
+      padding-top: 10%;
+    }
+  }
+  @media (max-width: 480px) and (min-width: 280px) {
+    #swiperContainer{
+      width: 95%;
+      height: 800px;
+      max-height: 850px;
+    }
+    #backToListDiv{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+    }
+    .btn{
+      width: 95%;
+      padding: 8% 25%;
+      font-size: 12px;
+    }
+    #infoRoutine{
+      padding-top: 10%;
+    }
+  }

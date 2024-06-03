@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <app-nav-bar-logged></app-nav-bar-logged>
+    <br><br><br><br>
+    <div id="align">
+        <div id="main">
+            <h1 id="userNameInfo">{{user.userName.toUpperCase()}}</h1>
+            <div id="container">
+                <div id="userImageDiv">
+                    <img id="userImage" src="{{user.image}}" alt="">
+                </div>
+                <div id="userInfo">
+                    <p id="firstName">First name: </p>
+                    <p id="lastName">Last Name: </p>
+                    <p id="age">Age: </p>
+                    <p id="weight">Weight: </p>
+                    <p id="height">Height: </p>
+                    <p id="email">Email: </p>
+                    <p id="routinesAmount" (click)="changeWindow('routines')">Routines: </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="buttons">
+        <button id="privacyButton" class="button" (click)="changeWindow('privacy')">Privacy</button>
+        <button id="settingsButton" class="button" (click)="changeWindow('settings')">Settings</button>
+    </div>
+</body>
+</html>

@@ -10,7 +10,7 @@ import { Usuario } from './models/usuario';
 
 
 export class AppComponent {
-  title = 'chinesef4';
+  title = 'menu';
 
   //Creo el arreglo de usuarios: 
   userList : Array<Usuario> = [];

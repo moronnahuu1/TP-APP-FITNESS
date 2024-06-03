@@ -1,8 +1,9 @@
 body {
-    background-color: rgb(21, 21, 28);
-    color: white;
-    height: 850px;
-    text-align: center;
+    background-image: url('..//..//..//assets/gym5.jpg');
+    background-size: cover; /* Para que la imagen cubra todo el contenedor */
+    background-position: center; /* Para centrar la imagen */
+    background-attachment: fixed;
+    min-height: 840px;
 }
 #delete {
     text-align: left;
@@ -12,13 +13,31 @@ body {
     margin-top: 15px;
 }
 #container {
-    background-color: rgb(43, 43, 56);
-    width: fit-content;
-    padding: 30px;
-    padding-top: 10px;
-    margin-left: 465px;
-    border-radius: 15px;
-    border: 1px solid grey;
+    background-color: none;
+    border: 1px solid rgb(130, 130, 130);
+    border-radius: 8px;
+    width: 35%;
+    height: 400px;
+    background: rgba(0, 0, 0, 0.7); /* Fondo blanco semitransparente */
+    backdrop-filter: blur(2px); /* Efecto de desenfoque */
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.3); /* Sombra con color semitransparente */
+    overflow-y: auto;
+    overflow-x: auto;
+    p, h1{
+        margin-left: 2%;
+        font-family: 'yolk';
+    }
+    h1{
+        margin-top: 2%;
+        font-family: 'globerBold';
+        font-size: 40px;
+        letter-spacing: 2px;
+        width: 95%;
+        border-bottom: 1px solid rgb(130, 130, 130);
+    }
+    input, label, div {
+        margin-left: 1%;
+    }
 }
 #createMessage {
     text-align: center;
@@ -30,17 +49,6 @@ p{
     border-radius: 5px;
     border: 0px;
     height: 40px;
-}
-button {
-    border: 0px;
-    border-radius: 30px;
-    background-color: greenyellow;
-    cursor: pointer;
-    transition: transform 0.5s ease; /* Agrega una transición suave para una animación más agradable */
-}
-button:hover{
-    background-color: white;
-    transform: scale(1.05); /* Escala el div al 120% del tamaño original */
 }
 #messages {
     position: absolute;
@@ -56,30 +64,193 @@ button:hover{
     font-size: 25px;
     margin-top: 50px;
 }
-.back {
-    border-radius: 35px;
-    width: 150px;
-    height: 65px;
-    border: 0px;
-    font-size: 15px;
-    font-weight: 100;
-    font-family: 'Lato', sans-serif;
-    line-height: 20px;
-    cursor: pointer;
-    background-color: rgb(147, 216, 0);
-    margin-left: 15px;
-    margin-right: 15px;
-    margin-top: 60px;
-    margin-bottom: 15px;
-    transition: transform 0.5s ease;
-}
+
 #backToListDiv {
     display: flex;
     justify-content: space-between;
 }
-.back:hover {
-    background-color: black;
-    border: 1px solid white;
-    color: white;
-    transform: scale(1.05); /* Escala el div al 120% del tamaño original */
+.btn {
+    border: none;
+    font-family: 'Lato';
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 25px 30px;
+    display: inline-block;
+    margin: 15px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  #deleteRoutine {
+    font-size: 15px;
+    width: 35%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    padding-right: 0;
+    margin-left: 1%;
+  }
+  
+  .btn:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  
+  /* Pseudo elements for icons */
+  .btn:before {
+    font-family: 'FontAwesome';
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  
+  /* Icon separator */
+  .btn-sep {
+    /*padding: 25px 60px 25px 120px;*/
+    padding-left: 6%;
+  }
+  
+  .btn-sep:before {
+    background: rgba(0,0,0,0.15);
+  }
+    
+  .btn:before {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    line-height: 3;
+    font-size: 150%;
+    width: 60px;
+  }
+  
+  .btn-1 {
+    background: #3498db;
+    color: #fff;
+  }
+  
+  .btn-1:hover {
+    background: #2980b9;
+  }
+
+  .btn-2 {
+    background: #3498db;
+    color: #fff;
+  }
+  .btn-3 {
+    background: #e74c3c;
+    color: #fff;
+  }
+  
+  .btn-3:hover {
+    background: #c0392b;
+  }
+  
+  .btn-2:hover {
+    background: #2980b9;
+  }
+  .icon-back:before {
+    content: "\f048";
+  }
+  .icon-backAll:before {
+    content: "\f049";
+  }
+  .icon-delete:before {
+    content: "\f014";
+  }
+  #align{
+    display: flex;
+    justify-content: center;
+  }
+
+@media (min-width: 1200px) {}
+@media (min-width: 768px) and (max-width: 1199px) {
+  #align{
+    margin-top: 2%;
+  }
+  #container {
+    width: 50%;
+    #messageCreate{
+      font-size: 30px;
+    }
+    #deleteRoutine{
+      padding-left: 55px;
+    }
+  }
+  #backToListDiv{
+    button{
+      font-size: 15px;
+      padding-left: 9%;
+     
+    }
+  }
 }
+@media (min-width: 481px) and (max-width: 767px) {
+  #align{
+    padding-top: 10%;
+  }
+  #container {
+    width: 70%;
+    #messageCreate{
+      font-size: 25px;
+    }
+    #deleteRoutine{
+      font-size: 12px;
+      padding-left: 20%;
+      padding-right: 15%;
+    }
+  }
+  #backToListDiv{
+    button{
+      font-size: 10px;
+      padding-left: 15%;
+      margin-left: 1%;
+      margin-right: 1%;
+    }
+  }
+}
+@media (max-width: 480px) and (min-width: 280px) {
+  body{
+    min-height: 932px;
+  }
+  #align{
+    padding-top: 10%;
+  }
+  #container {
+    width: 80%;
+    #messageCreate{
+      font-size: 25px;
+    }
+    #deleteRoutine{
+      font-size: 10px;
+      padding-left: 30%;
+      padding-right: 20%;
+      padding-top: 6%;
+      padding-bottom: 5%;
+    }   
+  }
+  #backToListDiv{
+    display: grid;
+    button{
+      font-size: 10px;
+      padding-left: 35%;
+      padding-right: 75%;
+    }
+  }
+}
+@media (max-width: 279px) {}

@@ -1,29 +1,38 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 </head>
 <body>
     <app-nav-bar-logged></app-nav-bar-logged>
-    <h1 class="routine-name" id="name"></h1>
-    <div class="routine-item">
-        <div *ngFor="let exercise of excerciseList" class="exercise-item">
-            <h1 class="exercise-name"> {{exercise.name}}</h1>
-            <p class="exercise-type">Type: {{exercise.type}}</p>
-            <p class="exercise-difficulty">Difficulty: {{exercise.difficulty}}</p>
-            <p class="exercise-muscle">Muscle: {{exercise.muscle}}</p>
-            <p class="exercise-reps">Repetitions: {{exercise.reps}}</p>
-            <p class="exercise-instructions">{{exercise.instructions}}</p>
-        </div>
+    <div id="infoRoutine">
+        <h1 class="routine-name" id="name"></h1>
+        <p id="amountEx">You have {{excerciseList.length}} excercises on this routine</p>
     </div>
+
+  <swiper-container [slides-per-view]="1" [speed]="500" [loop]="true" [autoplay]="{ delay: 5000 }" css-mode="true" id="swiperContainer" navigation="true" pagination="true" >
+    <swiper-slide *ngFor="let exercise of excerciseList" class="exercise-item">
+        <h1 class="exercise-name"> {{exercise.name.toUpperCase()}}</h1>
+          <p class="exercise-type">Type: {{exercise.type}}</p>
+          <p class="exercise-difficulty">Difficulty: {{exercise.difficulty}}</p>
+          <p class="exercise-muscle">Muscle: {{exercise.muscle}}</p>
+          <p class="exercise-reps">Repetitions: {{exercise.reps}}</p>
+          <p class="exercise-instructions">{{exercise.instructions}}</p>
+    </swiper-slide>
+  </swiper-container>
+
     <div id="noExercises" style="display: none;">
         <h1 id="noExercisesH1">YOU HAVE NO EXERCISES UPLOADED ON THIS ROUTINE YET</h1>
     </div>
     <div id="backToListDiv">
-        <button id="backToList" class="back" (click)="backToList('routines')">BACK TO PREVIOUS PAGE</button>
-        <button id="backToMenu" class="back" (click)="backToList('')">BACK TO THE PRINCIPAL MENU</button>
+        <button id="backToList" class="btn btn-1 btn-sep icon-previous" (click)="backToList('routines')">BACK TO PREVIOUS PAGE</button>
+        <button id="backToMenu" class="btn btn-2 btn-sep icon-all" (click)="backToList('')">BACK TO MAIN MENU</button>
     </div>
 </body>
 </html>

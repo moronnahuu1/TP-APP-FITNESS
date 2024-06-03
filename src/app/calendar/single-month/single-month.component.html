@@ -4,18 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 </head>
 <body>
     <app-nav-bar-logged></app-nav-bar-logged>
-    <br><br><br><br><br>
+    <br><br><br><br>
+    <div id="deleteRoutine" style="display: none;">
+        <p id="selectDelete">Select a routine</p>
+        <div id="routinesToDelete" *ngFor="let routineScheduled of routinesXcalendar" [ngClass]="{'selectedRoutine': isRoutineSelected(routineScheduled)}">
+            <p id="routineDeleteName" (click)="clickRoutine(routineScheduled)" *ngIf="routineScheduled.startingMonth.monthNumber==monthSelected.monthNumber" [ngClass]="{'selectedRoutine': isRoutineSelected(routineScheduled)==true}">{{routineScheduled.routines.name}}</p>
+        </div>
+        <div id="buttonDelete" (click)="deleteRoutine()" class="btn alert-1 btn-sep icon-delete">DELETE</div>
+    </div>
     <div id="options">
         <h1 id="selectStart" style="display: none;">Select the first day of the calendar for your routine</h1>
-        <div id="buttonStart" class="button" style="display: none;" (click)="displayQuest('selectFinish', 'buttonFinish', 'selectStart', 'buttonStart')">SELECT</div>
+        <div id="buttonStart" class="btn alert-2 btn-sep icon-select" style="display: none;" (click)="displayQuest('selectFinish', 'buttonFinish', 'selectStart', 'buttonStart')">SELECT</div>
         <h1 id="selectFinish" style="display: none;">Select the last day of the calendar for your routine</h1>
-        <div id="buttonFinish" class="button" style="display: none;" (click)="changeWindow('routines')">SELECT</div>
+        <div id="buttonFinish" class="btn alert-2 btn-sep icon-select" style="display: none;" (click)="changeWindow('routines')">SELECT</div>
     </div>
 
-    <div id="calendar">
+    <div id="container">
+        <div id="info2">
+            <p id="infoMessage">Days already settled for a routine</p>
+            <div id="routineXSchedule" *ngFor="let routineScheduled of routinesXcalendar"> 
+                <div id="info" *ngIf="monthsCheck(routineScheduled) == true">
+                    <div id="green" style.color="{{routineScheduled.color}}" style.background-color="{{routineScheduled.color}}"></div>
+                    <p id="daysAndName">{{routineScheduled.startingDay.number}}-{{routineScheduled.lastDay.number}}: <span id="routineName" (click)="changeWindowToRoutine(routineScheduled.routines)">{{routineScheduled.routines.name}}</span> </p>
+                </div>
+            </div>
+        </div>
         <div id="month">
             <h1 id="monthName">{{monthSelected.name}}</h1>
             <p class="dayType">MONDAY</p>
@@ -25,20 +43,21 @@
             <p class="dayType">FRIDAY</p>
             <p class="dayType">SATURDAY</p>
             <p class="dayType">SUNDAY</p>
-            <div id="days" *ngFor="let day of monthSelected.days" class="day-item" [ngStyle]="{'color': day.number === 0 ? 'rgb(206, 206, 206)' : 'black', 'background-color': selectedDay === day ? 'grey' : 'transparent'}" [ngClass]="{'current-day': isCurrentDay(day.number, monthSelected.monthNumber)}">
+            <div id="days"  *ngFor="let day of monthSelected.days" class="day-item" style.border-bottom-color="{{day.color}}" [ngClass]="{'current-day': isCurrentDay(day.number, monthSelected.monthNumber),'occuped': isDayOccuped(day) , 'dayZero': day.number === 0, 'selectedDay': selectedDay === day, 'borderCircle': !isDayOccuped(day)}">
                 <p id="dayNumb" [ngStyle]="{'cursor': addButtonDisplayed === true ? 'pointer' : ''}" (click)="selectFirstDay(day, monthSelected)">{{day.number}}</p>
             </div>
         </div>
     </div>
-    <div id="monthNav">
-        <div id="previousMonth" class="button" (click)="changeMonth('previous')">PREVIOUS MONTH</div>
-        <div id="allMonths" class="button" (click)="changeWindow('calendar')">ALL MONTHS</div>
-        <div id="nextMonth" class="button" (click)="changeMonth('next')">NEXT MONTH</div>
+    <div id="allButtons">
+        <div id="monthNav">
+            <div id="previousMonth" class="btn btn-1 btn-sep icon-previous" (click)="changeMonth('previous')">PREVIOUS MONTH</div>
+            <div id="allMonths" class="btn btn-2 btn-sep icon-all" (click)="changeWindow('calendar')">ALL MONTHS</div>
+            <div id="nextMonth" class="btn btn-3 btn-sep icon-next" (click)="changeMonth('next')">NEXT MONTH</div>
+        </div>
+        <div id="buttons">
+            <div id="addRoutine" class="btn btn-4 btn-sep icon-add" (click)="displayQuest('selectStart', 'buttonStart', 'deleteRoutine', 'buttonFinish')">ADD ROUTINE</div>
+            <div id="delete" class="btn btn-5 btn-sep icon-delete" (click)="deleteDisplay()">DELETE ROUTINE</div>
+        </div>
     </div>
-    <div id="buttons">
-        <div id="addRoutine" class="button" (click)="displayQuest('selectStart', 'buttonStart', 'selectFinish', 'buttonFinish')">ADD ROUTINE</div>
-        <div id="delete" class="button">DELETE ROUTINE</div>
-    </div>
-
 </body>
 </html>

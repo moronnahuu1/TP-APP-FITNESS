@@ -8,23 +8,27 @@
 <body>
     <app-nav-bar-logged></app-nav-bar-logged>
     <br><br><br><br>
-    <div id="addToRoutine" (click)="agregarArutinaDisplay()">
-        <h1 id="h1add">ADD TO ROUTINE</h1>
+    <div id="align">
+        <div class="exercise-item">
+            <h1 class="exercise-name" id="title"></h1>
+            <p class="exercise-type" id="type"></p>
+            <p class="exercise-difficulty" id="difficulty"></p>
+            <p class="exercise-muscle" id="muscle"></p>
+            <p class="exercise-equipment" id="equipment"></p>
+            <p class="exercise-instruction" id="instruction"></p>
+            <div id="addToRoutine" (click)="agregarArutinaDisplay()">
+                <p id="h1add">ADD TO ROUTINE</p>
+            </div>
+        </div>
     </div>
-    <div class="exercise-item">
-        <h1 class="exercise-name" id="title"></h1>
-        <p class="exercise-type" id="type"></p>
-        <p class="exercise-difficulty" id="difficulty"></p>
-        <p class="exercise-muscle" id="muscle"></p>
-        <p class="exercise-equipment" id="equipment"></p>
-        <p class="exercise-instruction" id="instruction"></p>
-    </div>
-    <div id="repsDiv" style="display: none;">
-        <label for="reps">Set the amount of repetitions for this <br> excercise before adding it to a routine</label>
-        <br>
-        <input type="number" name="reps" id="repsInp">
-        <br>
-        <button (click)="agregarArutina()">ADD</button>
+    <div id="alignReps">
+        <div id="repsDiv" style="display: none;">
+            <label for="reps">Set the amount of repetitions for this <br> excercise before adding it to a routine</label>
+            <br>
+            <input type="number" name="reps" id="repsInp">
+            <br>
+            <button (click)="agregarArutina()">ADD</button>
+        </div>
     </div>
     <app-footer></app-footer>
 </body>
