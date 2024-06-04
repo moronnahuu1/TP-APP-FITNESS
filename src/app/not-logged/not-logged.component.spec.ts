@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NavBarComponent } from './nav-bar.component';
+import { NotLoggedComponent } from './not-logged.component';
 
-describe('NavBarComponent', () => {
-  let component: NavBarComponent;
-  let fixture: ComponentFixture<NavBarComponent>;
+describe('NotLoggedComponent', () => {
+  let component: NotLoggedComponent;
+  let fixture: ComponentFixture<NotLoggedComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [NavBarComponent]
+      declarations: [NotLoggedComponent]
     });
-    fixture = TestBed.createComponent(NavBarComponent);
+    fixture = TestBed.createComponent(NotLoggedComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

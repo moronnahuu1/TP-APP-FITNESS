@@ -8,22 +8,25 @@
 <body>
     <app-nav-bar-logged></app-nav-bar-logged>
     <br><br><br><br>
-    <div id="added" style="display: none;">
-        <h1>Routine added to the calendar</h1>
-    </div>
-    <h1 id="season">2024</h1>
-    <div id="calendar">
-        <div id="month" *ngFor="let month of months" class="month-item" (click)="changeWindow('singleMonth', month)" >
-            <h1 id="monthName">{{month.name}}</h1>
-            <p id="1" class="dayType">M</p>
-            <p id="2" class="dayType">T</p>
-            <p id="3" class="dayType">W</p>
-            <p id="4" class="dayType">T</p>
-            <p id="5" class="dayType">F</p>
-            <p id="6" class="dayType">S</p>
-            <p id="7" class="dayType">S</p>
-            <div id="days" *ngFor="let day of month.days" class="day-item" [ngStyle]="{'color': day.number === 0 ? 'rgb(206, 206, 206)' : 'black'}"   [ngClass]="{'current-day': isCurrentDay(day.number, month.monthNumber)}">
-                <p id="dayAux">{{day.number}}</p>
+    <app-not-logged></app-not-logged>
+    <div id="containsAll" *ngIf="user.email != ''">
+        <div id="added" style="display: none;">
+            <h1>Routine added to the calendar</h1>
+        </div>
+        <h1 id="season">2024</h1>
+        <div id="calendar">
+            <div id="month" *ngFor="let month of months" class="month-item" (click)="changeWindow('singleMonth', month)" >
+                <h1 id="monthName">{{month.name}}</h1>
+                <p id="1" class="dayType">M</p>
+                <p id="2" class="dayType">T</p>
+                <p id="3" class="dayType">W</p>
+                <p id="4" class="dayType">T</p>
+                <p id="5" class="dayType">F</p>
+                <p id="6" class="dayType">S</p>
+                <p id="7" class="dayType">S</p>
+                <div id="days" *ngFor="let day of month.days" class="day-item" [ngStyle]="{'color': day.number === 0 ? 'rgb(206, 206, 206)' : 'black'}"   [ngClass]="{'current-day': isCurrentDay(day.number, month.monthNumber)}">
+                    <p id="dayAux">{{day.number}}</p>
+                </div>
             </div>
         </div>
     </div>

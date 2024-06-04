@@ -12,19 +12,17 @@
         <img class="logo" id="leftimg" src='../../assets/Logo transparente.png' alt="logo">
 
         <div id="navBarElements">
-            <div id="logOut" (click)="logOut()"> logOut </div>
-            <div id="Schedule" (click)="changeWindow('calendar')">Schedule</div>
-            <div id="Routines" (click)="changeWindow('routines')">Routines</div>
-            <div id="Excercises" (click)="changeWindow('excercise')">Excercises</div>
-            <div id="BMI" (click)="changeWindow('BMI')">BMI</div>
-            <div id="Menu" (click)="changeWindow('')">Menu</div>
+            <div id="logOut" *ngIf="user" (click)="logOut()"> logOut </div>
+            <div id="logined" [routerLink]="['/login']" *ngIf="!user"> login </div>
+            <div id="Schedule" [routerLink]="['/calendar']">Schedule</div>
+            <div id="Routines" [routerLink]="['/routines']">Routines</div>
+            <div id="Excercises" [routerLink]="['/excercise']">Excercises</div>
+            <div id="BMI" [routerLink]="['/BMI']">BMI</div>
+            <div id="Menu" [routerLink]="['/']">Menu</div>
         </div>
 
-        <p id="username" (click)="changeWindow('specificInfoUser')" class="user icon-user">{{user.userName}}</p>
-        <div id="imageDiv">
-            <img id="imagenProfile" (click)="changeWindow('specificInfoUser')" src="../../assets/profileDefault.png" alt="">
-            <p id="userNameImage">{{user.userName}}</p>
-        </div>
+        <p *ngIf="user" id="username" [routerLink]="['/specificInfoUser']" class="user icon-user">{{user.userName}}</p>
+        <p *ngIf="!user" class="user icon-user" [routerLink]="['/login']">login</p>
     </nav>    
 </body>
 </html>

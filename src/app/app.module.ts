@@ -11,7 +11,6 @@ import { FooterComponent } from './login/footer/footer.component';
 import { MainComponent } from './login/main/main.component';
 import { MenuComponent } from './menu/menu.component';
 import { ExcercisesComponent } from './excercises/excercises.component';
-import { NavBarComponent } from './excercises/nav-bar/nav-bar.component';
 import { InfoComponent } from './excercises/info/info.component';
 import { SpecificInfoComponent } from './excercises/info/specific-info/specific-info.component';
 import { SearchBarComponent } from './excercises/search-bar/search-bar.component';
@@ -29,6 +28,8 @@ import { CreateRoutineComponent } from './routines/create-routine/create-routine
 import { DeleteRoutineComponent } from './routines/delete-routine/delete-routine.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { SingleMonthComponent } from './calendar/single-month/single-month.component';
+import { NotLoggedComponent } from './not-logged/not-logged.component';
+import { NotLoggedMenuComponent } from './menu/not-logged-menu/not-logged-menu.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,6 @@ import { SingleMonthComponent } from './calendar/single-month/single-month.compo
     FooterComponent,
     MainComponent,
     ExcercisesComponent,
-    NavBarComponent,
     InfoComponent,
     SpecificInfoComponent,
     SearchBarComponent,
@@ -57,6 +57,8 @@ import { SingleMonthComponent } from './calendar/single-month/single-month.compo
     DeleteRoutineComponent,
     CalendarComponent,
     SingleMonthComponent,
+    NotLoggedComponent,
+    NotLoggedMenuComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { Excercise } from '../models/excercise';
-import { Block } from '@angular/compiler';
 import { routine } from '../models/routine';
 import { UserService } from '../user.service';
 import { Usuario } from '../models/usuario';
 import { Display } from '../display/display';
-import { first, last } from 'rxjs';
 import { routineScheduled } from '../models/routineScheduled';
 import { day } from '../models/day';
 import { month } from '../models/month';
@@ -25,7 +23,7 @@ export class RoutinesComponent {
   usersList: Usuario[] = [];
   position = -1;
   addToCalendar: boolean = false;
-  user: Usuario = new Usuario("","","");
+  user: Usuario | undefined;
   months: Array<month> = [];
   newSeason: season = new season(0, [], 0);
   constructor(userService: UserService){
@@ -36,8 +34,6 @@ export class RoutinesComponent {
       if(this.position>=0){ ///ENCONTRO EL USUARIO 
         this.displaySettings();
       }else { ///NO HAY UN USUARIO LOGUEADO
-        alert("To watch this side of the web, you must be logged in");
-        window.location.href = '';
       }
       this.getPublicRoutines();
     }
@@ -45,7 +41,9 @@ export class RoutinesComponent {
     if(this.ejercicioSerializado){
       Display.displayBlock("selectRoutine");
     }
-    this.routinesList = this.user.userRoutines;
+    if(this.user){
+      this.routinesList = this.user.userRoutines;
+    }
     Display.displayBlock("logged");
     Display.displayNone("notLogged");
     Display.displayNone("notLoggedMessage");
@@ -68,13 +66,15 @@ export class RoutinesComponent {
     const userSerializado = localStorage.getItem("oneUser");
     if(userSerializado){
       this.user = JSON.parse(userSerializado);
-    } 
-    this.position = this.verificarUsuarioExistente(this.user);
+    }
+    if(this.user){
+      this.position = this.verificarUsuarioExistente(this.user);
     if(this.position>=0){
       if(this.user.newSeason){
         this.newSeason = this.user.newSeason;
         this.months = this.newSeason.months;
       }
+    }
     }
   }
   getPublicRoutines(){
@@ -105,8 +105,9 @@ export class RoutinesComponent {
       routineAux.firstDays.push(firstDay);
       routineAux.lastDays.push(lastDay);
       console.log("POST FD LD");
-      
-      this.routinesList[routineAux.id] = routineAux;
+
+      if(this.user){
+        this.routinesList[routineAux.id] = routineAux;
       this.user.userRoutines = this.routinesList;
       let newRoutineScheduled = new routineScheduled(routineAux, firstDay, lastDay, firstMonth, color);
       routinesScheduled.push(newRoutineScheduled);
@@ -115,6 +116,7 @@ export class RoutinesComponent {
       this.usersList[this.position] = this.user;
       localStorage.setItem("users", JSON.stringify(this.usersList));
       localStorage.setItem("calendarAdded", JSON.stringify(true));
+      }
     }
     window.location.href = "calendar";
   }
@@ -132,10 +134,12 @@ export class RoutinesComponent {
     }
     this.months[monthAux.monthNumber-1] = monthAux;
     this.newSeason.months = this.months;
-    this.user.newSeason = this.newSeason;
-    localStorage.setItem("oneUser", JSON.stringify(this.user));
-    this.usersList[this.position] = this.user;
-    localStorage.setItem("users", JSON.stringify(this.usersList));
+    if(this.user){
+      this.user.newSeason = this.newSeason;
+      localStorage.setItem("oneUser", JSON.stringify(this.user));
+      this.usersList[this.position] = this.user;
+      localStorage.setItem("users", JSON.stringify(this.usersList));
+    }
     return randomColor;
   }
   generateRandomColor(): string {
@@ -184,7 +188,7 @@ addEx(rutina: routine){
   if (this.ejercicioSerializado) { 
     const exercise: Excercise = JSON.parse(decodeURIComponent(this.ejercicioSerializado));
     let acceso = this.verificarEjercicioExistente(exercise, rutina);
-    if(acceso){
+    if(acceso && this.user){
     rutina.excerciseList.push(exercise);
     this.routinesList[rutina.id] = rutina;
     this.user.userRoutines = this.routinesList;

@@ -8,22 +8,15 @@
 <body>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-    <div id="notLogged">
-        <app-nav-bar></app-nav-bar>
-        <br><br><br><br>
-        <h1>TO WATCH, ADD OR EDIT ROUTINES YOU HAVE TO BE LOGGED FIRST</h1>
-        <button id="optionLogin">LOGIN HERE</button>
-      </div>
-    <div id="logged" style="display: none;">
-        <app-nav-bar-logged id="navBar"></app-nav-bar-logged>
-    </div>
+    <app-nav-bar-logged id="navBar"></app-nav-bar-logged>
     <br><br><br>
+    <app-not-logged></app-not-logged>
     <div id="alignSelect">
         <div id="selectRoutine" class="btn btn-1 btn-sep icon-select" style="display: none;">
             <p id="selectH1">Select a routine</p>
         </div>
     </div>
-    <div id="optionsRoutines">
+    <div id="optionsRoutines" *ngIf="user">
         <div id="optionsMR">
             <br><br>
             <h1 id="myRoutines">MY ROUTINES</h1>
