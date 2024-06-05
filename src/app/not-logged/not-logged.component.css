@@ -1,7 +1,6 @@
-body{
-    background: none;
-    display: flex;
-    justify-content: center;
+#container{
+  display: flex;
+  justify-content: center;
 }
 #notLogged{
     margin-top: 2%;

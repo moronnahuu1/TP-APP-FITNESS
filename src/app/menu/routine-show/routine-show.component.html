@@ -1,21 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div id="routinesInfo" class="infoStyle" [routerLink]="['/routines']">
-        <p id="routineInfo" class="txtInfo">Watch Your Routines To Start Work Out!</p>
-        <div *ngFor="let routine of routinesList; let i=index" class="routine-item" [routerLink]="['/publicRoutinesShow']">
-          <ng-container *ngIf="i < 3">
-            <div class="exRoutine">
-              <h1 class="routine-name"> {{routine.name}}</h1>
-              <p class="routine-amountEX"> {{routine.excerciseList.length}} excercises!</p>
-            </div>
-        </ng-container>
-        </div>
+<div id="routinesInfo" class="infoStyle" [routerLink]="['/routines']">
+  <p id="routineInfo" class="txtInfo">Watch Your Routines To Start Work Out!</p>
+  <div *ngFor="let routine of routinesList; let i=index" class="routine-item" [routerLink]="['/publicRoutinesShow']">
+    <ng-container *ngIf="i < 3">
+      <div class="exRoutine">
+        <h1 class="routine-name"> {{routine.name}}</h1>
+        <p class="routine-amountEX"> {{routine.excerciseList.length}} excercises!</p>
       </div>
-</body>
-</html>
+  </ng-container>
+  </div>
+</div>

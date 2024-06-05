@@ -1,23 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div id="divInfo">
+<div id="divInfo">
 
-        <div id="userInfo" class="miniBar" [routerLink]="['/specificInfoUser']">
-          <p id="userNameWelcome">Welcome<p>
-          <p id="userName" class=" user icon-user"></p>
-          <p id="routinesAmount"></p>
-        </div>
-        <img src="../../assets/Logo transparente.png" id="logoInfo" alt="">
-        <div id="bmi" class="miniBar">
-          <p id="bmiMessage" [routerLink]="['/BMI']">Calculate your BMI here!</p>
-        </div>
-  
-      </div>
-</body>
-</html>
+  <div id="userInfo" class="miniBar" [routerLink]="['/specificInfoUser']">
+    <p id="userNameWelcome">Welcome<p>
+    <p id="userName" class=" user icon-user"></p>
+    <p id="routinesAmount"></p>
+  </div>
+  <img src="../../assets/Logo transparente.png" id="logoInfo" alt="">
+  <div id="bmi" class="miniBar">
+    <p id="bmiMessage" [routerLink]="['/BMI']">Calculate your BMI here!</p>
+  </div>
+
+</div>

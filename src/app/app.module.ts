@@ -36,6 +36,8 @@ import { WelcomeUserComponent } from './menu/welcome-user/welcome-user.component
 import { WelcomeNotLoggedComponent } from './menu/welcome-not-logged/welcome-not-logged.component';
 import { MyRoutinesComponent } from './routines/my-routines/my-routines.component';
 import { NoRoutinesComponent } from './routines/no-routines/no-routines.component';
+import { HeadInfoComponent } from './excercises/info/head-info/head-info.component';
+import { HeadComponent } from './routines/public-routines-show/head/head.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +73,8 @@ import { NoRoutinesComponent } from './routines/no-routines/no-routines.componen
     WelcomeNotLoggedComponent,
     MyRoutinesComponent,
     NoRoutinesComponent,
+    HeadInfoComponent,
+    HeadComponent,
   ],
   imports: [
     BrowserModule,
