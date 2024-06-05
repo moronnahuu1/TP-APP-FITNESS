@@ -9,9 +9,8 @@
 </head>
 <body>
   <app-nav-bar-logged></app-nav-bar-logged>
-  <app-not-logged></app-not-logged>
+  <app-not-logged-menu *ngIf="user.email == ''"></app-not-logged-menu>
   <div id="logged" *ngIf="user.email != ''">
-    <br><br><br>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <div id="divInfo">

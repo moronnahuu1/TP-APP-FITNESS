@@ -28,6 +28,12 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'real';
+    src: url('./assets/RealHeadWebW01Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 body{
     color: white;
     background-image: url('./assets/gym6.jpg');

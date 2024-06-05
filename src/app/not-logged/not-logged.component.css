@@ -1,0 +1,20 @@
+body{
+    background: none;
+    display: flex;
+    justify-content: center;
+}
+#notLogged{
+    margin-top: 2%;
+    width: 90%;
+    height: 80vh;
+    background: rgba(0, 0, 0, 0.7); /* Fondo blanco semitransparente */
+    backdrop-filter: blur(2px); /* Efecto de desenfoque */
+    box-shadow: rgba(22, 20, 20, 0.5) 10px 10px 10px 10px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'globerBold';
+    letter-spacing: 3px;
+}

@@ -9,7 +9,6 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <app-nav-bar-logged id="navBar"></app-nav-bar-logged>
-    <br><br><br>
     <app-not-logged></app-not-logged>
     <div id="alignSelect">
         <div id="selectRoutine" class="btn btn-1 btn-sep icon-select" style="display: none;">
@@ -27,7 +26,7 @@
                 <button (click)="displayCreate('deleteRoutine')" id="optionDelete" class="btn btn-3 btn-sep icon-delete">DELETE ROUTINE</button>
             </div>
         </div>
-        <div id="container" style="display: none;">
+        <div id="container">
             <div id="routine" *ngFor="let routine of routinesList" class="routine-item " (click) = "addToCalendar==false && addEx(routine)" (click)="addToCalendar && chooseRoutine(routine)">
                 <h1 class="routine-name"> {{routine.name.toUpperCase()}}</h1>
                 <p class="routine-amountEX"> {{routine.excerciseList.length}} excercises</p>
