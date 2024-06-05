@@ -8,7 +8,7 @@
 <body>
     <div id="notLogged" *ngIf="!user">
         <h1>TO VISIT THIS SIDE OF THE SITE, YOU MUST BE LOGGED FIRST</h1>
-        <button id="optionLogin">LOGIN HERE</button>
+        <button id="optionLogin" class="btn btn-sep btn-1 icon-login" [routerLink]="['/login']">LOGIN HERE</button>
     </div>
 </body>
 </html>

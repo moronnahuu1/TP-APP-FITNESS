@@ -1,0 +1,40 @@
+.txtInfo {
+    text-align: center;
+    margin-top: 2%;
+    font-size: 25px;
+    letter-spacing: 3px;
+    font-family: 'yolk';
+}
+#loginButton{
+    padding: 4%;
+    border: 0;
+}
+.infoStyle {
+    font-family: 'globerBold';
+    display: inline-block;
+    padding: 0.8% 1%;
+    color: white;
+    width: 75vh;
+    height: 500px;
+    text-align: center;
+    margin-top: 2%;
+    background: rgba(0, 0, 0, 0.8); /* Fondo blanco semitransparente */
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.3); /* Sombra con color semitransparente */
+}
+.exercise-name{
+    text-align: center;
+    margin-top: 5%;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    color: #000;
+    border-radius: 25px;
+    padding: 3%;
+    font-size: 25px;
+    width: 40%;
+    height: 90px;
+    background: rgba(192, 192, 192, 0.7); /* Fondo blanco semitransparente */
+    backdrop-filter: blur(2px); /* Efecto de desenfoque */
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.3); /* Sombra con color semitransparente */
+}

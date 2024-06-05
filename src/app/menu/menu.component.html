@@ -6,53 +6,28 @@
   <title>FitHub</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 </head>
 <body>
+
   <app-nav-bar-logged></app-nav-bar-logged>
-  <app-not-logged-menu *ngIf="user.email == ''"></app-not-logged-menu>
-  <div id="logged" *ngIf="user.email != ''">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-    <div id="divInfo">
 
-      <div id="userInfo" class="miniBar" (click)="changeWindow('specificInfoUser')">
-        <p id="userNameWelcome">Welcome<p>
-        <p id="userName" class=" user icon-user"></p>
-        <p id="routinesAmount"></p>
-      </div>
-      <img src="../../assets/Logo transparente.png" id="logoInfo" alt="">
-      <div id="bmi" class="miniBar">
-        <p id="bmiMessage" (click)="changeWindow('BMI')">Calculate your BMI here!</p>
-      </div>
+  <br>
 
-    </div>
+  <app-welcome-not-logged *ngIf="user.email == ''"></app-welcome-not-logged>
+  <app-welcome-user *ngIf="user.email != ''"></app-welcome-user>
 
-
-    <div id="linksInfo" [class.visible]="mostrarDiv">
-
-      <div id="exerciseInfo" class="infoStyle">
-        <p id="exInfo" class="txtInfo">Watch The Newest Exercises On The Site!</p>
-        <div *ngFor="let exercise of getRandomExercises(3); let i=index;" class="exercise-item" (click)="changeExerciseWindow(exercise)">
-          <h1 class="exercise-name"> {{exercise.getName()}}</h1>
-        </div>
-        
-      </div>
-
-      <div id="routinesInfo" class="infoStyle" (click)="changeWindow('routines')">
-        <p id="routineInfo" class="txtInfo">Watch Your Routines To Start Work Out!</p>
-        <div *ngFor="let routine of routinesList; let i=index" class="routine-item" (click) = showRoutines()>
-          <ng-container *ngIf="i < 3">
-            <div class="exRoutine">
-              <h1 class="routine-name"> {{routine.name}}</h1>
-              <p class="routine-amountEX"> {{routine.excerciseList.length}} excercises!</p>
-            </div>
-        </ng-container>
-        </div>
-      </div>
-
-    </div>
-    <app-footer id="footer"></app-footer>
+  <div id="linksInfo" [class.visible]="mostrarDiv">
+    <app-exercise-show></app-exercise-show>
+    <app-routine-show *ngIf="user.email != ''"></app-routine-show>
+    <app-login-show *ngIf="user.email == ''"></app-login-show>
   </div>
+
+  <br><br><br>
+  
+  <app-footer id="footer"></app-footer>
+
 </body>
 </html>
 

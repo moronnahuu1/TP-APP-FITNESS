@@ -1,85 +1,3 @@
-#divInfo {
-    height: fit-content;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 3%;
-}
-
-#bmi {
-    display: inline-block;
-    text-align: center;
-    cursor: pointer;
-    color: #fff;
-    margin-right: 2%;
-    background: rgba(0, 0, 0, 0.7); /* Fondo blanco semitransparente */
-    backdrop-filter: blur(2px); /* Efecto de desenfoque */
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.3); /* Sombra con color semitransparente */ 
-    height: fit-content; 
-    padding: 1%;
-}
-
-#bmiMessage{
-    text-align: center;
-    font-size: 30px;
-    font-family: 'globerBold';
-    letter-spacing: 3px;
-}
-
-#logoInfo {
-    width: 12%;
-    height: 12%;
-}
-
-#userInfo{
-    display: inline-block;
-    text-align: center;
-    cursor: pointer;
-    margin-left: 2%;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.7); /* Fondo blanco semitransparente */
-    backdrop-filter: blur(2px); /* Efecto de desenfoque */
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.3); /* Sombra con color semitransparente */ 
-}
-.user{
-    border: 1px solid rgb(200, 244, 0);
-    width: 90%;
-    margin-left: 2%;
-    border-radius: 20px;
-    transition: color 0.4s;
-    height: fit-content;
-    padding: 1%;
-}
-.user:before {
-    font-family: 'FontAwesome';
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    position: relative;
-    -webkit-font-smoothing: antialiased;
-  }
-.icon-user:before {
-    content: "\f007";
-    margin-right: 3%;
-  }
-#userInfo:hover{
-    #userName{
-        color: rgb(243, 191, 0);
-    }
-}
-
-.miniBar {
-    color: white;
-    width: 20%;
-    height: fit-content;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 17.5px;
-}
-
 #userImage {
     background-color: grey;
     border-radius: circle;
@@ -87,42 +5,18 @@
 p{
     text-align: center;
 }
-.txtInfo {
-    text-align: center;
-    margin-top: 2%;
-    font-size: 25px;
-    letter-spacing: 3px;
-    font-family: 'yolk';
-}
 
 #linksInfo {
     display: flex;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
     opacity: 0;
     transition: opacity 1s ease-in-out; /* Transición suave durante medio segundo */
 }
 #linksInfo.visible{
     opacity: 1;
-}
-.exRoutine {
-    display: inline-block;
-    cursor: pointer;
-    text-decoration: none;
-    position: relative;
-    color: #ffffff;
-    width: 35%;
-    height: 90px;
-    border-radius: 15px;
-    padding-top: 1%; /* Reducir el padding */
-    font-size: 20px;
-    margin-top: 4%;
-    white-space: nowrap;
-    box-sizing: border-box; /* Incluir padding y border en el tamaño total del div */
-    background: rgba(0, 0, 0, 0.7); /* Fondo blanco semitransparente */
-    backdrop-filter: blur(2px); /* Efecto de desenfoque */
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.3); /* Sombra con color semitransparente */
-    h1{
-        font-family: 'yolkBold';
-    }
 }
 
 #userName{
@@ -131,156 +25,33 @@ p{
     font-family: 'Noto Sans Display', sans-serif;
 }
 
-.routine-name{
-    font-size: 30px;
-}
-
 #footer{
     position: fixed;
     bottom: 0;
     width: 100%;
 }
 
-.exercise-name{
-    text-align: center;
-    margin-top: 5%;
-    display: inline-block;
-    cursor: pointer;
-    text-decoration: none;
-    position: relative;
-    color: #000;
-    border-radius: 25px;
-    padding: 3%;
-    font-size: 25px;
-    width: 40%;
-    height: 90px;
-    background: rgba(192, 192, 192, 0.7); /* Fondo blanco semitransparente */
-    backdrop-filter: blur(2px); /* Efecto de desenfoque */
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.3); /* Sombra con color semitransparente */
-
-}
-.infoStyle {
-    font-family: 'glober';
-    display: inline-block;
-    padding: 0.8% 1%;
-    color: white;
-    width: 50%;
-    height: 500px;
-    text-align: center;
-    margin-top: 2%;
-    background: rgba(0, 0, 0, 0.8); /* Fondo blanco semitransparente */
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.3); /* Sombra con color semitransparente */
-}
 @media (min-width: 1200px) {}
 @media (min-width: 768px) and (max-width: 1199px) {
-    #bmiMessage{
-        font-size: calc(0.64 * 30px);
-        letter-spacing: calc(0.64 * 3px);
-    }
-    .miniBar{
-        border-radius: calc(0.64 * 10px);
-        font-size: calc(0.64 * 17.5px);
-    }
-    .txtInfo{
-        font-size: calc(0.64 * 25px);
-        letter-spacing: calc(0.64 * 3px);
-    }
-    .exRoutine{
-        height: calc(0.64 * 90px);
-        border-radius: calc(0.64 * 15px);
-        font-size: calc(0.64 * 20px);
-    }
     #userName{
         font-size: calc(0.64 * 25px);
     }
-    .routine-name{
-        font-size: calc(0.64 * 30px);
-    }
-    .exercise-name{
-        height: calc(0.64 * 90px);
-        border-radius: calc(0.64 * 25px);
-        font-size: calc(0.64 * 25px);
-    }
-    .infoStyle{
-        height: calc(0.7 * 500px);
-    }
 }
 @media (max-width: 767px) {
-    .miniBar{
-        width: 50%;
-        min-height: 200px;
-    }
-    #divInfo{
-        margin-top: 15%;
-    }
-    #bmiMessage{
-        padding-top: 20%;
-        font-size: 25px;
-    }
-    #userInfo{
-        padding-top: 5%;
-    }
-    .infoStyle{
-        width: 100%;
-    }
     #linksInfo {
         display: grid;
         width: 100%;
     }
 }
 @media (max-width: 480px) and (min-width: 280px) {
-    .miniBar{
-        width: 50%;
-        min-height: 100px;
-    }
-    #divInfo{
-        margin-top: 15%;
-    }
-    #bmiMessage{
-        padding-top: 20%;
-    }
-    #userInfo{
-        padding-top: 5%;
-    }
-    .infoStyle{
-        width: 100%;
-    }
     #linksInfo {
         display: grid;
         width: 100%;
     }
 }
 @media (max-width: 279px) {
-    #bmiMessage{
-        font-size: calc(0.2 * 30px);
-        letter-spacing: calc(0.2 * 3px);
-    }
-    .miniBar{
-        border-radius: calc(0.2 * 10px);
-        font-size: calc(0.2 * 17.5px);
-    }
-    .txtInfo{
-        font-size: calc(0.2 * 25px);
-        letter-spacing: calc(0.2 * 3px);
-    }
-    .exRoutine{
-        height: calc(0.2 * 90px);
-        border-radius: calc(0.2 * 15px);
-        font-size: calc(0.2 * 20px);
-    }
     #userName{
         font-size: calc(0.2 * 25px);
-    }
-    .routine-name{
-        font-size: calc(0.2 * 30px);
-    }
-    .exercise-name{
-        height: calc(0.2 * 90px);
-        border-radius: calc(0.2 * 25px);
-        font-size: calc(0.2 * 30px);
-    }
-    .infoStyle{
-        width: 100%;
     }
     #linksInfo {
         display: grid;

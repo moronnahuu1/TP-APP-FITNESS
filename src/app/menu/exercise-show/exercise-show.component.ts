@@ -3,11 +3,11 @@ import { ExcerciseService } from 'src/app/excercise.service';
 import { Excercise } from 'src/app/models/excercise';
 
 @Component({
-  selector: 'app-not-logged-menu',
-  templateUrl: './not-logged-menu.component.html',
-  styleUrls: ['./not-logged-menu.component.css']
+  selector: 'app-exercise-show',
+  templateUrl: './exercise-show.component.html',
+  styleUrls: ['./exercise-show.component.css']
 })
-export class NotLoggedMenuComponent  implements OnInit{
+export class ExerciseShowComponent implements OnInit{
   excerciseList: Array<Excercise> = [];
   excerciseService = inject(ExcerciseService);
   mostrarDiv: boolean = false;

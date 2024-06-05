@@ -29,7 +29,11 @@ import { DeleteRoutineComponent } from './routines/delete-routine/delete-routine
 import { CalendarComponent } from './calendar/calendar.component';
 import { SingleMonthComponent } from './calendar/single-month/single-month.component';
 import { NotLoggedComponent } from './not-logged/not-logged.component';
-import { NotLoggedMenuComponent } from './menu/not-logged-menu/not-logged-menu.component';
+import { ExerciseShowComponent } from './menu/exercise-show/exercise-show.component';
+import { RoutineShowComponent } from './menu/routine-show/routine-show.component';
+import { LoginShowComponent } from './menu/login-show/login-show.component';
+import { WelcomeUserComponent } from './menu/welcome-user/welcome-user.component';
+import { WelcomeNotLoggedComponent } from './menu/welcome-not-logged/welcome-not-logged.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +62,11 @@ import { NotLoggedMenuComponent } from './menu/not-logged-menu/not-logged-menu.c
     CalendarComponent,
     SingleMonthComponent,
     NotLoggedComponent,
-    NotLoggedMenuComponent,
+    ExerciseShowComponent,
+    RoutineShowComponent,
+    LoginShowComponent,
+    WelcomeUserComponent,
+    WelcomeNotLoggedComponent,
   ],
   imports: [
     BrowserModule,

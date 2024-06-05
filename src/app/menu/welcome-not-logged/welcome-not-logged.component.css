@@ -1,0 +1,8 @@
+#welcome{
+    text-align: center;
+    font-family: 'real';
+    font-style: italic;
+    h1{
+        letter-spacing: 3px;
+    }
+}

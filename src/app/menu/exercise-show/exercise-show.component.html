@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="exerciseInfo" class="infoStyle">
+        <p id="exInfo" class="txtInfo">Watch The Newest Exercises On The Site!</p>
+        <div *ngFor="let exercise of getRandomExercises(3); let i=index;" class="exercise-item" (click)="changeExerciseWindow(exercise)">
+          <h1 class="exercise-name"> {{exercise.getName()}}</h1>
+        </div>
+      </div>
+</body>
+</html>
