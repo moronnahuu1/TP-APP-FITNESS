@@ -11,72 +11,6 @@ body{
         border-bottom: 1px solid grey;
     }
 }
-#noRoutineMessage {
-    margin-top: 210px;
-}
-#noRoutines {
-    color: white;
-    width: 80%;
-    height: 430px;
-    margin-left: 138px;
-    margin-top: 10px;
-    border-radius: 15px;
-    border: 1px solid grey;
-    background: rgba(0, 0, 0, 0.7); /* Fondo blanco semitransparente */
-    backdrop-filter: blur(2px); /* Efecto de desenfoque */
-    box-shadow: rgba(22, 20, 20, 0.5) 10px 10px 10px 10px; 
-    text-align: center;
-    font-family: 'globerBold';
-    letter-spacing: 3px;
-}
-#noRoutines:hover {
-    color: greenyellow;
-    border: 1px solid rgb(166, 166, 166);
-}
-
-.options {
-    display: flex;
-    justify-content: space-between;
-}
-.optionButton {
-    font-family: 'globerBold';
-    font-size: 15px;
-    letter-spacing: 1px;
-    background-color: rgb(200, 244, 0);
-    width: 10%;
-    height: 60px;
-    padding-top: 0.7%;
-    border-radius: 25px;
-    border: 0;
-    cursor: pointer;
-    transition: transform 0.5s ease; /* Agrega una transición suave para una animación más agradable */
-}
-#myRoutines {
-    color: white;
-    text-align: center;
-    font-family: 'globerBold';
-    font-weight: 800;
-    letter-spacing: 3px;
-}
-#messageMR{
-    text-align: center;
-    font-family: 'glober';
-    font-weight: 800;
-    font-size: 15px;
-}
-#optionsMR{
-    margin-top: 0.5%;
-    padding-bottom: 2%;
-    background-color: black;
-    width: 100%;
-    position: relative;
-}
-.optionButton:hover {
-    transform: scale(1.05); /* Escala el div al 120% del tamaño original */
-}
-#optionLook {
-    font-size: 15px;
-}
 #container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -220,44 +154,7 @@ body{
   .btn-1:hover {
     background: #27ae60;
   }
-
-  .btn-2 {
-    background: #3498db;
-    color: #fff;
-  }
   
-  .btn-2:hover {
-    background: #2980b9;
-  }
-
-  .btn-3 {
-    background: #e74c3c;
-    color: #fff;
-  }
-  
-  .btn-3:hover {
-    background: #c0392b;
-  }
-
-  /* Icons */
-  
-  .icon-previous:before {
-    content: "\f0a8";
-  }
-  
-  .icon-all:before {
-    content: "\f122";
-  }
-  
-  .icon-look:before {
-    content: "\f002";
-  }
-  .icon-add:before {
-    content: "\f055";
-  }
-  .icon-delete:before {
-    content: "\f014";
-  }
   .icon-select:before {
     content: "\f071";
   }
@@ -268,13 +165,6 @@ body{
     }
     #optionsRoutines{
       margin-top: -1%;
-    }
-    .options{
-      button{
-        width: 80%;
-        padding-left: 8%;
-        margin: 2%;
-      }
     }
     #container {
       grid-template-columns: repeat(3, 1fr);
@@ -287,16 +177,6 @@ body{
   @media (min-width: 481px) and (max-width: 767px) {
     #optionsRoutines{
       margin-top: -30%;
-    }
-    .options{
-
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      button{
-        width: 90%;
-        padding-left: 30%;
-        margin-left: 5%;
-      }
     }
     #container {
       grid-template-columns: repeat(2, 1fr);
@@ -321,24 +201,12 @@ body{
   }
   }
   @media (max-width: 480px) and (min-width: 280px) {
-    .options{
-      display: grid;
-      justify-content: center;
-      button{
-        width: 110%;
-        padding-left: 30%;
-        margin-left: 0;
-      }
-    }
     #container {
       grid-template-columns: repeat(1, 1fr);
       justify-items: center;
       max-height: 100%;
       overflow-y: auto;
       overflow-x: auto;
-  }
-  #optionsMR{
-    margin-top: 0;
   }
   #selectRoutine{
     position: relative;

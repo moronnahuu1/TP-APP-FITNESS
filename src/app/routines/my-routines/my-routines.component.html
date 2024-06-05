@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="optionsMR">
+        <br><br>
+        <h1 id="myRoutines">MY ROUTINES</h1>
+        <p id="messageMR">Take a look at the routines you created later before. You can upload, update or remove a routine if you want it. Enjoy!</p>
+        <div id="routineOptions" class="options">
+            <button [routerLink]="['/createRoutine']" id="optionCreate" class="btn btn-1 btn-sep icon-add">ADD ROUTINE</button>
+            <button [routerLink]="['/publicRoutinesShow']" id="optionLook" class="btn btn-2 btn-sep icon-look">LOOK ROUTINES</button>
+            <button [routerLink]="['/deleteRoutine']" id="optionDelete" class="btn btn-3 btn-sep icon-delete">DELETE ROUTINE</button>
+        </div>
+    </div>
+</body>
+</html>

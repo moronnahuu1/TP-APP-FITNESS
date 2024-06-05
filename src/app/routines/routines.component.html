@@ -4,28 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
     <app-nav-bar-logged id="navBar"></app-nav-bar-logged>
     <app-not-logged></app-not-logged>
+
     <div id="alignSelect">
         <div id="selectRoutine" class="btn btn-1 btn-sep icon-select" style="display: none;">
             <p id="selectH1">Select a routine</p>
         </div>
     </div>
+    
     <div id="optionsRoutines" *ngIf="user">
-        <div id="optionsMR">
-            <br><br>
-            <h1 id="myRoutines">MY ROUTINES</h1>
-            <p id="messageMR">Take a look at the routines you created later before. You can upload, update or remove a routine if you want it. Enjoy!</p>
-            <div id="routineOptions" class="options">
-                <button (click)="displayCreate('createRoutine')" id="optionCreate" class="btn btn-1 btn-sep icon-add">ADD ROUTINE</button>
-                <button id="optionLook" class="btn btn-2 btn-sep icon-look" (click)="showRoutines()">LOOK ROUTINES</button>
-                <button (click)="displayCreate('deleteRoutine')" id="optionDelete" class="btn btn-3 btn-sep icon-delete">DELETE ROUTINE</button>
-            </div>
-        </div>
+        <app-my-routines></app-my-routines>
         <div id="container">
             <div id="routine" *ngFor="let routine of routinesList" class="routine-item " (click) = "addToCalendar==false && addEx(routine)" (click)="addToCalendar && chooseRoutine(routine)">
                 <h1 class="routine-name"> {{routine.name.toUpperCase()}}</h1>
@@ -33,10 +27,10 @@
                 <p  *ngIf="routine.isScheduled">Scheduled</p>
             </div>
         </div>
-        <div id="noRoutines" style="display: none;">
-            <h1 id="noRoutineMessage">YOU HAVE NO ROUTINES CREATED</h1>
-        </div>
+        <app-no-routines *ngIf="routinesList.length == 0"></app-no-routines>
     </div>
+
+    <br><br>
     <app-footer></app-footer>
 </body>
 </html>
