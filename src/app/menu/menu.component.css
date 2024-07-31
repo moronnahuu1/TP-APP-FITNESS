@@ -11,10 +11,7 @@ p{
 
 #linksInfo {
     display: flex;
-    align-content: center;
-    align-items: center;
-    justify-items: center;
-    justify-content: center;
+    justify-content: space-between;
     opacity: 0;
     transition: opacity 1s ease-in-out; /* Transición suave durante medio segundo */
 }
@@ -34,10 +31,19 @@ p{
     width: 100%;
 }
 
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+    #linksInfo{
+        width: 100%;
+    }
+}
 @media (min-width: 768px) and (max-width: 1199px) {
     #userName{
         font-size: calc(0.64 * 25px);
+    }
+    #linksInfo{
+        display: flex;
+        flex-direction: column;
+        width: 75vh;
     }
 }
 @media (max-width: 767px) {

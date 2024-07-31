@@ -6,11 +6,11 @@ body {
     justify-items: center;
 	font-family: 'Jost', sans-serif;
     background-image: url('../../../assets/gym5.jpg');
-    min-height: 830px;
+    height: 100vh;
 
 }
 #infoRoutine{
-    margin-top: 0.5%;
+  margin-top: -5%;
     padding-bottom: 2%;
     background-color: black;
     h1{

@@ -18,7 +18,8 @@
                 <p class="routine-access">From {{routine.userName}}</p>
             </div>
         </div>
-        <app-no-routines></app-no-routines>
+        <br>
+        <app-no-public-routines *ngIf="publicRoutinesList.length == 0"></app-no-public-routines>
     </div>
     <app-footer></app-footer>
 </body>

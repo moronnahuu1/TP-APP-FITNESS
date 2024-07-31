@@ -26,8 +26,4 @@ export class PublicRoutinesShowComponent implements OnInit {
     const nuevaURL = `specificRoutine?parametro=${encodeURIComponent(rutinaSerializada)}`;
     window.location.href = nuevaURL;
   }
-  changeWindowNoParams(newURL: string){
-    window.location.href = newURL;
-  }
-  copyRoutine(){} ///TO DO
 }

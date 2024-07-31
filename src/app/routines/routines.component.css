@@ -3,13 +3,7 @@ body{
     background-size: cover; /* Para que la imagen cubra todo el contenedor */
     background-position: center; /* Para centrar la imagen */
     background-attachment: fixed;
-    min-height: 840px;
-}
-#navBar{
-    #navBar{
-        background-color: black;
-        border-bottom: 1px solid grey;
-    }
+    min-height: 100vh;
 }
 #container {
     display: grid;

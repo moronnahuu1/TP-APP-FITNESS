@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ExcerciseService } from 'src/app/excercise.service';
-import { Excercise } from 'src/app/models/excercise';
 import { Usuario } from 'src/app/models/usuario';
 import { UserService } from 'src/app/user.service';
+import { Validators } from 'src/app/validators/validators';
 
 @Component({
   selector: 'app-privacy',
@@ -70,9 +69,11 @@ export class PrivacyComponent implements OnInit {
       if (this.user.password == passAux) {
         this.displayBlock("samePass");
       }else {
-        this.displayNone("passwordChange");
+        let verified = Validators.validatePassword(passAux);
+        if(verified == true){
+          this.displayNone("passwordChange");
         this.displayNone("samePass");
-        this.user.password = passAux;
+          this.user.password = passAux;
         localStorage.setItem("oneUser", JSON.stringify(this.user));
         if(this.user.id != undefined){
         this.usersList[this.user.id] = this.user;
@@ -80,9 +81,10 @@ export class PrivacyComponent implements OnInit {
         this.userService.persistirDatos();
         console.log("PERSISTIDO NUEVAMENTE CON CONTRASENA CAMBIADA");
         this.displayBlock("passChanged");
+        this.displayBlock("backToMenu");
+        }
         }
       }
-      this.displayBlock("backToMenu");
     }
   }
   verifyPass(password: string){
@@ -96,7 +98,9 @@ export class PrivacyComponent implements OnInit {
       let mailAux = miInput.value;
       let change = this.verifyMail(mailAux);
       if(change){
-        this.displayNone("emailChange");
+        let verified = Validators.validateEmail(mailAux);
+        if(verified == true){
+          this.displayNone("emailChange");
         this.displayNone("emailNotChanged");
         this.displayNone("sameEmail");
         this.user.email = mailAux;
@@ -107,17 +111,20 @@ export class PrivacyComponent implements OnInit {
         this.userService.users = this.usersList;
         this.userService.persistirDatos();
         console.log("PERSISTIDO NUEVAMENTE CON MAIL CAMBIADO");
+        this.displayBlock("backToMenu");
+        }
+        }else{
+          alert('Please, enter a valid email');
         }
       }else {
       }
-      this.displayBlock("backToMenu");
     }
   }
   verifyMail(email: string): boolean{
     let i = 0
     let change = true;
     if(this.user.id != undefined){
-      if(this.usersList[this.user.id].email = email){
+      if(this.usersList[this.user.id].email == email){
         change = false;
         this.displayNone("emailNotChanged");
         this.displayBlock("sameEmail");

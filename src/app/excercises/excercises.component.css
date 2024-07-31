@@ -9,4 +9,5 @@ body{
     background-size: cover; /* Para que la imagen cubra todo el contenedor */
     background-position: center; /* Para centrar la imagen */
     background-attachment: fixed; 
+    height: auto;
 }

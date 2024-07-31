@@ -55,12 +55,20 @@ export class SpecificInfoComponent implements OnInit {
     if(input){
       let inputValue = input.value;
       let inputNumber = parseInt(inputValue);
-      if (this.ejercicioSerializado) { 
-        const exercise: Excercise = JSON.parse(decodeURIComponent(this.ejercicioSerializado)); 
-        exercise.reps = inputNumber;
-        const nuevoEJ = JSON.stringify(exercise);
-        const nuevaURL = `routines?parametro=${encodeURIComponent(nuevoEJ)}`;
-        window.location.href = nuevaURL;
+      if(!Number.isNaN(inputNumber)){
+        if(inputNumber <= 0){
+          alert('You cannot put 0 or less repetitions on an exercise');
+      }else{
+        if (this.ejercicioSerializado) { 
+          const exercise: Excercise = JSON.parse(decodeURIComponent(this.ejercicioSerializado)); 
+          exercise.reps = inputNumber;
+          const nuevoEJ = JSON.stringify(exercise);
+          const nuevaURL = `routines?parametro=${encodeURIComponent(nuevoEJ)}`;
+          window.location.href = nuevaURL;
+        }
+      }
+      }else{
+        alert('You cannot leave the space blank or even put letters here');
       }
     }
   }

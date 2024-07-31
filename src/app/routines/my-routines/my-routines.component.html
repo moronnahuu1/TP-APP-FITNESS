@@ -7,4 +7,7 @@
         <button [routerLink]="['/publicRoutinesShow']" id="optionLook" class="btn btn-2 btn-sep icon-look">LOOK ROUTINES</button>
         <button [routerLink]="['/deleteRoutine']" id="optionDelete" class="btn btn-3 btn-sep icon-delete">DELETE ROUTINE</button>
     </div>
+    <div *ngIf="addToCalendar">
+        <p>Select a routine for the calendar</p>
+    </div>
 </div>

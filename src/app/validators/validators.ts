@@ -1,11 +1,8 @@
-import { AbstractControl, AsyncValidatorFn, ValidatorFn } from "@angular/forms";
-import { UserService } from "../user.service";
-import { Usuario } from "../models/usuario";
 
 export class Validators {
       static validateInput(input: string): boolean {
         if(input.length == 0){
-            alert("El campo no puede estar vacio");
+            alert("You cannot left this empty");
         }
         return input.length > 0;
       }
@@ -13,25 +10,25 @@ export class Validators {
         const regexMayuscula = /[A-Z]/;
       const regexNumero = /[0-9]/;
       if(password.length == 0){
-        alert("No puedes dejar en blanco la contraseña");
+        alert("Password cannot be empty");
+        return false;
       }else{
         if(password.length<8){
-          alert("La contraseña debe tener 8 caracteres como minimo");
+          alert("Password must contain 8 characters");
+          return false;
         }else {
           if(!regexMayuscula.test(password)){
-            alert("La contraseña debe contener al menos una mayuscula");
+            alert("Password must contain an uppercase");
+            return false;
           }else{
             if(!regexNumero.test(password)){
-              alert("la contraseña debe contener al menos un numero");
+              alert("Password must contain a number");
+              return false;
             }
           }
         }
       }
-      return (
-        password.length >= 8 &&
-        regexMayuscula.test(password) &&
-        regexNumero.test(password)
-      )
+      return true;
       }
 
       static validateEmail(email: string){

@@ -23,6 +23,8 @@ body {
     justify-content: center;
     gap: 5%; /* Añadido espacio entre los elementos */
     margin-top: 2%; /* Añadido espacio entre #head y #container */
+    margin-bottom: auto;
+    height: max-content;
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }

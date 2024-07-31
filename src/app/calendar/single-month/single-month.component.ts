@@ -1,8 +1,5 @@
-import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
-import { RouterTestingHarness } from '@angular/router/testing';
-import { count, first } from 'rxjs';
+import { Component, OnInit} from '@angular/core';
 import { Display } from 'src/app/display/display';
-import { SearchBarComponent } from 'src/app/excercises/search-bar/search-bar.component';
 import { day } from 'src/app/models/day';
 import { month } from 'src/app/models/month';
 import { routine } from 'src/app/models/routine';
@@ -142,7 +139,6 @@ export class SingleMonthComponent implements OnInit {
         }
         }
       }
-    
     }
       if(lastDay){
         if(lastDay.style.display == 'block' && firstDay?.style.display == 'none'){
@@ -164,6 +160,7 @@ export class SingleMonthComponent implements OnInit {
           localStorage.setItem("lastDayCalendar", JSON.stringify(dayAux));
           localStorage.removeItem("lastMonthCalendar");
           localStorage.setItem("lastMonthCalendar", JSON.stringify(this.monthSelected));
+          localStorage.setItem("addCalendar", JSON.stringify(true));
           this.selectedDay = dayAux;
           }
         }

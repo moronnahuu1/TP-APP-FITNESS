@@ -1,4 +1,5 @@
 #welcome{
+    margin: auto;
     text-align: center;
     font-family: 'real';
     font-style: italic;
@@ -6,3 +7,32 @@
         letter-spacing: 3px;
     }
 }
+
+@media (min-width: 1200px) {
+  #welcome{
+    margin: auto;
+    margin-top: 3ch;
+    text-align: center;
+    font-family: 'real';
+    font-style: italic;
+    h1{
+        letter-spacing: 3px;
+    }
+}
+}
+  @media (min-width: 768px) and (max-width: 1199px) {
+    #welcome{
+        margin-top: 5%;
+    }
+  }
+  @media (min-width: 481px) and (max-width: 767px) {
+    #welcome{
+        margin-top: 17%;
+    }
+  }
+  @media (max-width: 480px) and (min-width: 280px) {
+    #welcome{
+        margin-top: 18%;
+    }
+  }
+  @media (max-width: 279px) {}

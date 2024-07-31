@@ -27,7 +27,8 @@
     display: inline-block;
     padding: 0.8% 1%;
     color: white;
-    width: 90vh;
+    width: auto;
+    padding: auto;
     height: 500px;
     text-align: center;
     margin-top: 2%;
@@ -35,7 +36,12 @@
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.3); /* Sombra con color semitransparente */
 }
 
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+    #infoStyle{
+        width: 100%;
+        background-color: red;
+    }
+}
 @media (min-width: 768px) and (max-width: 1199px) {
     .txtInfo{
         font-size: calc(0.64 * 25px);
@@ -47,7 +53,7 @@
         font-size: calc(0.64 * 25px);
     }
     .infoStyle{
-        width: 60vh;
+        width: 75vh;
     }
 }
 @media (max-width: 767px) {

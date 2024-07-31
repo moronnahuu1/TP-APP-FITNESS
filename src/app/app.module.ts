@@ -38,6 +38,7 @@ import { MyRoutinesComponent } from './routines/my-routines/my-routines.componen
 import { NoRoutinesComponent } from './routines/no-routines/no-routines.component';
 import { HeadInfoComponent } from './excercises/info/head-info/head-info.component';
 import { HeadComponent } from './routines/public-routines-show/head/head.component';
+import { NoPublicRoutinesComponent } from './routines/no-public-routines/no-public-routines.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { HeadComponent } from './routines/public-routines-show/head/head.compone
     NoRoutinesComponent,
     HeadInfoComponent,
     HeadComponent,
+    NoPublicRoutinesComponent,
   ],
   imports: [
     BrowserModule,

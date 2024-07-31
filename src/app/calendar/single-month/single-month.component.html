@@ -9,7 +9,6 @@
 </head>
 <body>
     <app-nav-bar-logged></app-nav-bar-logged>
-    <br><br><br><br>
     <div id="deleteRoutine" style="display: none;">
         <p id="selectDelete">Select a routine</p>
         <div id="routinesToDelete" *ngFor="let routineScheduled of routinesXcalendar" [ngClass]="{'selectedRoutine': isRoutineSelected(routineScheduled)}">
