@@ -84,41 +84,56 @@ export class BmiComponent {
           return;
       }
 
-      console.log(this.user);
       const height: number = parseFloat(heightInput.value);
       const weight: number = parseFloat(weightInput.value);
-      
-      const userKey = `user_${this.user.email}`;
 
-      localStorage.setItem(`${userKey}_userHeight`, String(height));
-      localStorage.setItem(`${userKey}_userWeight`, String(weight));
-
-      this.user.height = height;
-      this.user.weight = weight;
-      
-      // localStorage.setItem("oneUser", JSON.stringify(this.usersList[this.position]));
-      let number  = weight / ((height / 100) ** 2);
-      this.result = number.toFixed(2);
-      console.log('Result: '+this.result);
-      if (!isNaN(number)) {
-          bmiOutput.innerHTML = this.result.toString();
-          if (number < 18.5) {
-            this.bmiStatus ="Underweight";
-              bmiStatus.innerHTML = "Underweight";
-          } else if (number< 25) {
-            this.bmiStatus ="Healthy";
-            bmiStatus.innerHTML = "Healthy";
-          } else if (number < 30) {
-            this.bmiStatus ="Overweight";
-              bmiStatus.innerHTML = "Overweight";
-          } else {
-            this.bmiStatus ="Obesity";
-              bmiStatus.innerHTML = "Obesity" ;
+      if(!Number.isNaN(height)){
+        if(height > 0){
+          if(!Number.isNaN(weight)){
+            if(weight > 0){
+              const userKey = `user_${this.user.email}`;
+  
+          localStorage.setItem(`${userKey}_userHeight`, String(height));
+          localStorage.setItem(`${userKey}_userWeight`, String(weight));
+    
+          this.user.height = height;
+          this.user.weight = weight;
+          
+          // localStorage.setItem("oneUser", JSON.stringify(this.usersList[this.position]));
+          let number  = weight / ((height / 100) ** 2);
+          this.result = number.toFixed(2);
+          console.log('Result: '+this.result);
+          if (!isNaN(number)) {
+              bmiOutput.innerHTML = this.result.toString();
+              if (number < 18.5) {
+                this.bmiStatus ="Underweight";
+                  bmiStatus.innerHTML = "Underweight";
+              } else if (number< 25) {
+                this.bmiStatus ="Healthy";
+                bmiStatus.innerHTML = "Healthy";
+              } else if (number < 30) {
+                this.bmiStatus ="Overweight";
+                  bmiStatus.innerHTML = "Overweight";
+              } else {
+                this.bmiStatus ="Obesity";
+                  bmiStatus.innerHTML = "Obesity" ;
+              }
           }
+          
+          localStorage.setItem(`${userKey}_userBmi`, String(this.result));
+          localStorage.setItem(`${userKey}_userBmiStatus`, String(this.bmiStatus));
+            }else{
+              alert('Please, enter a valid weight. Your weight cannot be 0 or less');
+            }
+          }else{
+            alert('Please, enter a valid weight. Your weight cannot be empty or contain text characters');
+          }
+        }else{
+          alert('Please, enter a valid height. Your height cannot be 0 or less');
+        }
+      }else{
+        alert('Please, enter a valid height. Your height cannot be empty or contain text characters');
       }
-      
-      localStorage.setItem(`${userKey}_userBmi`, String(this.result));
-      localStorage.setItem(`${userKey}_userBmiStatus`, String(this.bmiStatus));
     }
 
 
