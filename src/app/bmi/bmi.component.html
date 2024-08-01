@@ -15,8 +15,8 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
 </head>
 <body>
-   <app-main  *ngIf="element == true"></app-main>
-   <app-nav-bar-logged  *ngIf="logged == true"></app-nav-bar-logged>
+   <app-nav-bar-logged></app-nav-bar-logged>
+   <app-not-logged *ngIf="logged == false"></app-not-logged>
 
    <div id="last-update"  *ngIf="storedHeight">
         <h1>Your latest BMI update</h1>
@@ -46,13 +46,6 @@
             <h4>Status: </h4>
             <div class="result" id="bmi-status"></div>
         </div> 
-    </div>
-
-    
-    
-    <div id="not-logged-form"  *ngIf="element == true">
-        <h1 id="warning">You must be loged to try the BMI calculator</h1>
-        <button class="logged" (click)="changeWindow('login')">Log In</button>
     </div>
         
 </body>
